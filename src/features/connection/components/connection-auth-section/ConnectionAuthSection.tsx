@@ -33,12 +33,12 @@ const ConnectionAuthSection: React.FC<ConnectionAuthSectionProps> = ({
 							/>
 							<span className="grid">Zennとの連携には</span>
 						</span>
-						<span>「ログイン」または「新規登録」が必要です。</span>
+						<span>「ログイン」が必要です。</span>
 					</p>
 					<div className="grid grid-cols-1 gap-2 place-items-center">
 						<p className="text-sm flex flex-col lg:flex-row justify-center items-center gap-1 lg:gap-0">
 							<em className="not-italic">
-								※「ログイン」「新規登録」無しでも、
+								※ ログイン無しでも、
 							</em>
 							<span>ご利用いただけます。</span>
 						</p>
@@ -94,7 +94,7 @@ const ConnectionAuthSection: React.FC<ConnectionAuthSectionProps> = ({
 					</button>
 				</div>
 				<p className="flex flex-col lg:flex-row justify-center items-center gap-1 lg:gap-0 text-sm lg:text-base mt-[12px]">
-					<span>先に「ログイン」または「新規登録」を</span>
+					<span>先に「ログイン」を</span>
 					<span>完了してください。</span>
 				</p>
 			</div>

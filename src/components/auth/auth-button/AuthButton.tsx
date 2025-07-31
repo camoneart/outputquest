@@ -1,6 +1,6 @@
 "use client";
 
-import { SignInButton, SignUpButton, useAuth } from "@clerk/nextjs";
+import { SignInButton, useAuth } from "@clerk/nextjs";
 import React, { useState, useEffect } from "react";
 import { useClickSound } from "@/components/common/audio/click-sound/ClickSound";
 import styles from "./AuthButton.module.css";
@@ -31,7 +31,7 @@ const AuthButton = () => {
 	}
 
 	return (
-		<div className="flex items-center justify-center w-full gap-5">
+		<div className="flex items-center justify-center w-full">
 			<SignInButton mode="modal" forceRedirectUrl={redirectUrl}>
 				<button
 					className={`${styles["login-btn"]}`}
@@ -40,14 +40,6 @@ const AuthButton = () => {
 					<span className={`${styles["login-btn-text"]}`}>ログイン</span>
 				</button>
 			</SignInButton>
-			<SignUpButton mode="modal" forceRedirectUrl={redirectUrl}>
-				<button
-					className={`${styles["sign-up-btn"]}`}
-					onClick={() => playClickSound()}
-				>
-					<span className={`${styles["sign-up-btn-text"]}`}>新規登録</span>
-				</button>
-			</SignUpButton>
 		</div>
 	);
 };

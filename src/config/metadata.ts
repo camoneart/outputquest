@@ -92,7 +92,7 @@ export const metadata: Record<string, Metadata> = {
 		...baseMetadata,
 		title: "連携",
 		description:
-			"Clerk認証によるログイン/新規登録、Zennのアカウント連携を管理できます。ログインとZenn連携をすることで、Zennの投稿データがアプリ内のUIに反映されます。アプリは「ログイン」「新規登録」無しでも利用できます。",
+			"Clerk認証によるログイン、Zennのアカウント連携を管理できます。ログインとZenn連携をすることで、Zennの投稿データがアプリ内のUIに反映されます。アプリはログイン無しでも利用できます。",
 	},
 	connectionDetail: {
 		...baseMetadata,

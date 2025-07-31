@@ -80,7 +80,7 @@ const ConnectionDetailContent = () => {
 					</div>
 					<div className="text-xs opacity-50 text-center grid gap-1.5">
 						<p>「ログインユーザー」</p>
-						<p>ログイン / 新規登録 に加え、Zenn連携を完了したユーザーのこと</p>
+						<p>ログインに加え、Zenn連携を完了したユーザーのこと</p>
 					</div>
 				</div>
 				{/* ゲストユーザー */}
@@ -97,8 +97,8 @@ const ConnectionDetailContent = () => {
 									className={`${styles["connection-detail-content-text"]} text-sm leading-[1.75] w-full [text-shadow:1px_1px_0px_#000]`}
 								>
 									ゲストとして、まずは気軽にアプリの世界を体験してみませんか？
-									ゲストユーザーは開発者のZennアカウント(@aoyamadev)をサンプルとして、OUTPUT
-									QUESTの世界観を体験できます。ログイン、新規登録は一切不要です。
+									ゲストユーザーはログイン不要で、開発者のZennアカウント(@aoyamadev)をサンプルとして、OUTPUT
+									QUESTの世界観を体験できます。
 								</p>
 							</div>
 						</div>
@@ -112,7 +112,7 @@ const ConnectionDetailContent = () => {
 								<li
 									className={`${styles["connection-detail-list-item"]} text-sm leading-[1.75] w-full`}
 								>
-									ログイン/新規登録の手間を省きたい
+									ログインの手間を省きたい
 								</li>
 								<li
 									className={`${styles["connection-detail-list-item"]} text-sm leading-[1.75] w-full`}
@@ -173,7 +173,7 @@ const ConnectionDetailContent = () => {
 					</div>
 					<div className="text-xs opacity-50 text-center grid gap-[5px]">
 						<p>「ゲストユーザー」</p>
-						<p>ログイン / 新規登録 を完了していないユーザーのこと</p>
+						<p>ログインを完了していないユーザーのこと</p>
 					</div>
 				</div>
 			</div>
