@@ -300,13 +300,13 @@ AIが勇者の仲間の「賢者」として、次に書く記事に最適なテ
 
 勇者の仲間に加わったキャラクターを確認できます。1人1人のキャラクターの詳細情報も確認できます。
 
-![なかま](public/images/readme/party-page.png)
+![なかま](public/gifs/readme/party-page.gif)
 
 ### **アイテム**
 
 勇者がレベルアップ報酬で入手したアイテムを確認できます。1つ1つのアイテムの詳細情報も確認できます。
 
-![アイテム](public/images/readme/items-page.png)
+![アイテム](public/gifs/readme/items-page.gif)
 
 ### **連携**
 
