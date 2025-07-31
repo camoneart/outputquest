@@ -1,6 +1,6 @@
 # OUTPUT QUEST　叡智の継承者
 
-![トップページ](public/gif/readme/top-page.gif)
+![トップページ](public/gifs/readme/top-page.gif)
 
 アプリは以下からアクセスできます。
 
@@ -94,7 +94,7 @@ outputquest/
 │   └── migrations/                                  # マイグレーションファイル
 ├── public/                                          # 静的ファイル
 │   ├── audio/                                       # 音声ファイル
-│   ├── gif/                                         # アニメーション画像ファイル
+│   ├── gifs/                                        # アニメーション画像ファイル
 │   └── images/                                      # 画像ファイル
 │       ├── arrow/                                   # 矢印画像
 │       ├── common/                                  # 共通画像
@@ -252,25 +252,25 @@ Next.js + CSS Modules + Tailwind CSS + TypeScriptで開発し、デプロイはV
 
 ゲームのオープニングを彷彿とさせる演出により、冒険のはじまりを視覚的に表現しました。
 
-![トップページ](public/gif/readme/top-page.gif)
+![トップページ](public/gifs/readme/top-page.gif)
 
 ### **ダッシュボード**
 
 勇者の冒険の拠点。勇者の成長度合いを示すレベル、Zennでの投稿数、勇者の仲間に加わったキャラや入手したアイテムを確認でき、Xへのシェアが可能です。
 
-![ダッシュボード](public/gif/readme/dashboard-page.gif)
+![ダッシュボード](public/gifs/readme/dashboard-page.gif)
 
 ### **学びの書**
 
 Zennの記事を「これまでの学び」として記録する場所。Zennで投稿した記事が一覧表示され、学びの記録として振り返ることができます。記事はアプリ内ではカード型UIで表示され、クリックすることでZennの記事ページにアクセスできます。
 
-![学びの書](public/gif/readme/posts-page.gif)
+![学びの書](public/gifs/readme/posts-page.gif)
 
 ### **記事探索**
 
 AIが勇者の仲間の「賢者」として、次に書く記事に最適なテーマを提案。賢者（AI）は、あなたのZenn記事を探索し、過去の投稿から傾向を探ることで、あなたの成長に最適な「学びのタネ」を見つけ出します。
 
-![記事探索](public/gif/readme/explore-page.gif)
+![記事探索](public/gifs/readme/explore-page.gif)
 
 ### **つよさ**
 
@@ -312,7 +312,7 @@ AIが勇者の仲間の「賢者」として、次に書く記事に最適なテ
 
 Clerk認証によるログイン/新規登録、Zennのアカウント連携を管理できます。ログインとZenn連携をすることで、Zennの投稿データがアプリ内のUIに反映されます。アプリは「ログイン」「新規登録」無しでも利用できます。
 
-![連携](public/gif/readme/connection-page.gif)
+![連携](public/gifs/readme/connection-page.gif)
 
 ### **Zenn連携について**
 
@@ -324,19 +324,19 @@ OUTPUT QUESTとZennアカウントを連携させることで得られるメリ�
 
 OUTPUT QUESTの世界観と使い方、アウトプットを通じて成長する「RPG風学習支援アプリ」の始め方を解説します。アプリの概要、コンセプト、主要機能について紹介します。
 
-![OUTPUT QUESTとは ?](public/gif/readme/about-page.gif)
+![OUTPUT QUESTとは ?](public/gifs/readme/about-page.gif)
 
 ### **利用規約**
 
 OUTPUT QUESTの利用規約を確認できます。
 
-![利用規約](public/gif/readme/terms-page.gif)
+![利用規約](public/gifs/readme/terms-page.gif)
 
 ### **プライバシーポリシー**
 
 OUTPUT QUESTのプライバシーポリシーを確認できます。
 
-![プライバシーポリシー](public/gif/readme/privacy-page.gif)
+![プライバシーポリシー](public/gifs/readme/privacy-page.gif)
 
 <h2 id="future-features">今後追加予定の機能やアップデート</h2>
 
