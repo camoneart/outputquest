@@ -22,7 +22,7 @@ https://outputquest.com
 
 アプリの概要や使い方について、音声（NotebookLM）で解説しています。
 
-[【音声解説】OUTPUT QUEST　叡智の継承者](https://notebooklm.google.com/notebook/64580ee4-82d4-46d3-be17-98e186fe6250/audio)
+[【音声解説】OUTPUT QUEST　叡智の継承者](https://notebooklm.google.com/notebook/f1b1104c-6080-4bde-8d84-b24dd31b65c4?artifactId=3f65ff4f-68d5-46c8-b2ee-b2c47e4e3db7)
 
 <h2 id="development-configuration-diagram">開発構成図</h2>
 
