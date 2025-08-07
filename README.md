@@ -103,7 +103,7 @@ OUTPUT QUEST 叡智の継承者は、ゲーミフィケーションを取り入�
 ### AI
 
 - [Vercel AI SDK](https://ai-sdk.dev/)：v4.3.16（TypeScript Toolkit）
-- [AI SDK Core](https://ai-sdk.dev/docs/ai-sdk-core/overview)：v1.2.19（LLM：Gemini(gemini-2.5-flash)）
+- [AI SDK Core](https://ai-sdk.dev/docs/ai-sdk-core/overview)：v1.2.19（LLM：Gemini(gemini-2.5-pro)）
 - [AI SDK UI](https://ai-sdk.dev/docs/ai-sdk-ui/overview)：v1.2.12（UI）
 
 ### Markdown
@@ -374,7 +374,7 @@ OUTPUT QUESTのプライバシーポリシーを確認できます。
 
 ### **記事探索機能のアップデート**
 
-- LLMのモデル変更（現在：gemini-2.5-flash）
+- LLMのモデル変更（現在：gemini-2.5-pro）
 - モデルの回答生成時の口調の変更（現在：老賢者）
 
 ### **連携できるプラットフォームの追加**
