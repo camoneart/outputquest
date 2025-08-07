@@ -46,7 +46,7 @@ const AboutPage = () => {
 									<dd
 										className={styles["about-section-list-content-description"]}
 									>
-										Zennで記事を書くことで、勇者が経験値を得られます。経験値を獲得して勇者がレベルアップすることで、新たな「称号」の獲得、「アイテム」の入手、新しい「仲間」との出会いがあなたを待っています。
+										Zennで記事を書くことで、勇者が経験値を得られます。経験値を獲得して勇者がレベルアップすることで、「称号の獲得」「アイテムの入手」「仲間との出会い」があなたを待っています。
 									</dd>
 								</div>
 								<div className={styles["about-section-list-content"]}>
