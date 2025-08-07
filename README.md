@@ -25,7 +25,7 @@ https://outputquest.com
 
 <br />
 
-OUTPUT QUESTは、ゲーミフィケーションを取り入れたRPG風学習支援アプリです。
+OUTPUT QUEST 叡智の継承者は、ゲーミフィケーションを取り入れたRPG風学習支援アプリです。
 
 ### 核となる **"3つの価値"**
 
