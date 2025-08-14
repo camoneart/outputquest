@@ -119,21 +119,3 @@ export const syncZennArticles = async (
 	const data = await response.json();
 	return data;
 };
-
-// 連携をリセットするAPI
-export const resetConnection = async (
-	clerkId: string
-): Promise<{
-	success: boolean;
-	error?: string;
-}> => {
-	const response = await fetch("/api/user/reset-connection", {
-		method: "DELETE",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({ clerkId }),
-	});
-	const data = await response.json();
-	return data;
-};

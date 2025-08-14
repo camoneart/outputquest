@@ -3,9 +3,6 @@
 import { useEffect, useState } from "react";
 import { useUser, useSession } from "@clerk/nextjs";
 
-// サインアウト処理中フラグ
-let isProcessingSignOut = false;
-
 export function SignOutHandler({ children }: { children: React.ReactNode }) {
 	const { user } = useUser();
 	const { session } = useSession();
@@ -24,46 +21,9 @@ export function SignOutHandler({ children }: { children: React.ReactNode }) {
 		}
 
 		// セッションが存在していたが、なくなった場合（サインアウト）
-		if (
-			previousSessionId &&
-			!session &&
-			!isProcessingSignOut &&
-			previousUserId
-		) {
-			// DBのデータを保持するため、リセット処理を無効化
-			// サインアウト時もZenn連携情報を維持する
-
-			// 以下の処理は無効化（DBのデータを保持するため）
-			/*
-			isProcessingSignOut = true;
-
-			// DBのZenn連携データをリセット
-			const resetZennData = async () => {
-				try {
-					const response = await fetch("/api/user/reset-connection", {
-						method: "DELETE",
-						headers: {
-							"Content-Type": "application/json",
-						},
-						body: JSON.stringify({ clerkId: previousUserId }),
-					});
-
-					if (!response.ok) {
-						console.error("Zenn連携リセットエラー: ", response.status);
-					}
-				} catch (error) {
-					console.error("Zenn連携リセットエラー:", error);
-				} finally {
-					isProcessingSignOut = false;
-					// ユーザーIDをクリア
-					setPreviousUserId(null);
-				}
-			};
-
-			resetZennData();
-			*/
-
+		if (previousSessionId && !session && previousUserId) {
 			// ユーザーIDをクリア（状態管理のみ）
+			// DBのデータは保持する仕様のため、リセット処理は行わない
 			setPreviousUserId(null);
 		}
 
