@@ -46,3 +46,9 @@ next-env.d.ts
 
 # log
 _docs
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Serena MCP server files
+.serena/
