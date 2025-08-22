@@ -18,7 +18,7 @@ https://outputquest.com
 - [開発構成図](#development-configuration-diagram)
 - [ディレクトリ構造](#directory-design)
 - [環境構築の手順](#environment-setup-procedure)
-- [今後追加予定の機能](#future-features)
+- [今後追加予定の機能やアップデート](#future-features-and-updates)
 
 <h2 id="concept">コンセプト</h2>
 
