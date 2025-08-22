@@ -9,15 +9,16 @@ https://outputquest.com
 ## 目次
 
 - [コンセプト](#concept)
+- [プロジェクト概要](#project-overview)
+- [アプリの利用方法](#how-to-use)
+- [機能紹介](#feature-introduction)
 - [音声解説](#audio-guide)
-- [開発構成図](#development-configuration-diagram)
 - [使用技術](#technology-used)
+- [技術選定理由](#why-technology-choices)
+- [開発構成図](#development-configuration-diagram)
 - [ディレクトリ構造](#directory-design)
 - [環境構築の手順](#environment-setup-procedure)
-- [プロジェクト概要](#project-overview)
-- [機能紹介](#feature-introduction)
 - [今後追加予定の機能](#future-features)
-- [アプリの利用方法](#how-to-use)
 
 <h2 id="concept">コンセプト</h2>
 
@@ -50,17 +51,148 @@ OUTPUT QUEST 叡智の継承者は、ゲーミフィケーションを取り入�
 **"1人1人のアウトプットが、誰かの学びとなり、知識となり、知恵となって継承されていく..."** <br />
 そんな世界を目指しています。
 
+<h2 id="project-overview">プロジェクト概要</h2>
+
+「OUTPUT QUEST　叡智の継承者」は、私が開発したWebアプリです。ゲーミフィケーションを取り入れた "RPG風学習支援アプリ" で、Zennで記事を投稿することでアプリ内の「勇者」が成長し、アイテムの入手、称号の獲得、仲間との出会いがあなたを待っています。アウトプットを通じて学習意欲や知的好奇心を高め、楽しみながら自己成長を促すことを目的に開発しました。
+
+Next.js + CSS Modules + Tailwind CSS + TypeScriptで開発し、デプロイはVercelで行いました。
+
+<h2 id="how-to-use">アプリの利用方法</h2>
+
+### ゲストユーザーで利用する場合
+
+```bash
+# 1. 早速、冒険をはじめよう！
+ゲストユーザーは、開発者のZennアカウント「@aoyamadev」と連携済みの状態で利用できるため、すぐに OUTPUT QUEST の世界を体験できます！
+```
+
+### ログインユーザーで利用する場合
+
+```bash
+# 1. Clerkによるログイン
+連携ページ（/connection）にて、ログインを実行。
+
+# 2. Zennのアカウントと連携
+ログイン完了後、連携したい自分のZennアカウントのユーザー名を入力して、連携。
+
+# 3. 冒険をはじめよう！
+ログインとZennアカウントの連携が完了したら、早速冒険をはじめよう！
+```
+
+<h2 id="feature-introduction">機能紹介</h2>
+
+「OUTPUT QUEST　叡智の継承者」の各ページの機能について紹介します。
+
+### **トップページ**
+
+ゲームのオープニングを彷彿とさせる演出により、冒険のはじまりを視覚的に表現しました。
+
+![トップページ](public/gifs/readme/top-page.gif)
+
+### **ダッシュボード**
+
+勇者の冒険の拠点。勇者の成長度合いを示すレベル、Zennでの投稿数、勇者の仲間に加わったキャラや入手したアイテムを確認でき、Xへのシェアが可能です。
+
+![ダッシュボード](public/gifs/readme/dashboard-page.gif)
+
+### **学びの書**
+
+Zennの記事を「これまでの学び」として記録する場所。Zennで投稿した記事が一覧表示され、学びの記録として振り返ることができます。記事はアプリ内ではカード型UIで表示され、クリックすることでZennの記事ページにアクセスできます。
+
+![学びの書](public/gifs/readme/posts-page.gif)
+
+### **記事探索**
+
+AIが勇者の仲間の「賢者」として、次に書く記事に最適なテーマを提案。賢者（AI）は、あなたのZenn記事を探索し、過去の投稿から傾向を探ることで、あなたの成長に最適な「学びのタネ」を見つけ出します。
+
+![記事探索](public/gifs/readme/explore-page.gif)
+
+**※記事探索機能には、「Gemini 2.5 Pro（無料枠）」をAPIとして利用しています。** <br />
+
+Gemini 2.5 Pro（無料枠）の採用理由は以下の2点です。
+
+- OUTPUT QUESTは、あくまで「**ポートフォリオ用に開発したWebアプリ**」であり、想定利用者は面接官や自分自身に限定されるため無料枠で十分と判断
+- **執筆や文字数を出すコンテンツ制作（記事探索機能）** において、Geminiの「**1Mコンテキストウィンドウ**」が非常に役立つため
+
+[Gemini 2.5 Pro（無料枠）のレートリミット](https://ai.google.dev/gemini-api/docs/rate-limits?hl=ja&_gl=1*ya4rpo*_up*MQ..*_ga*MTY1MTczOTQ5OS4xNzU0NzIyMTI0*_ga_P1DBVKWT6V*czE3NTQ3MjIxMjMkbzEkZzAkdDE3NTQ3MjIxMjMkajYwJGwwJGg3MDA2OTUzNDY.)
+
+| 指標 | 説明                          | 制限値  |
+| ---- | ----------------------------- | ------- |
+| RPM  | 1分あたりのリクエスト数       | 5       |
+| TPM  | 1分あたりのトークン数（入力） | 250,000 |
+| RPD  | 1日あたりのリクエスト数       | 100     |
+
+### **つよさ**
+
+勇者の成長度合いを示すレベル、レベルアップ報酬で獲得した「称号」の確認、勇者の「装備アイテム」の確認、これまでの学びの軌跡が残る「冒険ログ」の確認ができます。
+
+![つよさ](public/images/readme/strength-page.png)
+
+### **称号リスト**
+
+勇者がレベルアップ報酬で獲得した称号を一覧で確認できます。
+
+![称号リスト](public/images/readme/title-page.png)
+
+### **そうび一覧**
+
+勇者の装備アイテムを一覧で確認できます。
+
+![そうび一覧](public/images/readme/equipment-page.png)
+
+### **冒険ログ**
+
+学びの軌跡が残る「冒険ログ」。これまでの学びの軌跡を時系列で確認できます。
+
+![冒険ログ](public/images/readme/logs-page.png)
+
+### **なかま**
+
+勇者の仲間に加わったキャラクターを確認できます。1人1人のキャラクターの詳細情報も確認できます。
+
+![なかま](public/gifs/readme/party-page.gif)
+
+### **アイテム**
+
+勇者がレベルアップ報酬で入手したアイテムを確認できます。1つ1つのアイテムの詳細情報も確認できます。
+
+![アイテム](public/gifs/readme/items-page.gif)
+
+### **連携**
+
+Clerk認証によるログイン、Zennのアカウント連携を管理できます。ログインとZenn連携をすることで、Zennの投稿データがアプリ内のUIに反映されます。アプリはログイン無しでも利用できます。
+
+![連携](public/gifs/readme/connection-page.gif)
+
+### **Zenn連携について**
+
+OUTPUT QUESTとZennアカウントを連携させることで得られるメリットや、ゲストユーザーとしてアプリを手軽に体験する方法について解説します。あなたに合った方法で、OUTPUT QUESTの世界を体験できます。
+
+![Zenn連携について](public/images/readme/connection-detail-page.png)
+
+### **OUTPUT QUESTとは ?**
+
+OUTPUT QUESTの世界観と使い方、アウトプットを通じて成長する「RPG風学習支援アプリ」の始め方を解説します。アプリの概要、コンセプト、主要機能について紹介します。
+
+![OUTPUT QUESTとは ?](public/gifs/readme/about-page.gif)
+
+### **利用規約**
+
+OUTPUT QUESTの利用規約を確認できます。
+
+![利用規約](public/gifs/readme/terms-page.gif)
+
+### **プライバシーポリシー**
+
+OUTPUT QUESTのプライバシーポリシーを確認できます。
+
+![プライバシーポリシー](public/gifs/readme/privacy-page.gif)
+
 <h2 id="audio-guide">音声解説</h2>
 
 アプリの概要や使い方について、音声（NotebookLM）で解説しています。
 
 [【音声解説】OUTPUT QUEST　叡智の継承者](https://notebooklm.google.com/notebook/f1b1104c-6080-4bde-8d84-b24dd31b65c4?artifactId=3f65ff4f-68d5-46c8-b2ee-b2c47e4e3db7)
-
-<h2 id="development-configuration-diagram">開発構成図</h2>
-
-開発構成図を、HTMLインフォグラフィックで表現しました。
-
-[開発構成図（HTMLインフォグラフィック）](https://camoneart.github.io/output-quest-development-configuration-diagram/)
 
 <h2 id="technology-used">使用技術</h2>
 
@@ -113,6 +245,64 @@ OUTPUT QUEST 叡智の継承者は、ゲーミフィケーションを取り入�
 ### ホスティング
 
 - [Vercel](https://vercel.com/)
+
+<h2 id="why-technology-choices">技術選定理由</h2>
+
+### Next.js（App Router）
+
+**パフォーマンスとSEOの最適化**
+
+- データフェッチ（拡張fetch＋RSC）により、キャッシュ制御・static rendering/dynamic renderingの切替・即時反映を最適化
+- キャッシュ戦略（Data Cache/Router Cache/Full Route Cache）とPrefetchにより、初回表示・ページ遷移・再訪問を高速化し、UXを向上
+- 複数のレンダリングモデル（SSG/ISR/Streaming SSR/PPR）で用途別に最適化
+- Image/Font最適化、メタデータAPI、動的OGP生成によるSEO強化
+
+### Tailwind CSS + CSS Modules
+
+**Tailwind CSS**
+
+- ユーティリティでレイアウト・余白・レスポンシブを高速化し、一貫性を維持
+- shadcn/ui と親和性が高く、コンポーネント拡張が容易
+
+**CSS Modules**
+
+- ローカルスコープでクラス競合を防ぎ、BEM不要で保守性を確保
+- Grid/カスタムプロパティ/状態クラスなど複雑なスタイルを明確に分離・管理
+- スタイル量の多い箇所はCSSを分離し、可読性・再利用性を向上
+
+### TypeScript
+
+**型安全性と開発効率の向上**
+
+- 静的型付けでエラーを早期発見し、バグを削減
+- 型駆動リファクタリングと強力な補完で開発速度を向上
+- Prisma/zodと併用し、API・DB・UI間の型整合性を担保
+
+### Vercel（デプロイ）
+
+**Next.jsとの最適な統合**
+
+- Next.js開発元によるサポートとゼロコンフィグに近い運用
+- 自動デプロイ/プレビューURL/環境変数管理で開発〜検証のサイクルを高速化
+- Edge/SSR/ISR/画像最適化/CDNキャッシュがプラットフォーム標準で利用可能
+
+### その他
+
+**主要ライブラリの選定理由**
+
+- **Clerk**：安全な認証基盤とUIキットで実装を迅速化、ミドルウェア連携も容易
+- **Supabase + Prisma**：型安全ORM＋Postgres運用、RLSやリアルタイムを活用可能
+- **shadcn/ui**：Tailwind親和のヘッドレス/実装例で、拡張しやすくデザイン整合も保てる
+- **Motion**：宣言的アニメーションと良好なパフォーマンスで演出/インタラクションを強化
+- **Vercel AI SDK**：LLM呼び出しとストリーミングUIを簡素化、型安全な呼び出しが可能
+- **zod**：サーバ/クライアントで同一スキーマを共有し、バリデーションと型を一元化
+- **Lucide React**：軽量で揃ったスタイルのアイコン群、ツリーシェイキングで配信最適化
+
+<h2 id="development-configuration-diagram">開発構成図</h2>
+
+開発構成図を、HTMLインフォグラフィックで表現しました。
+
+[開発構成図（HTMLインフォグラフィック）](https://camoneart.github.io/output-quest-development-configuration-diagram/)
 
 <h2 id="directory-design">ディレクトリ構造</h2>
 
@@ -270,121 +460,6 @@ $ pnpm dev
 下記のローカル環境にアクセスして、アプリケーションの起動が確認できれば OK です。<br>
 http://localhost:3000/<br>
 
-<h2 id="project-overview">プロジェクト概要</h2>
-
-「OUTPUT QUEST　叡智の継承者」は、私が開発したWebアプリです。ゲーミフィケーションを取り入れた "RPG風学習支援アプリ" で、Zennで記事を投稿することでアプリ内の「勇者」が成長し、アイテムの入手、称号の獲得、仲間との出会いがあなたを待っています。アウトプットを通じて学習意欲や知的好奇心を高め、楽しみながら自己成長を促すことを目的に開発しました。
-
-Next.js + CSS Modules + Tailwind CSS + TypeScriptで開発し、デプロイはVercelで行いました。
-
-<h2 id="feature-introduction">機能紹介</h2>
-
-「OUTPUT QUEST　叡智の継承者」の各ページの機能について紹介します。
-
-### **トップページ**
-
-ゲームのオープニングを彷彿とさせる演出により、冒険のはじまりを視覚的に表現しました。
-
-![トップページ](public/gifs/readme/top-page.gif)
-
-### **ダッシュボード**
-
-勇者の冒険の拠点。勇者の成長度合いを示すレベル、Zennでの投稿数、勇者の仲間に加わったキャラや入手したアイテムを確認でき、Xへのシェアが可能です。
-
-![ダッシュボード](public/gifs/readme/dashboard-page.gif)
-
-### **学びの書**
-
-Zennの記事を「これまでの学び」として記録する場所。Zennで投稿した記事が一覧表示され、学びの記録として振り返ることができます。記事はアプリ内ではカード型UIで表示され、クリックすることでZennの記事ページにアクセスできます。
-
-![学びの書](public/gifs/readme/posts-page.gif)
-
-### **記事探索**
-
-AIが勇者の仲間の「賢者」として、次に書く記事に最適なテーマを提案。賢者（AI）は、あなたのZenn記事を探索し、過去の投稿から傾向を探ることで、あなたの成長に最適な「学びのタネ」を見つけ出します。
-
-![記事探索](public/gifs/readme/explore-page.gif)
-
-**※記事探索機能には、「Gemini 2.5 Pro（無料枠）」をAPIとして利用しています。** <br />
-
-Gemini 2.5 Pro（無料枠）の採用理由は以下の2点です。
-
-- OUTPUT QUESTは、あくまで「**ポートフォリオ用に開発したWebアプリ**」であり、想定利用者は面接官や自分自身に限定されるため無料枠で十分と判断
-- **執筆や文字数を出すコンテンツ制作（記事探索機能）** において、Geminiの「**1Mコンテキストウィンドウ**」が非常に役立つため
-
-[Gemini 2.5 Pro（無料枠）のレートリミット](https://ai.google.dev/gemini-api/docs/rate-limits?hl=ja&_gl=1*ya4rpo*_up*MQ..*_ga*MTY1MTczOTQ5OS4xNzU0NzIyMTI0*_ga_P1DBVKWT6V*czE3NTQ3MjIxMjMkbzEkZzAkdDE3NTQ3MjIxMjMkajYwJGwwJGg3MDA2OTUzNDY.)
-
-| 指標 | 説明                          | 制限値  |
-| ---- | ----------------------------- | ------- |
-| RPM  | 1分あたりのリクエスト数       | 5       |
-| TPM  | 1分あたりのトークン数（入力） | 250,000 |
-| RPD  | 1日あたりのリクエスト数       | 100     |
-
-### **つよさ**
-
-勇者の成長度合いを示すレベル、レベルアップ報酬で獲得した「称号」の確認、勇者の「装備アイテム」の確認、これまでの学びの軌跡が残る「冒険ログ」の確認ができます。
-
-![つよさ](public/images/readme/strength-page.png)
-
-### **称号リスト**
-
-勇者がレベルアップ報酬で獲得した称号を一覧で確認できます。
-
-![称号リスト](public/images/readme/title-page.png)
-
-### **そうび一覧**
-
-勇者の装備アイテムを一覧で確認できます。
-
-![そうび一覧](public/images/readme/equipment-page.png)
-
-### **冒険ログ**
-
-学びの軌跡が残る「冒険ログ」。これまでの学びの軌跡を時系列で確認できます。
-
-![冒険ログ](public/images/readme/logs-page.png)
-
-### **なかま**
-
-勇者の仲間に加わったキャラクターを確認できます。1人1人のキャラクターの詳細情報も確認できます。
-
-![なかま](public/gifs/readme/party-page.gif)
-
-### **アイテム**
-
-勇者がレベルアップ報酬で入手したアイテムを確認できます。1つ1つのアイテムの詳細情報も確認できます。
-
-![アイテム](public/gifs/readme/items-page.gif)
-
-### **連携**
-
-Clerk認証によるログイン、Zennのアカウント連携を管理できます。ログインとZenn連携をすることで、Zennの投稿データがアプリ内のUIに反映されます。アプリはログイン無しでも利用できます。
-
-![連携](public/gifs/readme/connection-page.gif)
-
-### **Zenn連携について**
-
-OUTPUT QUESTとZennアカウントを連携させることで得られるメリットや、ゲストユーザーとしてアプリを手軽に体験する方法について解説します。あなたに合った方法で、OUTPUT QUESTの世界を体験できます。
-
-![Zenn連携について](public/images/readme/connection-detail-page.png)
-
-### **OUTPUT QUESTとは ?**
-
-OUTPUT QUESTの世界観と使い方、アウトプットを通じて成長する「RPG風学習支援アプリ」の始め方を解説します。アプリの概要、コンセプト、主要機能について紹介します。
-
-![OUTPUT QUESTとは ?](public/gifs/readme/about-page.gif)
-
-### **利用規約**
-
-OUTPUT QUESTの利用規約を確認できます。
-
-![利用規約](public/gifs/readme/terms-page.gif)
-
-### **プライバシーポリシー**
-
-OUTPUT QUESTのプライバシーポリシーを確認できます。
-
-![プライバシーポリシー](public/gifs/readme/privacy-page.gif)
-
 <h2 id="future-features">今後追加予定の機能やアップデート</h2>
 
 ### **記事探索機能のアップデート**
@@ -395,7 +470,7 @@ OUTPUT QUESTのプライバシーポリシーを確認できます。
 ### **連携できるプラットフォームの追加**
 
 - 現在：[Zenn](https://zenn.dev) のみ
-- 追加予定：[izanami](https://izanami.dev), [note](https://note.com), [Qiita](https://qiita.com)
+- 追加予定：[note](https://note.com), [Qiita](https://qiita.com), [izanami](https://izanami.dev)
 
 ### **冒頭ログのアップデート**
 
@@ -413,25 +488,3 @@ OUTPUT QUESTのプライバシーポリシーを確認できます。
 
 - 現在は勇者のみ（変更不可）
 - 主人公に設定できるキャラを、「勇者のなかま」から選択できるように
-
-<h2 id="how-to-use">アプリの利用方法</h2>
-
-### ゲストユーザーで利用する場合
-
-```bash
-# 1. 早速、冒険をはじめよう！
-ゲストユーザーは、開発者のZennアカウント「@aoyamadev」と連携済みの状態で利用できるため、すぐに OUTPUT QUEST の世界を体験できます！
-```
-
-### ログインユーザーで利用する場合
-
-```bash
-# 1. Clerkによるログイン
-連携ページ（/connection）にて、ログインを実行。
-
-# 2. Zennのアカウントと連携
-ログイン完了後、連携したい自分のZennアカウントのユーザー名を入力して、連携。
-
-# 3. 冒険をはじめよう！
-ログインとZennアカウントの連携が完了したら、早速冒険をはじめよう！
-```
