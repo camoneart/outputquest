@@ -300,9 +300,7 @@ OUTPUT QUESTのプライバシーポリシーを確認できます。
 
 <h2 id="development-configuration-diagram">開発構成図</h2>
 
-開発構成図を、HTMLインフォグラフィックで表現しました。
-
-[開発構成図（HTMLインフォグラフィック）](https://camoneart.github.io/output-quest-development-configuration-diagram/)
+[開発構成図を、HTMLインフォグラフィックで表現](https://camoneart.github.io/output-quest-development-configuration-diagram/)しました。
 
 <h2 id="directory-design">ディレクトリ構造</h2>
 
