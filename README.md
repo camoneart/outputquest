@@ -190,7 +190,7 @@ OUTPUT QUESTのプライバシーポリシーを確認できます。
 
 <h2 id="audio-guide">音声解説</h2>
 
-[アプリの概要や使い方について、音声（NotebookLM）でも解説](https://notebooklm.google.com/notebook/f1b1104c-6080-4bde-8d84-b24dd31b65c4?artifactId=3f65ff4f-68d5-46c8-b2ee-b2c47e4e3db7)しています。
+[音声解説（NotebookLM）](https://notebooklm.google.com/notebook/f1b1104c-6080-4bde-8d84-b24dd31b65c4?artifactId=3f65ff4f-68d5-46c8-b2ee-b2c47e4e3db7)で、アプリの概要や使い方について知ることが出来ます。
 
 <h2 id="technology-used">使用技術</h2>
 
@@ -298,7 +298,7 @@ OUTPUT QUESTのプライバシーポリシーを確認できます。
 
 <h2 id="development-configuration-diagram">開発構成図</h2>
 
-[開発構成図を、HTMLインフォグラフィックで表現](https://camoneart.github.io/output-quest-development-configuration-diagram/)しました。
+[開発構成図](https://camoneart.github.io/output-quest-development-configuration-diagram/)はHTMLインフォグラフィックで表現しました。
 
 <h2 id="directory-design">ディレクトリ構造</h2>
 
