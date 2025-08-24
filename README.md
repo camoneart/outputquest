@@ -198,8 +198,8 @@ OUTPUT QUESTのプライバシーポリシーを確認できます。
 
 ### nodeバージョン
 
-- node v22.14.0
-- pnpm v10.11.1
+- [node](https://nodejs.org/ja/)：v22.14.0
+- [pnpm](https://pnpm.io/ja/)：v10.11.1
 
 ### フロント
 
