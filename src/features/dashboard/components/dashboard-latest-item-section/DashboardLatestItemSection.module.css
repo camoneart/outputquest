@@ -21,7 +21,7 @@
 .last-item-container {
   display: block grid;
   padding-inline: 25px;
-
+  
   @media (width < 768px) {
     padding-inline: 0;
   }
@@ -42,6 +42,7 @@
 	background-color: var(--color-primary-brown);
 	border: 2px solid var(--color-primary-brown-light);
 	padding: 15px;
+  text-shadow: 1.5px 1.5px 0px var(--color-primary-black);
 }
 
 .last-item-box {
