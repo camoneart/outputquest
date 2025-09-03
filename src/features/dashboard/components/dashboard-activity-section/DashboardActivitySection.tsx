@@ -67,7 +67,7 @@ const DashboardActivitySection = () => {
 	useEffect(() => {
 		const fetchArticles = async () => {
 			if (!zennUsername) {
-				setIsArticlesLoading(false);
+				// ユーザー名が未確定の間はローディングを維持してチラつきを防ぐ
 				return;
 			}
 
