@@ -5,12 +5,14 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useClickSound } from "@/components/common/audio/click-sound/ClickSound";
+import { useAudio } from "@/contexts/AudioContext";
 import styles from "./HomeStartButton.module.css";
 
 const HomeStartButton = () => {
 	const router = useRouter();
 	const { user, isLoaded } = useUser();
 	const [isZennConnected, setIsZennConnected] = useState(false);
+	const { isMuted } = useAudio();
 
 	const { playClickSound } = useClickSound({
 		soundPath: "/audio/start-sound.mp3",
@@ -42,9 +44,13 @@ const HomeStartButton = () => {
 		e.preventDefault();
 		playClickSound();
 
-		setTimeout(() => {
+		if (isMuted) {
 			router.push(destination);
-		}, 700);
+		} else {
+			setTimeout(() => {
+				router.push(destination);
+			}, 700);
+		}
 	};
 
 	return (
