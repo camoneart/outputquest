@@ -1,3 +1,3 @@
-import EquipmentDetailPageClient from "./equipment-detail-page/EquipmentDetailPageClient";
+import EquipmentDetailPageClient from "./equipment-detail-page-client/EquipmentDetailPageClient";
 
 export { EquipmentDetailPageClient };
