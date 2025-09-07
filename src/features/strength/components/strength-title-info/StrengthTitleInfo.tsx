@@ -21,18 +21,23 @@ const StrengthTitleInfo = () => {
 	// ローカルレベル取得状態
 	const [heroLevel, setHeroLevel] = useState<number>(1);
 	const [isLoadingTitle, setIsLoadingTitle] = useState<boolean>(true);
+	const [isZennInfoLoaded, setIsZennInfoLoaded] = useState<boolean>(false);
 	const [userZennInfo, setUserZennInfo] = useState<{
 		zennUsername?: string;
 	} | null>(null);
 
+	// 読み込み状態の統合
+	const isReady = isLoaded && isZennInfoLoaded;
 	// ゲストユーザーかどうかの判定（Clerkサインイン + Zenn連携の両方が必要）
-	const isGuestUser = !isLoaded || !user || !userZennInfo?.zennUsername;
+	const isGuestUser = isReady && (!user || !userZennInfo?.zennUsername);
 
 	// ユーザーのZenn連携情報を取得
 	useEffect(() => {
 		const fetchUserZennInfo = async () => {
+			setIsZennInfoLoaded(false);
 			if (!isLoaded || !user) {
 				setUserZennInfo(null);
+				setIsZennInfoLoaded(true);
 				return;
 			}
 
@@ -48,6 +53,8 @@ const StrengthTitleInfo = () => {
 			} catch (err) {
 				console.error("ユーザー情報取得エラー:", err);
 				setUserZennInfo(null);
+			} finally {
+				setIsZennInfoLoaded(true);
 			}
 		};
 
@@ -86,7 +93,7 @@ const StrengthTitleInfo = () => {
 
 	// 勇者のレベルに応じて直近で獲得した称号のIDを取得
 	const getLatestTitleId = () => {
-		if (isLoadingTitle) return 0;
+		if (isLoadingTitle || !isReady) return 0;
 
 		// 最終称号（Lv99）の特別処理
 		if (heroLevel >= 99) return 11;
@@ -101,7 +108,7 @@ const StrengthTitleInfo = () => {
 
 	// 勇者のレベルに応じて直近で獲得した称号を取得
 	const getLatestTitle = () => {
-		if (isLoadingTitle) return "";
+		if (isLoadingTitle || !isReady) return "";
 
 		// ゲストユーザーの場合は「ゲストユーザー」を表示
 		if (isGuestUser) return "ゲストユーザー";
@@ -124,6 +131,11 @@ const StrengthTitleInfo = () => {
 
 	// 現在の称号に対応するクラス名を取得
 	const getCurrentTitleClass = () => {
+		// ローディング中はローディング用のクラスを返す
+		if (isLoadingTitle || !isReady) {
+			return styles["strength-title-detail-content-loading"];
+		}
+
 		// ゲストユーザーの場合は専用のクラス名を返す
 		if (isGuestUser) {
 			return styles["strength-title-detail-content-default"];
@@ -171,7 +183,7 @@ const StrengthTitleInfo = () => {
 									styles["strength-title-detail-content"]
 								} ${getCurrentTitleClass()}`}
 							>
-								{isLoadingTitle ? (
+								{isLoadingTitle || !isReady ? (
 									<div className={styles["loading-indicator"]}>
 										読み込み中...
 									</div>
