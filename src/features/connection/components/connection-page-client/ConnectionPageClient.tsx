@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import styles from "./ConnectionPageClient.module.css";
@@ -66,18 +66,6 @@ export default function ConnectionPageClient() {
 		setIsNewSession,
 		setZennUsername,
 	});
-
-	// 3 秒のバッファを入れてフォーム表示を許可
-	const [canShowForm, setCanShowForm] = useState(false);
-
-	useEffect(() => {
-		if (isZennInfoLoaded) {
-			const timer = setTimeout(() => setCanShowForm(true), 3000); // 3s
-			return () => clearTimeout(timer);
-		}
-		// 読み込み直後や再フェッチ時にリセット
-		setCanShowForm(false);
-	}, [isZennInfoLoaded]);
 
 	// Zenn連携管理
 	const { updateUserProfile, loading: connectionLoading } = useZennConnection({
@@ -170,7 +158,7 @@ export default function ConnectionPageClient() {
 						</div>
 
 						<div className={styles["connection-info-container"]}>
-							{!canShowForm ? (
+							{!isZennInfoLoaded ? (
 								<div className="p-4 text-center">読み込み中...</div>
 							) : displayUser?.zennUsername ? (
 								<>
