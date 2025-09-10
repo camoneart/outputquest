@@ -1,4 +1,4 @@
-import { useState, useOptimistic } from "react";
+import { useState, useOptimistic, startTransition } from "react";
 import { useHero } from "@/contexts/HeroContext";
 import { useEquipment } from "@/features/equipment/contexts/EquipmentContext";
 import { UserInfo } from "../types";
@@ -84,9 +84,11 @@ export const useZennSync = ({
 				const articleCount = data.totalCount || 0;
 
 				// 楽観的に記事数を反映
-				addOptimistic({
-					zennUsername: username,
-					zennArticleCount: articleCount,
+				startTransition(() => {
+					addOptimistic({
+						zennUsername: username,
+						zennArticleCount: articleCount,
+					});
 				});
 
 				if (data.user) {
@@ -144,7 +146,9 @@ export const useZennSync = ({
 					const updateData = await updateArticleCount(articleCount);
 					if (updateData.success && updateData.user) {
 						setUserInfo(updateData.user);
-						addOptimistic({ zennArticleCount: articleCount });
+						startTransition(() => {
+							addOptimistic({ zennArticleCount: articleCount });
+						});
 					}
 				} catch (dbUpdateError) {
 					console.error("記事数更新エラー:", dbUpdateError);
