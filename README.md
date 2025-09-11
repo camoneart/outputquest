@@ -55,7 +55,7 @@ OUTPUT QUEST 叡智の継承者は、ゲーミフィケーションを取り入�
 
 「OUTPUT QUEST　叡智の継承者」は、私が開発したWebアプリです。ゲーミフィケーションを取り入れた "RPG風学習支援Webアプリ" で、Zennで記事を投稿することでアプリ内の「勇者」が成長し、アイテムの入手、称号の獲得、仲間との出会いがあなたを待っています。アウトプットを通じて学習意欲や知的好奇心を高め、楽しみながら自己成長を促すことを目的に開発しました。
 
-Next.js + CSS Modules + Tailwind CSS + TypeScriptで開発し、デプロイはVercelで行いました。
+Next.js + Tailwind CSS + TypeScriptで開発し、デプロイはVercelで行いました。
 
 <h2 id="how-to-use">アプリの利用方法</h2>
 
