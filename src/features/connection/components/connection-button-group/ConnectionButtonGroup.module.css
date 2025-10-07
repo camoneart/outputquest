@@ -23,6 +23,10 @@
   background-color: var(--bg-color-message-success);
   border: 3px solid var(--color-primary-white);
   border-radius: var(--border-radius-small);
+
+  &:has(.sync-button:disabled) {
+    background-color: #9ca3af;
+  }
 }
 
 .sync-button {
@@ -37,6 +41,20 @@
 
   &:hover {
     border: 3px solid var(--color-primary-black);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    border: 3px solid #9ca3af;
+    opacity: 0.6;
+
+    &:hover {
+      border: 3px solid #9ca3af;
+    }
+
+    .sync-button-text {
+      text-shadow: 1.5px 1.5px 0px #6b7280;
+    }
   }
 
   .sync-button-text {
