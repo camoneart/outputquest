@@ -8,6 +8,7 @@ import { fetchZennArticles } from "@/features/posts/services";
 import { PostData } from "@/features/posts/types";
 import { useClickSound } from "@/components/common/audio/click-sound/ClickSound";
 import { useHero } from "@/contexts/HeroContext";
+import { getUserInfo } from "@/lib/api/user";
 
 // カテゴリー表示用のマッピング
 const CATEGORY_DISPLAY = {
@@ -44,10 +45,9 @@ const DashboardActivitySection = () => {
 			}
 
 			try {
-				const userRes = await fetch("/api/user");
-				const userData = await userRes.json();
+				const userData = await getUserInfo();
 
-				if (userData.success) {
+				if (userData.success && userData.user) {
 					// zennUsernameが設定されている場合はそれを使用、そうでなければaoyamadevをフォールバック
 					const username = userData.user.zennUsername || "aoyamadev";
 					setZennUsername(username);

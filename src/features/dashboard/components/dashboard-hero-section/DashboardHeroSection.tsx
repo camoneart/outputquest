@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { useHero } from "@/contexts/HeroContext";
 import { useUser } from "@clerk/nextjs";
 import XShareButton from "@/components/common/x-share-button/XShareButton";
+import { getUserInfo } from "@/lib/api/user";
 
 type DashboardHeroSectionProps = {
 	dashboardData: DashboardData;
@@ -54,10 +55,9 @@ const DashboardHeroSection = ({ dashboardData }: DashboardHeroSectionProps) => {
 
 				setIsZennInfoLoaded(false);
 
-				const userRes = await fetch("/api/user");
-				const userData = await userRes.json();
+				const userData = await getUserInfo();
 
-				if (userData.success) {
+				if (userData.success && userData.user) {
 					setUserZennInfo(userData.user);
 					if (userData.user.zennUsername) {
 						setZennUsername(`@${userData.user.zennUsername}`);
