@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { streamText } from "ai";
 import { google } from "@ai-sdk/google";
-import { z } from "zod/v4";
+import { z } from "zod";
 import { auth } from "@clerk/nextjs/server";
 
 // リクエストボディのバリデーション
@@ -118,32 +118,35 @@ export async function POST(request: NextRequest) {
 
 		// Vercel AI SDKを使用してストリーミングレスポンスを生成
 		const result = await streamText({
-			model: google("gemini-2.5-pro", {
-				safetySettings: [
-					{
-						category: "HARM_CATEGORY_HATE_SPEECH",
-						threshold: "BLOCK_MEDIUM_AND_ABOVE",
-					},
-					{
-						category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-						threshold: "BLOCK_MEDIUM_AND_ABOVE",
-					},
-					{
-						category: "HARM_CATEGORY_HARASSMENT",
-						threshold: "BLOCK_MEDIUM_AND_ABOVE",
-					},
-					{
-						category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-						threshold: "BLOCK_MEDIUM_AND_ABOVE",
-					},
-				],
-			}),
+			model: google("gemini-2.5-pro"),
 			prompt,
 			temperature: 0.7,
-			maxTokens: 100000,
+			maxOutputTokens: 100000,
+			providerOptions: {
+				google: {
+					safetySettings: [
+						{
+							category: "HARM_CATEGORY_HATE_SPEECH",
+							threshold: "BLOCK_MEDIUM_AND_ABOVE",
+						},
+						{
+							category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+							threshold: "BLOCK_MEDIUM_AND_ABOVE",
+						},
+						{
+							category: "HARM_CATEGORY_HARASSMENT",
+							threshold: "BLOCK_MEDIUM_AND_ABOVE",
+						},
+						{
+							category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+							threshold: "BLOCK_MEDIUM_AND_ABOVE",
+						},
+					],
+				},
+			},
 		});
 
-		return result.toDataStreamResponse();
+		return result.toTextStreamResponse();
 	} catch (error) {
 		console.error("AI探索エラー:", error);
 

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useChat } from "@ai-sdk/react";
+import { DefaultChatTransport } from "ai";
 import styles from "./ExplorePageClient.module.css";
 import * as Explore from "@/features/explore/components";
 import { fetchZennArticles } from "@/features/posts/services";
@@ -24,9 +25,10 @@ const ExplorePageClient = () => {
 		delay: 190,
 	});
 
-	const { messages, append, status, setMessages } = useChat({
-		api: "/api/ai/analyze-articles",
-		body: {}, // 初期化
+	const { messages, sendMessage, status, setMessages } = useChat({
+		transport: new DefaultChatTransport({
+			api: "/api/ai/analyze-articles",
+		}),
 		onError: (error) => {
 			console.error("AI探索エラー:", error);
 			setError("記事を探索できませんでした。再度お試しください。");
@@ -66,10 +68,9 @@ const ExplorePageClient = () => {
 			}
 
 			// AI探索を実行
-			await append(
+			await sendMessage(
 				{
-					role: "user",
-					content: "記事探索を開始します",
+					text: "記事探索を開始します",
 				},
 				{
 					body: {
