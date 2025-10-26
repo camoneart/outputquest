@@ -90,8 +90,8 @@ const ExploreArticleAnalysis: React.FC<ExploreArticleAnalysisProps> = ({
 												</div>
 											)}
 
-											{messages.map((message, _) => (
-												<Fragment key={message.id || Math.random()}>
+											{messages.map((message, index) => (
+												<Fragment key={message.id || `message-${index}`}>
 													{message.role === "assistant" && (
 														<div className={styles["explore-response"]}>
 															<div
