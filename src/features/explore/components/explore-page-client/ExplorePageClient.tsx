@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useChat } from "@ai-sdk/react";
+import { DefaultChatTransport } from "ai";
 import styles from "./ExplorePageClient.module.css";
 import * as Explore from "@/features/explore/components";
 import { fetchZennArticles } from "@/features/posts/services";
@@ -24,9 +25,10 @@ const ExplorePageClient = () => {
 		delay: 190,
 	});
 
-	const { messages, append, status, setMessages } = useChat({
-		api: "/api/ai/analyze-articles",
-		body: {}, // 初期化
+	const { messages, sendMessage, status, setMessages } = useChat({
+		transport: new DefaultChatTransport({
+			api: "/api/ai/analyze-articles",
+		}),
 		onError: (error) => {
 			console.error("AI探索エラー:", error);
 			setError("記事を探索できませんでした。再度お試しください。");
@@ -66,10 +68,9 @@ const ExplorePageClient = () => {
 			}
 
 			// AI探索を実行
-			await append(
+			await sendMessage(
 				{
-					role: "user",
-					content: "記事探索を開始します",
+					text: "記事探索を開始します",
 				},
 				{
 					body: {
@@ -129,83 +130,79 @@ const ExplorePageClient = () => {
 
 	return (
 		<>
-			<div className={styles["title-bg"]}></div>
-			<h1 className={`${styles["explore-title"]}`}>記事探索</h1>
-			<div className={`${styles["explorer-container"]}`}>
-				<div className={`${styles["explorer-header"]}`}>
-					<div className={styles["explorer-header-content"]}>
-						<div className="grid gap-[5px] place-items-center lg:place-items-start">
-							<p>
-								AIが勇者の仲間の「賢者」として、次に書く記事に最適なテーマを提案。
-							</p>
-							<p>
-								賢者（AI）は、あなたのZenn記事を探索し、過去の投稿から傾向を探ることで、
-							</p>
-							<p>あなたの成長に最適な「学びのタネ」を見つけ出します。</p>
-						</div>
-
-						{!isLoaded || !isZennInfoLoaded ? (
-							<p className="grid place-items-center px-4">読み込み中...</p>
-						) : !isGuestUser ? (
-							<div className={styles["explore-analysis-controls"]}>
-								<button
-									onClick={handleAnalyzeArticles}
-									disabled={isAnalyzing || status === "streaming"}
-									className={`${styles["explore-analyze-button"]} ${
-										isAnalyzing || status === "streaming"
-											? styles["explore-analyzing"]
-											: ""
-									}`}
-								>
-									<span className={styles["explore-analyze-button-text"]}>
-										<Image
-											src="/images/icon/explore-btn-icon.svg"
-											alt="探索する"
-											width={18}
-											height={18}
-											className={styles["explore-analyze-button-icon"]}
-										/>
-										{isAnalyzing || status === "streaming" ? (
-											<span>探索中...</span>
-										) : (
-											<span>探索する</span>
-										)}
-									</span>
-								</button>
-							</div>
-						) : (
-							<div className={styles["explore-analysis-controls"]}>
-								<div
-									className={`${styles["explore-analyze-button"]} ${styles["explore-guest-message"]}`}
-								>
-									<span className={styles["explore-analyze-button-text"]}>
-										<Image
-											src="/images/icon/explore-btn-icon.svg"
-											alt="探索する"
-											width={18}
-											height={18}
-											className={styles["explore-analyze-button-icon"]}
-										/>
-										<span>ログインが必要</span>
-									</span>
-								</div>
-							</div>
-						)}
+			<div className={`${styles["explorer-header"]}`}>
+				<div className={styles["explorer-header-content"]}>
+					<div className="grid gap-[5px] place-items-center lg:place-items-start">
+						<p>
+							AIが勇者の仲間の「賢者」として、次に書く記事に最適なテーマを提案。
+						</p>
+						<p>
+							賢者（AI）は、あなたのZenn記事を探索し、過去の投稿から傾向を探ることで、
+						</p>
+						<p>あなたの成長に最適な「学びのタネ」を見つけ出します。</p>
 					</div>
+
+					{!isLoaded || !isZennInfoLoaded ? (
+						<p className="grid place-items-center px-4">読み込み中...</p>
+					) : !isGuestUser ? (
+						<div className={styles["explore-analysis-controls"]}>
+							<button
+								onClick={handleAnalyzeArticles}
+								disabled={isAnalyzing || status === "streaming"}
+								className={`${styles["explore-analyze-button"]} ${
+									isAnalyzing || status === "streaming"
+										? styles["explore-analyzing"]
+										: ""
+								}`}
+							>
+								<span className={styles["explore-analyze-button-text"]}>
+									<Image
+										src="/images/icon/explore-btn-icon.svg"
+										alt="探索する"
+										width={18}
+										height={18}
+										className={styles["explore-analyze-button-icon"]}
+									/>
+									{isAnalyzing || status === "streaming" ? (
+										<span>探索中...</span>
+									) : (
+										<span>探索する</span>
+									)}
+								</span>
+							</button>
+						</div>
+					) : (
+						<div className={styles["explore-analysis-controls"]}>
+							<div
+								className={`${styles["explore-analyze-button"]} ${styles["explore-guest-message"]}`}
+							>
+								<span className={styles["explore-analyze-button-text"]}>
+									<Image
+										src="/images/icon/explore-btn-icon.svg"
+										alt="探索する"
+										width={18}
+										height={18}
+										className={styles["explore-analyze-button-icon"]}
+									/>
+									<span>ログインが必要</span>
+								</span>
+							</div>
+						</div>
+					)}
 				</div>
-
-				<hr className={styles["explorer-line"]} />
-
-				<Explore.ExploreArticleAnalysis
-					userZennInfo={userZennInfo}
-					isLoaded={isLoaded}
-					isZennInfoLoaded={isZennInfoLoaded}
-					messages={messages}
-					status={status}
-					isAnalyzing={isAnalyzing}
-					error={error}
-				/>
 			</div>
+
+			<hr className={styles["explorer-line"]} />
+
+			<Explore.ExploreArticleAnalysis
+				userZennInfo={userZennInfo}
+				isLoaded={isLoaded}
+				isZennInfoLoaded={isZennInfoLoaded}
+				messages={messages}
+				status={status}
+				isAnalyzing={isAnalyzing}
+				error={error}
+			/>
 		</>
 	);
 };

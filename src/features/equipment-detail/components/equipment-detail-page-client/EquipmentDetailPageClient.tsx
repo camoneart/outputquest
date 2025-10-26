@@ -31,23 +31,6 @@ const EquipmentDetailPageClient = ({
 	const [isLoadingItems, setIsLoadingItems] = useState<boolean>(true);
 	const [itemsError, setItemsError] = useState<string | null>(null);
 
-	const getEquipmentName = (id: string) => {
-		switch (id) {
-			case "weapon":
-				return "武器";
-			case "shield":
-				return "盾";
-			case "helmet":
-				return "かぶと";
-			case "armor":
-				return "よろい";
-			case "accessory":
-				return "アクセサリー";
-			default:
-				return "";
-		}
-	};
-
 	useEffect(() => {
 		const fetchItems = async () => {
 			try {
@@ -102,113 +85,101 @@ const EquipmentDetailPageClient = ({
 
 	return (
 		<>
-			<div className={styles["title-bg"]}></div>
-			<h1 className={`${styles["equipment-detail-title"]}`}>
-				そうび一覧（{getEquipmentName(equipmentSlug)}）
-			</h1>
-			<div className={`${styles["equipment-detail-container"]}`}>
-				{/* 装備情報エリア */}
-				<div className={`${styles["equipment-current-item"]}`}>
-					<div className={styles["equipment-current-item-box"]}>
-						<div className={styles["equipment-current-item-content"]}>
-							<h2 className={`${styles["equipment-current-item-title"]}`}>
-								現在の装備：
-								{isLoadingItems
-									? "ーーー"
-									: equipmentState[equipmentSlug as keyof typeof equipmentState]
-										? equipmentState[
-												equipmentSlug as keyof typeof equipmentState
-											]?.name
-										: "そうびなし"}
-							</h2>
-							{equipmentState[equipmentSlug as keyof typeof equipmentState] && (
-								<button
-									className={`${styles["unequip-button"]}`}
-									onClick={(e) => {
-										handleUnequipItem(e);
-										playClickSound(() => router.push("/strength"));
-									}}
-								>
-									<span className={`${styles["unequip-button-text"]}`}>
-										はずす
-									</span>
-								</button>
-							)}
-						</div>
+			{/* 装備情報エリア */}
+			<div className={`${styles["equipment-current-item"]}`}>
+				<div className={styles["equipment-current-item-box"]}>
+					<div className={styles["equipment-current-item-content"]}>
+						<h2 className={`${styles["equipment-current-item-title"]}`}>
+							現在の装備：
+							{isLoadingItems
+								? "ーーー"
+								: equipmentState[equipmentSlug as keyof typeof equipmentState]
+									? equipmentState[equipmentSlug as keyof typeof equipmentState]
+											?.name
+									: "そうびなし"}
+						</h2>
+						{equipmentState[equipmentSlug as keyof typeof equipmentState] && (
+							<button
+								className={`${styles["unequip-button"]}`}
+								onClick={(e) => {
+									handleUnequipItem(e);
+									playClickSound(() => router.push("/strength"));
+								}}
+							>
+								<span className={`${styles["unequip-button-text"]}`}>
+									はずす
+								</span>
+							</button>
+						)}
 					</div>
 				</div>
-
-				<hr className={`${styles["equipment-detail-line"]}`} />
-
-				{/* 装備品一覧エリア */}
-				{isLoadingItems ? (
-					<div className={styles["equipment-detail-loading"]}>
-						読み込み中...
-					</div>
-				) : itemsError ? (
-					<div className={styles["equipment-detail-no-item-text"]}>
-						{itemsError}
-					</div>
-				) : filteredItems.length > 0 ? (
-					<ul className={styles["equipment-detail-list"]}>
-						{filteredItems.map((item) => (
-							<li
-								key={item.id}
-								className={`${styles["equipment-detail-item"]} ${
-									equipmentState[equipmentSlug as keyof typeof equipmentState]
-										?.id === item.id
-										? styles["equipment-detail-item-equipped"]
-										: ""
-								}`}
-								onClick={() =>
-									equipmentState[equipmentSlug as keyof typeof equipmentState]
-										?.id === item.id
-										? undefined
-										: handleNavigationEquip(item)
-								}
-							>
-								<div className={styles["equipment-detail-item-content"]}>
-									<div className={styles["equipment-detail-item-icon"]}>
-										<Image
-											src={`/images/items-page/acquired-icon/item-${item.id}.svg`}
-											alt={item.name || "アイテム"}
-											width={50}
-											height={50}
-											priority={true}
-											className={styles["equipment-detail-item-icon-image"]}
-										/>
-									</div>
-									<h3 className={styles["equipment-detail-item-name"]}>
-										{item.name}{" "}
-										{equipmentState[
-											equipmentSlug as keyof typeof equipmentState
-										]?.id === item.id && "（装備中）"}
-									</h3>
-									{item.description && (
-										<div
-											className={styles["equipment-detail-item-description"]}
-										>
-											<p
-												className={
-													styles["equipment-detail-item-description-text"]
-												}
-											>
-												{item.description}
-											</p>
-										</div>
-									)}
-								</div>
-							</li>
-						))}
-					</ul>
-				) : (
-					<div className={styles["equipment-detail-no-item"]}>
-						<p className={styles["equipment-detail-no-item-text"]}>
-							装備品がありません
-						</p>
-					</div>
-				)}
 			</div>
+
+			<hr className={`${styles["equipment-detail-line"]}`} />
+
+			{/* 装備品一覧エリア */}
+			{isLoadingItems ? (
+				<div className={styles["equipment-detail-loading"]}>読み込み中...</div>
+			) : itemsError ? (
+				<div className={styles["equipment-detail-no-item-text"]}>
+					{itemsError}
+				</div>
+			) : filteredItems.length > 0 ? (
+				<ul className={styles["equipment-detail-list"]}>
+					{filteredItems.map((item) => (
+						<li
+							key={item.id}
+							className={`${styles["equipment-detail-item"]} ${
+								equipmentState[equipmentSlug as keyof typeof equipmentState]
+									?.id === item.id
+									? styles["equipment-detail-item-equipped"]
+									: ""
+							}`}
+							onClick={() =>
+								equipmentState[equipmentSlug as keyof typeof equipmentState]
+									?.id === item.id
+									? undefined
+									: handleNavigationEquip(item)
+							}
+						>
+							<div className={styles["equipment-detail-item-content"]}>
+								<div className={styles["equipment-detail-item-icon"]}>
+									<Image
+										src={`/images/items-page/acquired-icon/item-${item.id}.svg`}
+										alt={item.name || "アイテム"}
+										width={50}
+										height={50}
+										priority={true}
+										className={styles["equipment-detail-item-icon-image"]}
+									/>
+								</div>
+								<h3 className={styles["equipment-detail-item-name"]}>
+									{item.name}{" "}
+									{equipmentState[equipmentSlug as keyof typeof equipmentState]
+										?.id === item.id && "（装備中）"}
+								</h3>
+								{item.description && (
+									<div className={styles["equipment-detail-item-description"]}>
+										<p
+											className={
+												styles["equipment-detail-item-description-text"]
+											}
+										>
+											{item.description}
+										</p>
+									</div>
+								)}
+							</div>
+						</li>
+					))}
+				</ul>
+			) : (
+				<div className={styles["equipment-detail-no-item"]}>
+					<p className={styles["equipment-detail-no-item-text"]}>
+						装備品がありません
+					</p>
+				</div>
+			)}
 		</>
 	);
 };

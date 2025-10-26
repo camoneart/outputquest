@@ -1,9 +1,16 @@
-import React from "react";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import styles from "./ItemDetailPage.module.css";
 import * as itemDetail from "@/features/item-detail/components/index";
 import { generateItemMetadata } from "@/features/item-detail/metadata/generateItemMetadata";
+
+export async function generateStaticParams() {
+  // 1から30までのアイテムIDを生成
+  return Array.from({ length: 30 }, (_, i) => ({
+    itemId: String(i + 1),
+  }));
+}
 
 export async function generateMetadata(
   { params }: { params: Promise<{ itemId: string }> }
@@ -31,7 +38,9 @@ export default async function ItemDetailPage(
       <h1 className={styles["item-detail-page-title"]}>アイテム詳細</h1>
       <div className={styles["item-detail-container"]}>
         {/* クライアントコンポーネントとしてItemDetailClientを使用 */}
-        <itemDetail.ItemDetailClient itemId={itemIdNum} />
+        <Suspense fallback={<div className="grid place-items-center">読み込み中...</div>}>
+          <itemDetail.ItemDetailClient itemId={itemIdNum} />
+        </Suspense>
 
         <hr />
 

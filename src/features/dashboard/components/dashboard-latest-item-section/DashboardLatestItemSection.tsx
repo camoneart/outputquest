@@ -13,6 +13,7 @@ import { useClickSound } from "@/components/common/audio/click-sound/ClickSound"
 import { useRouter } from "next/navigation";
 import { useHero } from "@/contexts/HeroContext";
 import { useUser } from "@clerk/nextjs";
+import { getUserInfo } from "@/lib/api/user";
 import XShareButton from "@/components/common/x-share-button/XShareButton";
 
 const DashboardLatestItemSection: React.FC = () => {
@@ -45,8 +46,7 @@ const DashboardLatestItemSection: React.FC = () => {
 			}
 
 			try {
-				const response = await fetch("/api/user");
-				const data = await response.json();
+				const data = await getUserInfo();
 
 				if (data.success && data.user) {
 					setUserZennInfo({ zennUsername: data.user.zennUsername });

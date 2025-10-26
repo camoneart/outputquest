@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./DashboardPlatformStatsSection.module.css";
 import { DashboardData } from "../../types/dashboard.types";
 import { useHero } from "@/contexts/HeroContext";
+import { getUserInfo } from "@/lib/api/user";
 import { useUser } from "@clerk/nextjs";
 import XShareButton from "@/components/common/x-share-button/XShareButton";
 
@@ -41,10 +42,9 @@ const DashboardPlatformStatsSection = ({
 			setIsZennInfoLoaded(false);
 
 			try {
-				const userRes = await fetch("/api/user");
-				const userData = await userRes.json();
+				const userData = await getUserInfo();
 
-				if (userData.success) {
+				if (userData.success && userData.user) {
 					setUserZennInfo(userData.user);
 				} else {
 					setUserZennInfo(null);
