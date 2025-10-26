@@ -10,8 +10,8 @@ const nextConfig: NextConfig = {
       "img.clerk.com",
     ],
   },
-  // cacheComponents
-  cacheComponents: true,
+  // reactCompiler
+  reactCompiler: true,
 };
 
 export default nextConfig;
