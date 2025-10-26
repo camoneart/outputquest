@@ -194,23 +194,23 @@ OUTPUT QUESTのプライバシーポリシーを確認できます。
 
 ### nodeバージョン
 
-- [node](https://nodejs.org/ja/)：v22.14.0
+- [node](https://nodejs.org/ja/)：v22.21.0
 - [pnpm](https://pnpm.io/ja/)：v10.11.1
 
 ### フロント
 
-- [Next.js(App Router)](https://nextjs.org/blog/next-15-3)：v15.3.1
-- [React](https://ja.react.dev/blog/2024/12/05/react-19)：v19.0.0
-- [TypeScript](https://www.typescriptlang.org/)：v5
+- [Next.js(App Router)](https://nextjs.org/blog/next-16)：v16.0.0
+- [React](https://ja.react.dev/blog/2024/12/05/react-19)：v19.2.0
+- [TypeScript](https://www.typescriptlang.org/)：v5.9.3
 
 ### スタイル・UI
 
-- [Tailwind CSS](https://tailwindcss.com/)：v4.1.8
+- [Tailwind CSS](https://tailwindcss.com/)：v4.1.16
 - [shadcn/ui](https://ui.shadcn.com/)
 
 ### アニメーション
 
-- [Motion](https://motion.dev/)：v12.4.7
+- [Motion](https://motion.dev/)：v12.23.24
 
 ### オーディオ
 
@@ -218,19 +218,19 @@ OUTPUT QUESTのプライバシーポリシーを確認できます。
 
 ### 認証・データベース
 
-- [Clerk](https://clerk.com/)：v6.12.0（認証）
-- [Prisma](https://www.prisma.io/)：v6.8.2（ORM）
+- [Clerk](https://clerk.com/)：v6.34.0（認証）
+- [Prisma](https://www.prisma.io/)：v6.18.0（ORM）
 - [Supabase](https://supabase.com/)（PostgreSQL）
 
 ### スキーマバリデーション
 
-- [zod](https://zod.dev/)：v3.25.67
+- [zod](https://zod.dev/)：v4.1.12
 
 ### AI
 
-- [Vercel AI SDK](https://ai-sdk.dev/)：v4.3.16（TypeScript Toolkit）
-- [AI SDK Core](https://ai-sdk.dev/docs/ai-sdk-core/overview)：v1.2.19（LLM：Gemini(gemini-2.5-pro)）
-- [AI SDK UI](https://ai-sdk.dev/docs/ai-sdk-ui/overview)：v1.2.12（UI）
+- [Vercel AI SDK](https://ai-sdk.dev/)：v5.0.78（TypeScript Toolkit）
+- [AI SDK Core](https://ai-sdk.dev/docs/ai-sdk-core/overview)：v2.0.23（LLM：Gemini(gemini-2.5-pro)）
+- [AI SDK UI](https://ai-sdk.dev/docs/ai-sdk-ui/overview)：v2.0.78（UI）
 
 ### Markdown
 
