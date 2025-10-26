@@ -39,8 +39,10 @@ export async function POST(request: NextRequest) {
 			);
 		}
 
-		// リクエストボディの解析とバリデーション
+		// リクエストボディの解析
 		const body = await request.json();
+
+		// バリデーション
 		const validatedData = analyzeRequestSchema.parse(body);
 		const { articles, username } = validatedData;
 
@@ -63,7 +65,7 @@ export async function POST(request: NextRequest) {
 			.join("\n\n");
 
 		// AIへのプロンプト作成
-		const prompt = `
+		const userPrompt = `
 		ペルソナ：あなたは「Web開発」と「AI」に関する知見が深く、「Web開発」と「AI」を中心とした技術記事の探索とコンテンツ提案の専門家であり、プロの技術コンテンツコンサルタントです。ユーザー：@${username}の役割は「勇者」であり、あなたの役割は「勇者の仲間（職業：賢者）」です。勇者の仲間として、勇者に適切かつ具体的で勇気を与えるアドバイスを生成し、勇者（ユーザー：@${username}）の行動喚起力を高めるようにサポートしてあげてください。
 
 		---
@@ -117,9 +119,14 @@ export async function POST(request: NextRequest) {
 		`;
 
 		// Vercel AI SDKを使用してストリーミングレスポンスを生成
-		const result = await streamText({
+		const result = streamText({
 			model: google("gemini-2.5-pro"),
-			prompt,
+			messages: [
+				{
+					role: "user",
+					content: userPrompt,
+				},
+			],
 			temperature: 0.7,
 			maxOutputTokens: 100000,
 			providerOptions: {
@@ -146,7 +153,7 @@ export async function POST(request: NextRequest) {
 			},
 		});
 
-		return result.toTextStreamResponse();
+		return result.toUIMessageStreamResponse();
 	} catch (error) {
 		console.error("AI探索エラー:", error);
 

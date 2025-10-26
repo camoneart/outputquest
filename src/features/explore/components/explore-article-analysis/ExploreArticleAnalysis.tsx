@@ -90,9 +90,16 @@ const ExploreArticleAnalysis: React.FC<ExploreArticleAnalysisProps> = ({
 												</div>
 											)}
 
-											{messages.map((message, index) => (
+											{messages.map((message, index) => {
+												// AI SDK v5ではmessage.partsから'text'タイプを抽出
+												const textContent = message.parts
+													?.filter((part: any) => part.type === "text")
+													.map((part: any) => part.text)
+													.join("");
+
+												return (
 												<Fragment key={message.id || `message-${index}`}>
-													{message.role === "assistant" && (
+													{message.role === "assistant" && textContent && (
 														<div className={styles["explore-response"]}>
 															<div
 																className={styles["explore-response-content"]}
@@ -151,14 +158,15 @@ const ExploreArticleAnalysis: React.FC<ExploreArticleAnalysisProps> = ({
 																			// ),
 																		}}
 																	>
-																		{message.content}
+																		{textContent}
 																	</ReactMarkdown>
 																</div>
 															</div>
 														</div>
 													)}
 												</Fragment>
-											))}
+												);
+											})}
 										</>
 									)}
 								</div>
