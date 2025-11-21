@@ -161,7 +161,7 @@ const StrengthLogInfo = () => {
 								{loading ? (
 									<li className={styles["strength-log-item"]}>
 										<div className={styles["strength-log-loading-text"]}>
-											<LoadingIndicator fontSize="0.875rem" />
+											<LoadingIndicator text="読み込み中" fontSize="0.875rem" />
 										</div>
 									</li>
 								) : (

@@ -25,7 +25,7 @@ const LogsList = () => {
       {loading ? (
         <li className={styles["logs-page-list-item"]}>
           <div className={styles["logs-page-list-item-loading-text"]}>
-            <LoadingIndicator fontSize="0.875rem" />
+            <LoadingIndicator text="読み込み中" fontSize="0.875rem" />
           </div>
         </li>
       ) : logs.length === 0 ? (

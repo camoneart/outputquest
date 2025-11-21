@@ -2,6 +2,7 @@ import styles from "./ConnectionAuthSection.module.css";
 import AuthButton from "@/components/auth/auth-button/AuthButton";
 import Link from "next/link";
 import Image from "next/image";
+import LoadingIndicator from "@/components/common/loading-indicator/LoadingIndicator";
 
 interface ConnectionAuthSectionProps {
 	loading: boolean;
@@ -36,9 +37,7 @@ const ConnectionAuthSection: React.FC<ConnectionAuthSectionProps> = ({
 					</p>
 					<div className="grid grid-cols-1 gap-2 place-items-center">
 						<p className="text-sm flex flex-col lg:flex-row justify-center items-center gap-1 lg:gap-0">
-							<em className="not-italic">
-								※ ログイン無しでも、
-							</em>
+							<em className="not-italic">※ ログイン無しでも、</em>
 							<span>ご利用いただけます。</span>
 						</p>
 						<Link
@@ -88,7 +87,7 @@ const ConnectionAuthSection: React.FC<ConnectionAuthSectionProps> = ({
 						disabled={loading || !zennUsername}
 					>
 						<div className={`${styles["connect-button-content"]}`}>
-							{loading ? "連携中..." : "連携"}
+							{loading ? <LoadingIndicator text="連携中" /> : "連携"}
 						</div>
 					</button>
 				</div>

@@ -14,7 +14,9 @@ import LoadingIndicator from "@/components/common/loading-indicator/LoadingIndic
 // ExploreArticleAnalysisを動的インポート（重いReactMarkdownとAI機能を含むため）
 const ExploreArticleAnalysis = dynamic(
 	() =>
-		import("@/features/explore/components/explore-article-analysis/ExploreArticleAnalysis"),
+		import(
+			"@/features/explore/components/explore-article-analysis/ExploreArticleAnalysis"
+		),
 	{
 		ssr: false, // クライアントのみで実行
 		loading: () => (
@@ -25,7 +27,7 @@ const ExploreArticleAnalysis = dynamic(
 					height: "100%",
 				}}
 			>
-				<LoadingIndicator fontSize="1.125rem" />
+				<LoadingIndicator text="読み込み中" fontSize="1.125rem" />
 			</div>
 		),
 	}
@@ -165,7 +167,7 @@ const ExplorePageClient = () => {
 
 					{!isLoaded || !isZennInfoLoaded ? (
 						<div className="grid place-items-center px-4">
-							<LoadingIndicator fontSize="0.875rem" />
+							<LoadingIndicator text="読み込み中" fontSize="0.875rem" />
 						</div>
 					) : !isGuestUser ? (
 						<div className={styles["explore-analysis-controls"]}>
@@ -187,7 +189,11 @@ const ExplorePageClient = () => {
 										className={styles["explore-analyze-button-icon"]}
 									/>
 									{isAnalyzing || status === "streaming" ? (
-										<div className={styles["explore-analyze-button-loading-indicator"]}>
+										<div
+											className={
+												styles["explore-analyze-button-loading-indicator"]
+											}
+										>
 											<span>探索中</span>
 											<span className={styles["loading-dots"]}>
 												<span className={styles["loading-dot"]}>.</span>

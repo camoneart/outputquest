@@ -1,4 +1,5 @@
 import styles from "./ConnectionMessageDisplay.module.css";
+import LoadingIndicator from "@/components/common/loading-indicator/LoadingIndicator";
 
 interface ConnectionMessageDisplayProps {
   error?: string;
@@ -15,9 +16,21 @@ const ConnectionMessageDisplay: React.FC<ConnectionMessageDisplayProps> = ({
     return null;
   }
 
+  // ローディング中のエラーメッセージを検出
+  const isLoadingError = error?.startsWith("LOADING:");
+  const loadingMessage = isLoadingError ? error?.replace("LOADING:", "") : "";
+
   return (
     <>
-      {error && <strong className={styles["error-message"]}>{error}</strong>}
+      {error && (
+        <strong className={styles["error-message"]}>
+          {isLoadingError ? (
+            <LoadingIndicator text={loadingMessage} fontSize="0.875rem" />
+          ) : (
+            error
+          )}
+        </strong>
+      )}
       {!error && success && (
         <p className={styles["success-message"]}>{success}</p>
       )}

@@ -61,7 +61,7 @@ const TitlePageClient = () => {
 		return (
 			<div className={`${styles["title-page-container"]}`}>
 				<div className="text-sm sm:text-base grid place-items-center h-full bg-[#1a1a1a] px-[10px] py-[40px]">
-					<LoadingIndicator fontSize="1rem" />
+					<LoadingIndicator text="読み込み中" fontSize="1rem" />
 				</div>
 			</div>
 		);

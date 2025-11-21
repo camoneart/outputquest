@@ -185,7 +185,7 @@ const StrengthTitleInfo = () => {
 								} ${getCurrentTitleClass()}`}
 							>
 								{isLoadingTitle || !isReady ? (
-									<LoadingIndicator fontSize="1.125rem" />
+									<LoadingIndicator text="読み込み中" fontSize="1.125rem" />
 								) : (
 									<h3 className={styles["strength-title-detail-text"]}>
 										{getLatestTitle()}

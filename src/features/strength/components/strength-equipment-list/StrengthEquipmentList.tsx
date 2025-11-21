@@ -105,7 +105,7 @@ const StrengthEquipmentList = () => {
 		return (
 			<div className={styles["strength-equipment-list-box"]}>
 				<div className="text-sm grid place-items-center h-full border-2 rounded-[3px] bg-[#1a1a1a] px-[10px] py-[40px]">
-					<LoadingIndicator fontSize="0.875rem" />
+					<LoadingIndicator text="読み込み中" fontSize="0.875rem" />
 				</div>
 			</div>
 		);

@@ -143,7 +143,7 @@ export default function ConnectionPageClient() {
 			<h1 className={`${styles["profile-title"]}`}>連携</h1>
 			<div className={`${styles["profile-container"]}`}>
 				{!isLoaded ? (
-					<LoadingIndicator className="px-4 pb-[40px] text-center" fontSize="1.125rem" />
+					<LoadingIndicator text="読み込み中" className="px-4 pb-[40px] text-center" fontSize="1.125rem" />
 				) : !user ? (
 					<Connection.ConnectionAuthSection
 						loading={loading}

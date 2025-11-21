@@ -75,7 +75,7 @@ export const useZennConnection = ({
 
 			// 記事数が0の場合のリトライ処理
 			if (!checkData.articles || checkData.articles.length === 0) {
-				setError("記事を確認中...（投稿直後の場合、少しお待ちください）");
+				setError("LOADING:記事を確認中（投稿直後の場合、少しお待ちください）");
 				await new Promise((resolve) => setTimeout(resolve, 1000));
 
 				const retryData = await checkZennUser(username);

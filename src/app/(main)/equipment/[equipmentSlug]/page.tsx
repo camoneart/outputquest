@@ -57,7 +57,7 @@ export default async function EquipmentDetailPage({
 				<Suspense
 					fallback={
 						<div className="grid place-items-center">
-							<LoadingIndicator  />
+							<LoadingIndicator text="読み込み中" />
 						</div>
 					}
 				>

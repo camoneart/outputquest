@@ -1,7 +1,7 @@
 import styles from "./LoadingIndicator.module.css";
 
 interface LoadingIndicatorProps {
-	text?: string;
+	text: string;
 	className?: string;
 	fontSize?: string;
 }
@@ -12,14 +12,14 @@ interface LoadingIndicatorProps {
  * アニメーション付きのローディングインジケーター
  * ドット3つが波のように順番に点滅する視覚効果を提供
  *
- * @param text - 表示するテキスト（デフォルト: "読み込み中"）
+ * @param text - 表示するテキスト（必須）
  * @param className - 追加のCSSクラス名
  * @param fontSize - フォントサイズ（例: "1rem", "16px"）
  */
 const LoadingIndicator = ({
-	text = "読み込み中",
+	text,
 	className = "",
-	fontSize
+	fontSize,
 }: LoadingIndicatorProps) => {
 	return (
 		<div

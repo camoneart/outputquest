@@ -3,6 +3,7 @@
 import { memo, useState, useEffect, useCallback } from "react";
 import styles from "./ConnectionZennForm.module.css";
 import Image from "next/image";
+import LoadingIndicator from "@/components/common/loading-indicator/LoadingIndicator";
 
 interface ConnectionZennFormProps {
 	zennUsername: string;
@@ -83,11 +84,13 @@ const ConnectionZennForm = memo<ConnectionZennFormProps>(
 				{error ? (
 					""
 				) : (
-					<p className="text-center mt-[12px]">
-						{loading && isZennInfoLoaded
-							? "連携中..."
-							: "Zennと連携が必要です。"}
-					</p>
+					<div className="text-center mt-[12px]">
+						{loading && isZennInfoLoaded ? (
+							<LoadingIndicator text="連携中" />
+						) : (
+							<p>Zennと連携が必要です。</p>
+						)}
+					</div>
 				)}
 			</div>
 		);

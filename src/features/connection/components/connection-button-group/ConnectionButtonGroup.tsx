@@ -2,6 +2,7 @@ import { RefreshCcw, Unplug, Newspaper } from "lucide-react";
 import styles from "./ConnectionButtonGroup.module.css";
 import { useClickSound } from "@/components/common/audio/click-sound/ClickSound";
 import Link from "next/link";
+import LoadingIndicator from "@/components/common/loading-indicator/LoadingIndicator";
 
 interface ConnectionButtonGroupProps {
 	loading: boolean;
@@ -48,9 +49,15 @@ const ConnectionButtonGroup: React.FC<ConnectionButtonGroupProps> = ({
 					disabled={loading || !userInfo.zennUsername}
 				>
 					<RefreshCcw size={16} />
-					<span className={styles["sync-button-text"]}>
-						{loading ? "同期中..." : "同期する"}
-					</span>
+					{loading ? (
+						<LoadingIndicator
+							text="同期中"
+							className={styles["sync-button-text"]}
+							fontSize="0.875rem"
+						/>
+					) : (
+						<span className={styles["sync-button-text"]}>同期する</span>
+					)}
 				</button>
 			</div>
 
