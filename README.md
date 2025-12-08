@@ -199,8 +199,8 @@ OUTPUT QUESTのプライバシーポリシーを確認できます。
 
 ### フロント
 
-- [Next.js(App Router)](https://nextjs.org/blog/next-16)：v16.0.7
-- [React](https://ja.react.dev/blog/2024/12/05/react-19)：v19.2.1
+- [Next.js(App Router)](https://nextjs.org)：v16.0.7
+- [React](https://react.dev)：v19.2.1
 - [TypeScript](https://www.typescriptlang.org/)：v5.9.3
 
 ### スタイル・UI
