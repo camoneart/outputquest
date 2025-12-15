@@ -29,15 +29,15 @@ export default function RootLayout({
 }>) {
 	const redirectUrl = process.env.NEXT_PUBLIC_CONNECTION_URL || "/connection";
 	return (
-		<ClerkProvider
-			signInFallbackRedirectUrl={redirectUrl}
-			signInForceRedirectUrl={redirectUrl}
-			signUpFallbackRedirectUrl={redirectUrl}
-			signUpForceRedirectUrl={redirectUrl}
-			afterSignOutUrl={redirectUrl}
-		>
-			<html lang="ja" className={`${dotGothic16.variable}`}>
-				<body suppressHydrationWarning>
+		<html lang="ja" className={`${dotGothic16.variable}`}>
+			<body suppressHydrationWarning>
+				<ClerkProvider
+					signInFallbackRedirectUrl={redirectUrl}
+					signInForceRedirectUrl={redirectUrl}
+					signUpFallbackRedirectUrl={redirectUrl}
+					signUpForceRedirectUrl={redirectUrl}
+					afterSignOutUrl={redirectUrl}
+				>
 					<SignOutHandler>
 						<AudioProvider>
 							<HeroProvider>
@@ -50,8 +50,8 @@ export default function RootLayout({
 							</HeroProvider>
 						</AudioProvider>
 					</SignOutHandler>
-				</body>
-			</html>
-		</ClerkProvider>
+				</ClerkProvider>
+			</body>
+		</html>
 	);
 }
