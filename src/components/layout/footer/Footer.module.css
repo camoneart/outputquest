@@ -7,7 +7,6 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--color-primary-red);
   padding-inline: 15px;
 
   @media (width < 640px) {
