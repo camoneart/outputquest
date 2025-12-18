@@ -1,72 +1,78 @@
 {
-	"name": "output-quest",
-	"version": "0.1.0",
-	"private": true,
-	"author": "aoyama",
-	"description": "ゲーミフィケーションを取り入れたRPG風学習支援Webアプリ",
-	"homepage": "https://outputquest.com",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/camoneart/output-quest"
-	},
-	"packageManager": "pnpm@10.11.1",
-	"engines": {
-		"node": ">=20.9.0",
-		"pnpm": ">=10.0.0"
-	},
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"deploy": "prisma migrate deploy",
-		"postinstall": "prisma generate",
-		"start": "next start",
-		"lint": "next lint",
-		"format:write": "prettier --write . --ignore-path .gitignore",
-		"format:check": "prettier --check . --ignore-path .gitignore",
-		"lint:fix": "eslint --fix . && prettier --write . --ignore-path .gitignore"
-	},
-	"dependencies": {
-		"@ai-sdk/google": "2.0.23",
-		"@ai-sdk/react": "2.0.78",
-		"@clerk/nextjs": "6.36.2",
-		"@clerk/types": "4.101.6",
-		"@google/generative-ai": "0.24.1",
-		"@phosphor-icons/react": "2.1.10",
-		"@prisma/client": "6.18.0",
-		"@radix-ui/react-slot": "1.2.3",
-		"ai": "5.0.78",
-		"class-variance-authority": "0.7.1",
-		"clsx": "2.1.1",
-		"howler": "2.2.4",
-		"lucide-react": "0.548.0",
-		"motion": "12.23.24",
-		"next": "16.0.7",
-		"react": "19.2.1",
-		"react-dom": "19.2.1",
-		"react-icons": "5.5.0",
-		"react-markdown": "10.1.0",
-		"server-only": "0.0.1",
-		"svix": "1.80.0",
-		"tailwind-merge": "3.3.1",
-		"tailwindcss-animate": "1.0.7",
-		"zod": "4.1.12"
-	},
-	"devDependencies": {
-		"@eslint/eslintrc": "3.3.1",
-		"@tailwindcss/postcss": "4.1.16",
-		"@types/howler": "2.2.12",
-		"@types/node": "24",
-		"@types/react": "19.2.2",
-		"@types/react-dom": "19.2.2",
-		"babel-plugin-react-compiler": "1.0.0",
-		"eslint": "9.38.0",
-		"eslint-config-next": "16.0.0",
-		"eslint-config-prettier": "10.1.8",
-		"eslint-plugin-prettier": "5.5.4",
-		"postcss": "8.5.6",
-		"prettier": "3.6.2",
-		"prisma": "6.18.0",
-		"tailwindcss": "4.1.16",
-		"typescript": "5.9.3"
-	}
+  "name": "output-quest",
+  "version": "0.1.0",
+  "private": true,
+  "author": "aoyama",
+  "description": "ゲーミフィケーションを取り入れたRPG風学習支援Webアプリ",
+  "homepage": "https://outputquest.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/camoneart/output-quest"
+  },
+  "packageManager": "pnpm@10.11.1",
+  "engines": {
+    "node": ">=20.9.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "deploy": "prisma migrate deploy",
+    "postinstall": "prisma generate",
+    "start": "next start",
+    "lint": "next lint",
+    "format:write": "prettier --write . --ignore-path .gitignore",
+    "format:check": "prettier --check . --ignore-path .gitignore",
+    "lint:fix": "eslint --fix . && prettier --write . --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "2.0.23",
+    "@ai-sdk/react": "2.0.78",
+    "@clerk/nextjs": "6.36.3",
+    "@clerk/types": "4.101.6",
+    "@google/generative-ai": "0.24.1",
+    "@phosphor-icons/react": "2.1.10",
+    "@prisma/client": "6.18.0",
+    "@radix-ui/react-slot": "1.2.3",
+    "ai": "5.0.78",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "howler": "2.2.4",
+    "lucide-react": "0.548.0",
+    "motion": "12.23.24",
+    "next": "16.1.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-icons": "5.5.0",
+    "react-markdown": "10.1.0",
+    "server-only": "0.0.1",
+    "svix": "1.80.0",
+    "tailwind-merge": "3.3.1",
+    "tailwindcss-animate": "1.0.7",
+    "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3.3.1",
+    "@tailwindcss/postcss": "4.1.16",
+    "@types/howler": "2.2.12",
+    "@types/node": "24",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "9.38.0",
+    "eslint-config-next": "16.1.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.4",
+    "postcss": "8.5.6",
+    "prettier": "3.6.2",
+    "prisma": "6.18.0",
+    "tailwindcss": "4.1.16",
+    "typescript": "5.9.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.2.7",
+      "@types/react-dom": "19.2.3"
+    }
+  }
 }
