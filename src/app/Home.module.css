@@ -1,15 +1,18 @@
 .main {
-  display: block grid;
-  place-items: center;
+	display: block grid;
+	place-items: center;
 }
 
 .main-container {
-  width: 100%;
-  display: block grid;
-  place-items: center;
-  gap: 56px;
+	width: 100%;
+	height: 100%;
+	display: block grid;
+	grid-template-rows: auto auto;
+	place-items: center;
+	gap: 80px;
+	padding-block-end: 20px;
 
-  @media (width < 1024px) {
-    gap: 25px;
-  }
+	@media (width < 1024px) {
+		gap: 25px;
+	}
 }

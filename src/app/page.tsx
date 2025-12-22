@@ -5,23 +5,18 @@ import * as Hero from "@/features/hero/components";
 
 // Motion使用コンポーネントを動的インポート（Client Bundleを最小化）
 const HomeAnimatedTitle = dynamic(
-  () => import("@/features/home/components/home-animated-title/HomeAnimatedTitle")
-);
-
-const HomeAnimatedCharacter = dynamic(
-  () => import("@/features/home/components/home-animated-character/HomeAnimatedCharacter")
+	() =>
+		import("@/features/home/components/home-animated-title/HomeAnimatedTitle")
 );
 
 export default function HomePage() {
-  return (
-    <main className={`${styles["main"]}`}>
-      <Hero.HeroBg />
-      <div className={`${styles["main-container"]}`}>
-        <HomeAnimatedTitle />
-        <Home.HomeAnimatedSubTitle />
-        <HomeAnimatedCharacter />
-        <Home.HomeStartButton />
-      </div>
-    </main>
-  );
+	return (
+		<main className={`${styles["main"]}`}>
+			<Hero.HeroBg />
+			<div className={`${styles["main-container"]}`}>
+				<HomeAnimatedTitle />
+				<Home.HomeStartButton />
+			</div>
+		</main>
+	);
 }
