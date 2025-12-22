@@ -23,13 +23,16 @@
 }
 
 .footer-box {
+  display: block grid;
+  place-items: center;
+  width: 170px;
+  height: 30px;
   background: var(--color-primary-dark-gray);
   border: var(--border-normal);
   border-radius: var(--border-radius-small);
-  padding-block: 5px 6px;
-  padding-inline: 12px;
 }
 
 .footer-text {
-  color: var(--color-primary-white);
+  color: var(--color-primary-yellow);
+  font-family: "ab-don2", sans-serif;
 }
