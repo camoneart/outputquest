@@ -48,13 +48,28 @@
 		.acquired-item-icon-image,
 		.unacquired-item-icon-image {
 			filter: drop-shadow(0 0 7px var(--color-primary-white));
-			transform: translateY(-7px);
+		}
+
+		.treasure-chest-close {
+			display: none;
+		}
+
+		.treasure-chest-open {
+			display: block;
 		}
 
 		.item-name {
 			text-shadow: 0 0 8px rgb(255 255 255 / 0.5);
 		}
 	}
+}
+
+.treasure-chest-close {
+	display: block;
+}
+
+.treasure-chest-open {
+	display: none;
 }
 
 .acquired-item-icon,
@@ -72,8 +87,7 @@
 	height: auto;
 	filter: drop-shadow(0 0 1px var(--color-primary-white));
 	transition:
-		filter 0.2s ease-in-out,
-		transform 0.2s ease-in-out;
+		filter 0.2s ease-in-out;
 }
 
 .acquired-item-icon-image {

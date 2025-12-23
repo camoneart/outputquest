@@ -37,9 +37,11 @@ const ItemCardListClient: React.FC<ItemCardListClientProps> = ({ items, isGuestU
 						{isGuestUser ? (
 							<div className={styles["unacquired-item-icon"]}>
 								<Items.ItemsTreasureChestIcon
-									width={40}
-									height={40}
+									width={100}
+									height={100}
 									className={styles["unacquired-item-icon-image"]}
+									classNameClose={styles["treasure-chest-close"]}
+									classNameOpen={styles["treasure-chest-open"]}
 								/>
 							</div>
 						) : item.acquired ? (
@@ -57,9 +59,11 @@ const ItemCardListClient: React.FC<ItemCardListClientProps> = ({ items, isGuestU
 						) : (
 							<div className={styles["unacquired-item-icon"]}>
 								<Items.ItemsTreasureChestIcon
-									width={40}
-									height={40}
+									width={100}
+									height={100}
 									className={styles["unacquired-item-icon-image"]}
+									classNameClose={styles["treasure-chest-close"]}
+									classNameOpen={styles["treasure-chest-open"]}
 								/>
 							</div>
 						)}
