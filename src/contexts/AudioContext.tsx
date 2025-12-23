@@ -1,12 +1,6 @@
 "use client";
 
-import {
-	createContext,
-	useState,
-	useCallback,
-	use,
-	ReactNode,
-} from "react";
+import { createContext, useState, useCallback, use, ReactNode } from "react";
 
 interface AudioContextType {
 	isMuted: boolean;
@@ -22,9 +16,7 @@ export const AudioProvider = ({ children }: { children: ReactNode }) => {
 		setIsMuted((prev) => !prev);
 	}, []);
 
-	return (
-		<AudioContext value={{ isMuted, toggleMute }}>{children}</AudioContext>
-	);
+	return <AudioContext value={{ isMuted, toggleMute }}>{children}</AudioContext>;
 };
 
 export const useAudio = () => {

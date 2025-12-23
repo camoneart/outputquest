@@ -45,9 +45,7 @@ const GnavItems = () => {
 											priority={true}
 											className={`${styles["gnav-item-icon"]}`}
 										/>
-										<h3 className={`${styles["gnav-item-title"]}`}>
-											{item.title}
-										</h3>
+										<h3 className={`${styles["gnav-item-title"]}`}>{item.title}</h3>
 									</div>
 								</div>
 							</Button>
@@ -72,9 +70,7 @@ const GnavItems = () => {
 											priority={true}
 											className={`${styles["gnav-item-icon"]}`}
 										/>
-										<h3 className={`${styles["gnav-item-title"]}`}>
-											{item.title}
-										</h3>
+										<h3 className={`${styles["gnav-item-title"]}`}>{item.title}</h3>
 									</div>
 								</Link>
 							</Button>

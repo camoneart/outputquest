@@ -86,9 +86,7 @@
 	--matched-radius-padding: 2px;
 	--matched-radius-inner-size: 4px;
 	padding: var(--matched-radius-padding);
-	border-radius: calc(
-		var(--matched-radius-inner-size) + var(--matched-radius-padding)
-	);
+	border-radius: calc(var(--matched-radius-inner-size) + var(--matched-radius-padding));
 	box-shadow: 0px 0px 4px var(--color-primary-brown-dark);
 }
 
@@ -139,7 +137,7 @@
 .party-member-share-link {
 	display: block flex;
 	align-items: center;
-  place-self: center;
+	place-self: center;
 	gap: 7px;
 
 	&:hover {

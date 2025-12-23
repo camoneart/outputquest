@@ -2,10 +2,7 @@
 
 import { useEffect, Dispatch, SetStateAction } from "react";
 import { UserResource } from "@clerk/types";
-import {
-	SESSION_ID_KEY,
-	LOGOUT_FLAG_KEY,
-} from "@/features/connection/constants";
+import { SESSION_ID_KEY, LOGOUT_FLAG_KEY } from "@/features/connection/constants";
 
 interface UserInfo {
 	id: string;
@@ -41,11 +38,7 @@ export const useSessionManagement = ({
 				const logoutFlag = localStorage.getItem(LOGOUT_FLAG_KEY);
 
 				// ログアウトフラグがある場合またはセッションIDが変更された場合
-				if (
-					logoutFlag === "true" ||
-					!currentSessionId ||
-					currentSessionId !== user.id
-				) {
+				if (logoutFlag === "true" || !currentSessionId || currentSessionId !== user.id) {
 					// フラグをクリア
 					localStorage.removeItem(LOGOUT_FLAG_KEY);
 					localStorage.removeItem("zenn_previous_user");
@@ -65,12 +58,5 @@ export const useSessionManagement = ({
 				localStorage.setItem(LOGOUT_FLAG_KEY, "true");
 			}
 		}
-	}, [
-		user,
-		isLoaded,
-		setWasLoggedOut,
-		setIsNewSession,
-		setUserInfo,
-		setZennUsername,
-	]);
+	}, [user, isLoaded, setWasLoggedOut, setIsNewSession, setUserInfo, setZennUsername]);
 };

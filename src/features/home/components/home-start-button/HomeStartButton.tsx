@@ -55,11 +55,7 @@ const HomeStartButton = () => {
 
 	return (
 		<div className={`${styles["start-btn-container"]}`}>
-			<Link
-				href={destination}
-				className={`${styles["start-btn"]}`}
-				onClick={handleClick}
-			>
+			<Link href={destination} className={`${styles["start-btn"]}`} onClick={handleClick}>
 				はじめる
 			</Link>
 		</div>

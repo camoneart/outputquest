@@ -47,10 +47,7 @@ export async function POST(request: NextRequest) {
 		const { articles, username } = validatedData;
 
 		if (articles.length === 0) {
-			return NextResponse.json(
-				{ error: "探索する記事がありません" },
-				{ status: 400 }
-			);
+			return NextResponse.json({ error: "探索する記事がありません" }, { status: 400 });
 		}
 
 		// 記事データを整理

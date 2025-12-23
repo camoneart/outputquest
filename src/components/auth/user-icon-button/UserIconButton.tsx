@@ -51,18 +51,14 @@ const UserIconButton = ({
 
 	if (userId) {
 		return (
-			<button
-				onClick={() => playClickSound()}
-				className={`${styles["user-button"]}`}
-			>
+			<button onClick={() => playClickSound()} className={`${styles["user-button"]}`}>
 				<UserButton
 					appearance={{
 						elements: {
 							avatarBox: avatarSize,
 							userButtonBox: styles["user-button-box"],
 							userButtonOuterIdentifier: styles["user-button-name"],
-							userButtonAvatarBox:
-								styles["user-button-avatar-box"] + " " + classnameButton,
+							userButtonAvatarBox: styles["user-button-avatar-box"] + " " + classnameButton,
 						},
 						variables: {
 							fontSize: "1rem",

@@ -38,9 +38,7 @@ type EquipmentContextType = {
 };
 
 // Contextの作成
-const EquipmentContext = createContext<EquipmentContextType | undefined>(
-	undefined
-);
+const EquipmentContext = createContext<EquipmentContextType | undefined>(undefined);
 
 // Providerコンポーネント
 export const EquipmentProvider = ({ children }: { children: ReactNode }) => {

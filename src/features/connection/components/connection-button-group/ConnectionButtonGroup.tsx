@@ -72,17 +72,12 @@ const ConnectionButtonGroup: React.FC<ConnectionButtonGroupProps> = ({
 					}}
 				>
 					<Newspaper size={16} />
-					<span className={styles["view-zenn-posts-link-text"]}>
-						記事を確認
-					</span>
+					<span className={styles["view-zenn-posts-link-text"]}>記事を確認</span>
 				</Link>
 			</div>
 
 			<div className={styles["release-button-box"]}>
-				<button
-					onClick={handleReleaseClick}
-					className={styles["release-button"]}
-				>
+				<button onClick={handleReleaseClick} className={styles["release-button"]}>
 					<Unplug size={16} />
 					<span className={styles["release-button-text"]}>連携解除</span>
 				</button>

@@ -23,7 +23,7 @@
 	height: 100%;
 	display: block grid;
 	grid-template-rows: auto 1fr;
-  place-content: center;
+	place-content: center;
 	grid-template-areas:
 		"content"
 		".";

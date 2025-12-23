@@ -24,9 +24,7 @@ type DashboardActivityContentProps = {
 	articles: PostData[];
 };
 
-export const DashboardActivityContent = ({
-	articles,
-}: DashboardActivityContentProps) => {
+export const DashboardActivityContent = ({ articles }: DashboardActivityContentProps) => {
 	const { playClickSound } = useClickSound({
 		soundPath: "/audio/click-sound_decision.mp3",
 		volume: 0.5,
@@ -53,17 +51,12 @@ export const DashboardActivityContent = ({
 
 	return (
 		<section className={`${styles["recent-activity-section"]}`}>
-			<h2 className={`${styles["recent-activity-section-title"]}`}>
-				~ 最近の記録 ~
-			</h2>
+			<h2 className={`${styles["recent-activity-section-title"]}`}>~ 最近の記録 ~</h2>
 
 			{articles.length > 0 ? (
 				<ul className={`${styles["recent-activity-list"]}`}>
 					{articles.map((article) => (
-						<li
-							key={article.id}
-							className={`${styles["recent-activity-item"]}`}
-						>
+						<li key={article.id} className={`${styles["recent-activity-item"]}`}>
 							<Link
 								href={article.url}
 								className={`${styles["recent-activity-item-link"]}`}
@@ -72,42 +65,29 @@ export const DashboardActivityContent = ({
 								onClick={() => playClickSound()}
 							>
 								<div className={`${styles["recent-activity-item-content"]}`}>
-									<h3 className={`${styles["recent-activity-item-title"]}`}>
-										{article.title}
-									</h3>
+									<h3 className={`${styles["recent-activity-item-title"]}`}>{article.title}</h3>
 
 									<hr />
 
 									{/* カテゴリーと日付を表示する領域 */}
 									<div className={`${styles["recent-activity-item-info"]}`}>
 										{article.category && (
-											<div
-												className={`${styles["recent-activity-item-category-container"]}`}
-											>
-												<span
-													className={`${styles["recent-activity-item-category"]}`}
-												>
-													{CATEGORY_DISPLAY[
-														article.category as keyof typeof CATEGORY_DISPLAY
-													] || article.category}
+											<div className={`${styles["recent-activity-item-category-container"]}`}>
+												<span className={`${styles["recent-activity-item-category"]}`}>
+													{CATEGORY_DISPLAY[article.category as keyof typeof CATEGORY_DISPLAY] ||
+														article.category}
 												</span>
 											</div>
 										)}
 
-										<div
-											className={`${styles["recent-activity-item-date-container"]}`}
-										>
-											<span
-												className={`${styles["recent-activity-item-date"]}`}
-											>
+										<div className={`${styles["recent-activity-item-date-container"]}`}>
+											<span className={`${styles["recent-activity-item-date"]}`}>
 												{formatDate(article.publishedAt || article.date)}
 											</span>
 										</div>
 									</div>
 
-									<div
-										className={`${styles["recent-activity-item-platform-container"]}`}
-									>
+									<div className={`${styles["recent-activity-item-platform-container"]}`}>
 										<Image
 											src={PLATFORM_INFO.zenn.favicon}
 											alt="Zenn favicon"
@@ -120,9 +100,7 @@ export const DashboardActivityContent = ({
 										</p>
 									</div>
 								</div>
-								<div className={`${styles["recent-activity-item-exp"]}`}>
-									+1 EXP
-								</div>
+								<div className={`${styles["recent-activity-item-exp"]}`}>+1 EXP</div>
 							</Link>
 						</li>
 					))}

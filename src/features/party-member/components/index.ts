@@ -5,9 +5,9 @@ import PartyMemberDynamicHead from "./party-member-dynamic-head/PartyMemberDynam
 import PartyMemberDetailSkeleton from "./party-member-detail-skeleton/PartyMemberDetailSkeleton";
 
 export {
-  PartyMemberRarityStar,
-  PartyMemberFooter,
-  PartyMemberDetail,
-  PartyMemberDynamicHead,
-  PartyMemberDetailSkeleton,
+	PartyMemberRarityStar,
+	PartyMemberFooter,
+	PartyMemberDetail,
+	PartyMemberDynamicHead,
+	PartyMemberDetailSkeleton,
 };

@@ -23,10 +23,7 @@ const StrengthLogInfo = () => {
 		delay: 190, // 190ミリ秒 = 0.19秒の遅延
 	});
 
-	const handleNavigation = (
-		e: React.MouseEvent<HTMLAnchorElement>,
-		path: string
-	) => {
+	const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
 		e.preventDefault();
 		playClickSound(() => router.push(path));
 	};
@@ -82,9 +79,7 @@ const StrengthLogInfo = () => {
 			const newLogs = articles.map((article, index) => {
 				const dateStr =
 					article.publishedAt ??
-					(typeof article.date === "string"
-						? article.date
-						: article.date?.toISOString());
+					(typeof article.date === "string" ? article.date : article.date?.toISOString());
 				const date = dateStr ? new Date(dateStr) : new Date();
 				const formattedDate = formatDate(date);
 				const level = totalCount - index;

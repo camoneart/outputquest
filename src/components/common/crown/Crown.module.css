@@ -1,24 +1,12 @@
 .crown-container {
-  padding-inline-start: 282px;
+	padding-inline-start: 282px;
 }
 
 .crown {
-	filter: drop-shadow(
-			0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 10%)
-		)
-		drop-shadow(
-			0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 50%)
-		)
-		drop-shadow(
-			0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 50%)
-		)
-		drop-shadow(
-			0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 50%)
-		)
-		drop-shadow(
-			0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 50%)
-		)
-		drop-shadow(
-			0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 50%)
-		);
+	filter: drop-shadow(0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 10%))
+		drop-shadow(0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 50%))
+		drop-shadow(0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 50%))
+		drop-shadow(0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 50%))
+		drop-shadow(0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 50%))
+		drop-shadow(0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 50%));
 }

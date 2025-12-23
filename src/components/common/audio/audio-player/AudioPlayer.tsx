@@ -40,8 +40,7 @@ const AudioPlayer = memo(
 				onplay: () => setIsPlaying(true),
 				onpause: () => setIsPlaying(false),
 				onstop: () => setIsPlaying(false),
-				onloaderror: (id: number, error: unknown) =>
-					console.error("Error loading audio:", error),
+				onloaderror: (id: number, error: unknown) => console.error("Error loading audio:", error),
 				onplayerror: (id: number, error: unknown) => {
 					console.error("Error playing audio:", error);
 					setIsPlaying(false);
@@ -71,17 +70,9 @@ const AudioPlayer = memo(
 			>
 				<div className={styles["audio-button-icon-box"]}>
 					{isMuted ? (
-						<HeadphoneOff
-							size={size}
-							color={color}
-							className={styles["audio-mute"]}
-						/>
+						<HeadphoneOff size={size} color={color} className={styles["audio-mute"]} />
 					) : (
-						<Headphones
-							size={size}
-							color={color}
-							className={styles["audio-play"]}
-						/>
+						<Headphones size={size} color={color} className={styles["audio-play"]} />
 					)}
 				</div>
 			</button>

@@ -1,19 +1,19 @@
 .skeleton-grid {
-  grid-area: posts-list;
-  display: block grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 20px;
-  padding-block: 30px 20px;
-  padding-inline: 20px;
-  overflow-y: scroll;
+	grid-area: posts-list;
+	display: block grid;
+	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	gap: 20px;
+	padding-block: 30px 20px;
+	padding-inline: 20px;
+	overflow-y: scroll;
 
-  @media (width < 1024px) {
-    overflow-y: visible;
-  }
+	@media (width < 1024px) {
+		overflow-y: visible;
+	}
 
-  @media (width < 640px) {
-    grid-template-columns: 1fr;
-  }
+	@media (width < 640px) {
+		grid-template-columns: 1fr;
+	}
 }
 
 /* Item - matches posts-item layout */

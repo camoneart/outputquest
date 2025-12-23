@@ -40,11 +40,7 @@ const PartyMemberCardList = async () => {
 		return <PartyMemberCardListClient members={members} isGuestUser={isGuestUser} />;
 	} catch (error) {
 		console.error("仲間データ取得エラー:", error);
-		return (
-			<p className={styles["error-message"]}>
-				仲間データの取得に失敗しました。
-			</p>
-		);
+		return <p className={styles["error-message"]}>仲間データの取得に失敗しました。</p>;
 	}
 };
 

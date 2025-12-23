@@ -18,9 +18,7 @@ const ZennPosts = () => {
 		<div className={styles["posts-container"]}>
 			<div className={`${styles["posts-header"]}`}>
 				<p>Zennの記事を「これまでの学び」として記録する場所。</p>
-				<p>
-					Zennで投稿した記事が一覧表示され、学びの記録として振り返ることができます。
-				</p>
+				<p>Zennで投稿した記事が一覧表示され、学びの記録として振り返ることができます。</p>
 			</div>
 
 			<hr className={styles["posts-container-line"]} />

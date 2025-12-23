@@ -61,9 +61,7 @@ export default async function EquipmentDetailPage({
 						</div>
 					}
 				>
-					<EquipmentDetail.EquipmentDetailPageClient
-						equipmentSlug={equipmentSlug}
-					/>
+					<EquipmentDetail.EquipmentDetailPageClient equipmentSlug={equipmentSlug} />
 				</Suspense>
 			</div>
 		</>

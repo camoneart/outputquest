@@ -6,8 +6,7 @@ import Crown from "@/components/common/crown/Crown";
 
 // Motion使用コンポーネントを動的インポート（Client Bundleを最小化）
 const HomeAnimatedTitle = dynamic(
-	() =>
-		import("@/features/home/components/home-animated-title/HomeAnimatedTitle")
+	() => import("@/features/home/components/home-animated-title/HomeAnimatedTitle")
 );
 
 export default function HomePage() {

@@ -14,10 +14,7 @@ const LogsPageFooter = () => {
 		delay: 190, // 190ミリ秒 = 0.19秒の遅延
 	});
 
-	const handleNavigation = (
-		e: React.MouseEvent<HTMLAnchorElement>,
-		path: string
-	) => {
+	const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
 		e.preventDefault();
 		playClickSound(() => router.push(path));
 	};

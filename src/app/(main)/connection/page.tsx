@@ -5,5 +5,5 @@ import { Metadata } from "next";
 export const metadata: Metadata = getPageMetadata("connection");
 
 export default function ConnectionPage() {
-  return <Connection.ConnectionPageClient />;
+	return <Connection.ConnectionPageClient />;
 }

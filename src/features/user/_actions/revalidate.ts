@@ -38,9 +38,7 @@ export async function revalidateUserCache(clerkId: string): Promise<void> {
  *
  * @param username - Zennユーザー名
  */
-export async function revalidateZennArticlesCache(
-	username: string
-): Promise<void> {
+export async function revalidateZennArticlesCache(username: string): Promise<void> {
 	try {
 		revalidateTag(CacheTags.zennArticles(username), "max");
 		console.log(`Revalidated cache for Zenn articles: ${username}`);

@@ -28,16 +28,12 @@ const DashboardContent = async () => {
 		.filter(([, requiredLevel]) => heroData.level >= requiredLevel)
 		.map(([itemIdStr]) => parseInt(itemIdStr, 10));
 
-	const lastAcquiredItemId =
-		acquiredItemIds.length > 0 ? Math.max(...acquiredItemIds) : null;
+	const lastAcquiredItemId = acquiredItemIds.length > 0 ? Math.max(...acquiredItemIds) : null;
 
 	// Client Componentにデータを渡す
 	// Server ComponentはCompositionパターン（children）で渡す
 	return (
-		<DashboardContentClient
-			heroData={heroData}
-			lastAcquiredItemId={lastAcquiredItemId}
-		>
+		<DashboardContentClient heroData={heroData} lastAcquiredItemId={lastAcquiredItemId}>
 			<Suspense fallback={<DashboardActivitySkeleton />}>
 				<DashboardActivitySection />
 			</Suspense>

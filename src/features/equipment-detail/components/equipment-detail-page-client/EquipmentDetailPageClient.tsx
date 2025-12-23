@@ -16,9 +16,7 @@ interface EquipmentDetailPageClientProps {
 }
 
 // クライアントコンポーネント
-const EquipmentDetailPageClient = ({
-	equipmentSlug,
-}: EquipmentDetailPageClientProps) => {
+const EquipmentDetailPageClient = ({ equipmentSlug }: EquipmentDetailPageClientProps) => {
 	const { equipmentState, equipItem, unequipItem } = useEquipment();
 
 	const router = useRouter();
@@ -57,9 +55,7 @@ const EquipmentDetailPageClient = ({
 			} catch (err) {
 				console.error("アイテム取得エラー:", err);
 				setItemsError(
-					err instanceof Error
-						? err.message
-						: "アイテムデータ取得中にエラーが発生しました。"
+					err instanceof Error ? err.message : "アイテムデータ取得中にエラーが発生しました。"
 				);
 			} finally {
 				setIsLoadingItems(false);
@@ -69,9 +65,7 @@ const EquipmentDetailPageClient = ({
 	}, [equipmentSlug]);
 
 	// 装備品一覧エリア
-	const filteredItems = items.filter(
-		(item) => item.acquired && item.type === equipmentSlug
-	);
+	const filteredItems = items.filter((item) => item.acquired && item.type === equipmentSlug);
 
 	const handleNavigationEquip = (item: Item) => {
 		playClickSound(() => {
@@ -95,8 +89,7 @@ const EquipmentDetailPageClient = ({
 							{isLoadingItems
 								? "ーーー"
 								: equipmentState[equipmentSlug as keyof typeof equipmentState]
-									? equipmentState[equipmentSlug as keyof typeof equipmentState]
-											?.name
+									? equipmentState[equipmentSlug as keyof typeof equipmentState]?.name
 									: "そうびなし"}
 						</h2>
 						{equipmentState[equipmentSlug as keyof typeof equipmentState] && (
@@ -107,9 +100,7 @@ const EquipmentDetailPageClient = ({
 									playClickSound(() => router.push("/strength"));
 								}}
 							>
-								<span className={`${styles["unequip-button-text"]}`}>
-									はずす
-								</span>
+								<span className={`${styles["unequip-button-text"]}`}>はずす</span>
 							</button>
 						)}
 					</div>
@@ -122,23 +113,19 @@ const EquipmentDetailPageClient = ({
 			{isLoadingItems ? (
 				<EquipmentListSkeleton />
 			) : itemsError ? (
-				<div className={styles["equipment-detail-no-item-text"]}>
-					{itemsError}
-				</div>
+				<div className={styles["equipment-detail-no-item-text"]}>{itemsError}</div>
 			) : filteredItems.length > 0 ? (
 				<ul className={styles["equipment-detail-list"]}>
 					{filteredItems.map((item) => (
 						<li
 							key={item.id}
 							className={`${styles["equipment-detail-item"]} ${
-								equipmentState[equipmentSlug as keyof typeof equipmentState]
-									?.id === item.id
+								equipmentState[equipmentSlug as keyof typeof equipmentState]?.id === item.id
 									? styles["equipment-detail-item-equipped"]
 									: ""
 							}`}
 							onClick={() =>
-								equipmentState[equipmentSlug as keyof typeof equipmentState]
-									?.id === item.id
+								equipmentState[equipmentSlug as keyof typeof equipmentState]?.id === item.id
 									? undefined
 									: handleNavigationEquip(item)
 							}
@@ -156,16 +143,12 @@ const EquipmentDetailPageClient = ({
 								</div>
 								<h3 className={styles["equipment-detail-item-name"]}>
 									{item.name}{" "}
-									{equipmentState[equipmentSlug as keyof typeof equipmentState]
-										?.id === item.id && "（装備中）"}
+									{equipmentState[equipmentSlug as keyof typeof equipmentState]?.id === item.id &&
+										"（装備中）"}
 								</h3>
 								{item.description && (
 									<div className={styles["equipment-detail-item-description"]}>
-										<p
-											className={
-												styles["equipment-detail-item-description-text"]
-											}
-										>
+										<p className={styles["equipment-detail-item-description-text"]}>
 											{item.description}
 										</p>
 									</div>
@@ -176,9 +159,7 @@ const EquipmentDetailPageClient = ({
 				</ul>
 			) : (
 				<div className={styles["equipment-detail-no-item"]}>
-					<p className={styles["equipment-detail-no-item-text"]}>
-						装備品がありません
-					</p>
+					<p className={styles["equipment-detail-no-item-text"]}>装備品がありません</p>
 				</div>
 			)}
 		</>

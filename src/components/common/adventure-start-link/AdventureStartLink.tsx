@@ -48,9 +48,7 @@ const AdventureStartLink = () => {
 					height={20}
 					className={styles["adventure-start-link-icon"]}
 				/>
-				<span className={styles["adventure-start-link-text"]}>
-					冒険をはじめる
-				</span>
+				<span className={styles["adventure-start-link-text"]}>冒険をはじめる</span>
 			</Link>
 		</div>
 	);

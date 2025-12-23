@@ -12,10 +12,7 @@ interface ItemCardListClientProps {
 	isGuestUser: boolean;
 }
 
-const ItemCardListClient: React.FC<ItemCardListClientProps> = ({
-	items,
-	isGuestUser,
-}) => {
+const ItemCardListClient: React.FC<ItemCardListClientProps> = ({ items, isGuestUser }) => {
 	const router = useRouter();
 	const { playClickSound } = useClickSound({
 		soundPath: "/audio/click-sound_decision.mp3",
@@ -23,10 +20,7 @@ const ItemCardListClient: React.FC<ItemCardListClientProps> = ({
 		delay: 190,
 	});
 
-	const handleNavigation = (
-		e: React.MouseEvent<HTMLAnchorElement>,
-		path: string
-	) => {
+	const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
 		e.preventDefault();
 		playClickSound(() => router.push(path));
 	};

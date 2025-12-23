@@ -40,11 +40,7 @@ const ItemCardList = async () => {
 		return <ItemCardListClient items={items} isGuestUser={isGuestUser} />;
 	} catch (error) {
 		console.error("アイテムデータ取得エラー:", error);
-		return (
-			<p className={styles["error-message"]}>
-				アイテムデータの取得に失敗しました。
-			</p>
-		);
+		return <p className={styles["error-message"]}>アイテムデータの取得に失敗しました。</p>;
 	}
 };
 

@@ -6,9 +6,7 @@ import { useUser, useSession } from "@clerk/nextjs";
 export function SignOutHandler({ children }: { children: React.ReactNode }) {
 	const { user } = useUser();
 	const { session } = useSession();
-	const [previousSessionId, setPreviousSessionId] = useState<string | null>(
-		null
-	);
+	const [previousSessionId, setPreviousSessionId] = useState<string | null>(null);
 	const [previousUserId, setPreviousUserId] = useState<string | null>(null);
 
 	useEffect(() => {

@@ -13,13 +13,13 @@ const ExplorePage = () => {
 			<div className={styles["title-bg"]}></div>
 			<h1 className={`${styles["explore-title"]}`}>記事探索</h1>
 			<div className={`${styles["explorer-container"]}`}>
-			<Suspense
-				fallback={
-					<div className="grid place-items-center pt-4">
-						<LoadingIndicator text="読み込み中" fontSize="1.125rem" />
-					</div>
-				}
-			>
+				<Suspense
+					fallback={
+						<div className="grid place-items-center pt-4">
+							<LoadingIndicator text="読み込み中" fontSize="1.125rem" />
+						</div>
+					}
+				>
 					<Explore.ExplorePageClient />
 				</Suspense>
 			</div>

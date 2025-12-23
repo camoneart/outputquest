@@ -13,10 +13,7 @@ import LoadingIndicator from "@/components/common/loading-indicator/LoadingIndic
 
 // ExploreArticleAnalysisを動的インポート（重いReactMarkdownとAI機能を含むため）
 const ExploreArticleAnalysis = dynamic(
-	() =>
-		import(
-			"@/features/explore/components/explore-article-analysis/ExploreArticleAnalysis"
-		),
+	() => import("@/features/explore/components/explore-article-analysis/ExploreArticleAnalysis"),
 	{
 		ssr: false, // クライアントのみで実行
 		loading: () => (
@@ -156,12 +153,8 @@ const ExplorePageClient = () => {
 			<div className={`${styles["explorer-header"]}`}>
 				<div className={styles["explorer-header-content"]}>
 					<div className="grid gap-[5px] place-items-center lg:place-items-start">
-						<p>
-							AIが勇者の仲間の「賢者」として、次に書く記事に最適なテーマを提案。
-						</p>
-						<p>
-							賢者（AI）は、あなたのZenn記事を探索し、過去の投稿から傾向を探ることで、
-						</p>
+						<p>AIが勇者の仲間の「賢者」として、次に書く記事に最適なテーマを提案。</p>
+						<p>賢者（AI）は、あなたのZenn記事を探索し、過去の投稿から傾向を探ることで、</p>
 						<p>あなたの成長に最適な「学びのタネ」を見つけ出します。</p>
 					</div>
 
@@ -175,9 +168,7 @@ const ExplorePageClient = () => {
 								onClick={handleAnalyzeArticles}
 								disabled={isAnalyzing || status === "streaming"}
 								className={`${styles["explore-analyze-button"]} ${
-									isAnalyzing || status === "streaming"
-										? styles["explore-analyzing"]
-										: ""
+									isAnalyzing || status === "streaming" ? styles["explore-analyzing"] : ""
 								}`}
 							>
 								<span className={styles["explore-analyze-button-text"]}>
@@ -189,11 +180,7 @@ const ExplorePageClient = () => {
 										className={styles["explore-analyze-button-icon"]}
 									/>
 									{isAnalyzing || status === "streaming" ? (
-										<div
-											className={
-												styles["explore-analyze-button-loading-indicator"]
-											}
-										>
+										<div className={styles["explore-analyze-button-loading-indicator"]}>
 											<span>探索中</span>
 											<span className={styles["loading-dots"]}>
 												<span className={styles["loading-dot"]}>.</span>

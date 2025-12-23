@@ -101,10 +101,7 @@ export default function ConnectionPageClient() {
 	const loading = connectionLoading || syncLoading;
 
 	// 遅延付きページ遷移の処理
-	const handleNavigation = (
-		e: React.MouseEvent<HTMLAnchorElement>,
-		path: string
-	) => {
+	const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
 		e.preventDefault();
 		playClickSound(() => router.push(path));
 	};
@@ -143,7 +140,11 @@ export default function ConnectionPageClient() {
 			<h1 className={`${styles["profile-title"]}`}>連携</h1>
 			<div className={`${styles["profile-container"]}`}>
 				{!isLoaded ? (
-					<LoadingIndicator text="読み込み中" className="px-4 pb-[40px] text-center" fontSize="1.125rem" />
+					<LoadingIndicator
+						text="読み込み中"
+						className="px-4 pb-[40px] text-center"
+						fontSize="1.125rem"
+					/>
 				) : !user ? (
 					<Connection.ConnectionAuthSection
 						loading={loading}
@@ -158,10 +159,10 @@ export default function ConnectionPageClient() {
 							<hr className={styles["center-line"]} />
 						</div>
 
-					<div className={styles["connection-info-container"]}>
-						{!isZennInfoLoaded ? (
-							<LoadingIndicator text="読み込み中" className="p-4 text-center" />
-						) : displayUser?.zennUsername ? (
+						<div className={styles["connection-info-container"]}>
+							{!isZennInfoLoaded ? (
+								<LoadingIndicator text="読み込み中" className="p-4 text-center" />
+							) : displayUser?.zennUsername ? (
 								<>
 									<div className={styles["connection-info-zenn"]}>
 										<Connection.ConnectionZennInfoDisplay
@@ -170,9 +171,7 @@ export default function ConnectionPageClient() {
 										/>
 									</div>
 									<div className={styles["connection-info-button-container"]}>
-										<Connection.ConnectionNavigationToAdventure
-											onNavigate={handleNavigation}
-										/>
+										<Connection.ConnectionNavigationToAdventure onNavigate={handleNavigation} />
 										<Connection.ConnectionButtonGroup
 											loading={loading}
 											userInfo={displayUser!}

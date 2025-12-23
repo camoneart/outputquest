@@ -32,7 +32,7 @@ const ExploreArticleAnalysis: React.FC<ExploreArticleAnalysisProps> = ({
 
 	// ゲストユーザーまたはZenn未連携の場合
 	// ローディング中もゲストユーザーとして判定しない（ちらつき防止）
-	const isGuestUser = (!isLoaded || !isZennInfoLoaded) ? false : (!user || !userZennInfo?.zennUsername);
+	const isGuestUser = !isLoaded || !isZennInfoLoaded ? false : !user || !userZennInfo?.zennUsername;
 
 	const { playClickSound } = useClickSound({
 		soundPath: "/audio/click-sound_decision.mp3",
@@ -52,9 +52,7 @@ const ExploreArticleAnalysis: React.FC<ExploreArticleAnalysisProps> = ({
 							className={styles["to-the-link-page-button"]}
 							onClick={() => playClickSound()}
 						>
-							<span className={styles["to-the-link-page-button-text"]}>
-								連携ページへ
-							</span>
+							<span className={styles["to-the-link-page-button-text"]}>連携ページへ</span>
 						</Link>
 					</div>
 				</div>
@@ -101,70 +99,48 @@ const ExploreArticleAnalysis: React.FC<ExploreArticleAnalysisProps> = ({
 													.join("");
 
 												return (
-												<Fragment key={message.id || `message-${index}`}>
-													{message.role === "assistant" && textContent && (
-														<div className={styles["explore-response"]}>
-															<div
-																className={styles["explore-response-content"]}
-															>
-																<div
-																	className={
-																		styles["explore-response-markdown"]
-																	}
-																>
-																	<ReactMarkdown
-																		components={{
-																			h3: ({ children }) => (
-																				<h3 className={styles["markdown-h3"]}>
-																					{children}
-																				</h3>
-																			),
-																			h4: ({ children }) => (
-																				<h4 className={styles["markdown-h4"]}>
-																					{children}
-																				</h4>
-																			),
-																			p: ({ children }) => (
-																				<p className={styles["markdown-p"]}>
-																					{children}
-																				</p>
-																			),
-																			strong: ({ children }) => (
-																				<strong
-																					className={styles["markdown-strong"]}
-																				>
-																					{children}
-																				</strong>
-																			),
-																			em: ({ children }) => (
-																				<em className={styles["markdown-em"]}>
-																					{children}
-																				</em>
-																			),
-																			ul: ({ children }) => (
-																				<ul className={styles["markdown-ul"]}>
-																					{children}
-																				</ul>
-																			),
-																			ol: ({ children }) => (
-																				<ol className={styles["markdown-ol"]}>
-																					{children}
-																				</ol>
-																			),
-																			li: ({ children }) => (
-																				<li className={styles["markdown-li"]}>
-																					{children}
-																				</li>
-																			),
-																		}}
-																	>
-																		{textContent}
-																	</ReactMarkdown>
+													<Fragment key={message.id || `message-${index}`}>
+														{message.role === "assistant" && textContent && (
+															<div className={styles["explore-response"]}>
+																<div className={styles["explore-response-content"]}>
+																	<div className={styles["explore-response-markdown"]}>
+																		<ReactMarkdown
+																			components={{
+																				h3: ({ children }) => (
+																					<h3 className={styles["markdown-h3"]}>{children}</h3>
+																				),
+																				h4: ({ children }) => (
+																					<h4 className={styles["markdown-h4"]}>{children}</h4>
+																				),
+																				p: ({ children }) => (
+																					<p className={styles["markdown-p"]}>{children}</p>
+																				),
+																				strong: ({ children }) => (
+																					<strong className={styles["markdown-strong"]}>
+																						{children}
+																					</strong>
+																				),
+																				em: ({ children }) => (
+																					<em className={styles["markdown-em"]}>{children}</em>
+																				),
+																				ul: ({ children }) => (
+																					<ul className={styles["markdown-ul"]}>{children}</ul>
+																				),
+																				ol: ({ children }) => (
+																					<ol className={styles["markdown-ol"]}>{children}</ol>
+																				),
+																				li: ({ children }) => (
+																					<li className={styles["markdown-li"]}>{children}</li>
+																				),
+																			}}
+																		>
+																			{textContent}
+																		</ReactMarkdown>
+																	</div>
 																</div>
 															</div>
-														</div>
-													)}
-												</Fragment>
+														)}
+													</Fragment>
 												);
 											})}
 										</>

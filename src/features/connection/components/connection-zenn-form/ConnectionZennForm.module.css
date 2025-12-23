@@ -1,31 +1,31 @@
 .zenn-connect-area {
-  width: 100%;
-  max-width: 500px;
-  margin-inline: auto;
+	width: 100%;
+	max-width: 500px;
+	margin-inline: auto;
 }
 
 .connect-button {
-  background-color: var(--color-primary-brown-dark);
-  border: 2px solid var(--color-primary-brown-light);
-  padding: 3px;
-  border-radius: 0.25rem;
+	background-color: var(--color-primary-brown-dark);
+	border: 2px solid var(--color-primary-brown-light);
+	padding: 3px;
+	border-radius: 0.25rem;
 
-  &.active:hover {
-    .connect-button-content {
-      border: 1.5px solid var(--color-primary-yellow);
-    }
-  }
+	&.active:hover {
+		.connect-button-content {
+			border: 1.5px solid var(--color-primary-yellow);
+		}
+	}
 }
 
 .connect-button-content {
-  background-color: var(--color-primary-brown);
-  border: 1.5px solid var(--color-primary-brown-light);
-  place-items: center;
-  padding-block: 5px;
-  padding-inline: 15px;
-  display: block grid;
-  text-shadow: 1.5px 1.5px 0px var(--color-primary-black);
-  transition: border 0.2s ease-in-out;
+	background-color: var(--color-primary-brown);
+	border: 1.5px solid var(--color-primary-brown-light);
+	place-items: center;
+	padding-block: 5px;
+	padding-inline: 15px;
+	display: block grid;
+	text-shadow: 1.5px 1.5px 0px var(--color-primary-black);
+	transition: border 0.2s ease-in-out;
 }
 
 .zenn-username {
@@ -35,9 +35,9 @@
 }
 
 .zenn-logo-sm {
-  width: 16px;
-  height: 16px;
-  object-fit: contain;
-  object-position: center;
-  filter: drop-shadow(0 0 0.5px var(--color-primary-white));
+	width: 16px;
+	height: 16px;
+	object-fit: contain;
+	object-position: center;
+	filter: drop-shadow(0 0 0.5px var(--color-primary-white));
 }

@@ -14,15 +14,14 @@ const PrivacyPage = () => {
 			<div className={`${styles["privacy-container"]}`}>
 				<div className={`${styles["privacy-content"]} w-full`}>
 					<p className="text-base md:text-lg leading-[1.75] font-weight-normal px-[20px] md:px-[50px] pt-[10px] md:pt-[30px]">
-						「OUTPUT QUEST　叡智の継承者」（以下、「当サービス」といいます。）は、ユーザーの個人情報について以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。
+						「OUTPUT
+						QUEST　叡智の継承者」（以下、「当サービス」といいます。）は、ユーザーの個人情報について以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。
 					</p>
 					<article className={styles["privacy-article"]}>
 						<section className={`${styles["privacy-section"]}`}>
 							<div className={styles["privacy-section-title-container"]}>
 								<div className={styles["privacy-section-title-box"]}>
-									<h2 className={styles["privacy-section-title"]}>
-										1. 個人情報の収集方法
-									</h2>
+									<h2 className={styles["privacy-section-title"]}>1. 個人情報の収集方法</h2>
 								</div>
 							</div>
 							<p className={styles["privacy-section-message"]}>
@@ -66,9 +65,7 @@ const PrivacyPage = () => {
 						<section className={`${styles["privacy-section"]}`}>
 							<div className={styles["privacy-section-title-container"]}>
 								<div className={styles["privacy-section-title-box"]}>
-									<h2 className={styles["privacy-section-title"]}>
-										3. 個人情報の第三者提供
-									</h2>
+									<h2 className={styles["privacy-section-title"]}>3. 個人情報の第三者提供</h2>
 								</div>
 							</div>
 							<p className={styles["privacy-section-message"]}>
@@ -79,9 +76,7 @@ const PrivacyPage = () => {
 						<section className={`${styles["privacy-section"]}`}>
 							<div className={styles["privacy-section-title-container"]}>
 								<div className={styles["privacy-section-title-box"]}>
-									<h2 className={styles["privacy-section-title"]}>
-										4. 個人情報の開示
-									</h2>
+									<h2 className={styles["privacy-section-title"]}>4. 個人情報の開示</h2>
 								</div>
 							</div>
 							<p className={styles["privacy-section-message"]}>
@@ -92,9 +87,7 @@ const PrivacyPage = () => {
 						<section className={`${styles["privacy-section"]}`}>
 							<div className={styles["privacy-section-title-container"]}>
 								<div className={styles["privacy-section-title-box"]}>
-									<h2 className={styles["privacy-section-title"]}>
-										5. 個人情報の訂正および削除
-									</h2>
+									<h2 className={styles["privacy-section-title"]}>5. 個人情報の訂正および削除</h2>
 								</div>
 							</div>
 							<p className={styles["privacy-section-message"]}>
@@ -118,9 +111,7 @@ const PrivacyPage = () => {
 						<section className={`${styles["privacy-section"]}`}>
 							<div className={styles["privacy-section-title-container"]}>
 								<div className={styles["privacy-section-title-box"]}>
-									<h2 className={styles["privacy-section-title"]}>
-										7. プライバシーポリシーの変更
-									</h2>
+									<h2 className={styles["privacy-section-title"]}>7. プライバシーポリシーの変更</h2>
 								</div>
 							</div>
 							<p className={styles["privacy-section-message"]}>
@@ -131,9 +122,7 @@ const PrivacyPage = () => {
 						<section className={`${styles["privacy-section"]}`}>
 							<div className={styles["privacy-section-title-container"]}>
 								<div className={styles["privacy-section-title-box"]}>
-									<h2 className={styles["privacy-section-title"]}>
-										8. お問い合わせ
-									</h2>
+									<h2 className={styles["privacy-section-title"]}>8. お問い合わせ</h2>
 								</div>
 							</div>
 							<p className={styles["privacy-section-message"]}>

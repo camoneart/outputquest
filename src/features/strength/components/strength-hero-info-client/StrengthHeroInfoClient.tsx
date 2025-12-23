@@ -20,13 +20,9 @@ type StrengthHeroInfoClientProps = {
  * 勇者のレベル情報を表示するClient Component
  * StrengthHeroInfo（Server Component）から分離
  */
-const StrengthHeroInfoClient = ({
-	heroData,
-	zennUsername,
-}: StrengthHeroInfoClientProps) => {
+const StrengthHeroInfoClient = ({ heroData, zennUsername }: StrengthHeroInfoClientProps) => {
 	// 経験値の進捗率をパーセンテージで計算
-	const expProgressPercent =
-		(heroData.currentExp / heroData.nextLevelExp) * 100;
+	const expProgressPercent = (heroData.currentExp / heroData.nextLevelExp) * 100;
 
 	return (
 		<div className={styles["strength-hero-info"]}>
@@ -56,9 +52,7 @@ const StrengthHeroInfoClient = ({
 						<div className={`${styles["strength-level-display-container"]}`}>
 							<div className={`${styles["strength-level-display-box"]}`}>
 								<div className={`${styles["strength-level-display"]}`}>
-									<span className={`${styles["strength-level-display-text"]}`}>
-										Lv
-									</span>
+									<span className={`${styles["strength-level-display-text"]}`}>Lv</span>
 									<span className={`${styles["strength-level-display-value"]}`}>
 										{heroData.level}
 									</span>
@@ -71,15 +65,9 @@ const StrengthHeroInfoClient = ({
 				<div className={styles["strength-level-progress-info"]}>
 					<div className={`${styles["strength-level-progress-box"]}`}>
 						<div className={`${styles["strength-level-progress-content"]}`}>
-							<span className={`${styles["strength-level-progress-text"]}`}>
-								次のレベルまで：
-							</span>
-							<div
-								className={`${styles["strength-level-progress-info-remaining-articles"]}`}
-							>
-								<em
-									className={`${styles["strength-level-progress-info-remaining-articles-em"]}`}
-								>
+							<span className={`${styles["strength-level-progress-text"]}`}>次のレベルまで：</span>
+							<div className={`${styles["strength-level-progress-info-remaining-articles"]}`}>
+								<em className={`${styles["strength-level-progress-info-remaining-articles-em"]}`}>
 									{heroData.remainingArticles}
 								</em>
 								<span

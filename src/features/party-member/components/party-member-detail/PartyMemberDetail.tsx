@@ -19,9 +19,7 @@ interface PartyMemberDetailProps {
 }
 
 // レア度を判定する関数
-const getMemberRarityType = (
-	partyId: number
-): "normal" | "rare" | "superRare" => {
+const getMemberRarityType = (partyId: number): "normal" | "rare" | "superRare" => {
 	if (partyId === 30) return "superRare";
 	if (partyId > 12) return "rare";
 	return "normal";
@@ -76,11 +74,7 @@ const PartyMemberDetail: React.FC<PartyMemberDetailProps> = ({ partyId }) => {
 				setCurrentLevel(articles.length);
 			} catch (err) {
 				console.error("レベル取得エラー:", err);
-				setLevelError(
-					err instanceof Error
-						? err.message
-						: "レベル取得中にエラーが発生しました。"
-				);
+				setLevelError(err instanceof Error ? err.message : "レベル取得中にエラーが発生しました。");
 			} finally {
 				setIsZennInfoLoaded(true);
 			}
@@ -96,8 +90,7 @@ const PartyMemberDetail: React.FC<PartyMemberDetailProps> = ({ partyId }) => {
 	}
 
 	// ゲストユーザーの場合は常に未獲得状態として表示
-	const isAcquired =
-		!isGuestUser && isAcquiredByHeroLevel(partyId, currentLevel);
+	const isAcquired = !isGuestUser && isAcquiredByHeroLevel(partyId, currentLevel);
 
 	// 仲間を獲得するために必要なレベル
 	const requiredLevel = heroLevelAndMemberRelation[partyId] || partyId;
@@ -106,9 +99,7 @@ const PartyMemberDetail: React.FC<PartyMemberDetailProps> = ({ partyId }) => {
 	const levelDifference = Math.max(0, requiredLevel - currentLevel);
 
 	// 仲間の名前と説明文を取得
-	const memberName = isAcquired
-		? customMemberNames[partyId] || `勇者の仲間${partyId}`
-		: null;
+	const memberName = isAcquired ? customMemberNames[partyId] || `勇者の仲間${partyId}` : null;
 	const memberDescription = isAcquired
 		? customMemberDescriptions[partyId] || `これは${memberName}の説明です。`
 		: null;
@@ -156,22 +147,15 @@ const PartyMemberDetail: React.FC<PartyMemberDetailProps> = ({ partyId }) => {
 						{isAcquired ? (
 							<>
 								<div className={styles["party-member-description-box"]}>
-									<p className={styles["party-member-description"]}>
-										{memberDescription}
-									</p>
+									<p className={styles["party-member-description"]}>{memberDescription}</p>
 								</div>
 
 								<div className={styles["party-member-rarity-box"]}>
-									<h3 className={styles["party-member-rarity-title"]}>
-										レア度
-									</h3>
+									<h3 className={styles["party-member-rarity-title"]}>レア度</h3>
 									<div className={styles["party-member-rarity-stars"]}>
-										{rarityType === "normal" &&
-											PartyMember.PartyMemberRarityStar.normal}
-										{rarityType === "rare" &&
-											PartyMember.PartyMemberRarityStar.rare}
-										{rarityType === "superRare" &&
-											PartyMember.PartyMemberRarityStar.superRare}
+										{rarityType === "normal" && PartyMember.PartyMemberRarityStar.normal}
+										{rarityType === "rare" && PartyMember.PartyMemberRarityStar.rare}
+										{rarityType === "superRare" && PartyMember.PartyMemberRarityStar.superRare}
 									</div>
 								</div>
 							</>

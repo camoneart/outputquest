@@ -90,10 +90,7 @@ const ClickSound: React.FC<{
 	};
 
 	return (
-		<button
-			className={`${styles.clickButton} ${className || ""}`}
-			onClick={handleClick}
-		>
+		<button className={`${styles.clickButton} ${className || ""}`} onClick={handleClick}>
 			{children}
 		</button>
 	);

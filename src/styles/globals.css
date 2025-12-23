@@ -39,16 +39,13 @@
 	--radius-lg: var(--radius);
 	--radius-md: calc(var(--radius) - 2px);
 	--radius-sm: calc(var(--radius) - 4px);
+
+	/* Adobe Fonts */
+	--font-nitalago: "nitalago-rera", sans-serif;
+	--font-ab-don: "ab-don2", sans-serif;
+	--font-sicprintemps: "sicprintemps", sans-serif;
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
 	*,
 	::after,
@@ -64,13 +61,15 @@
 		/* color */
 		--color-primary-dark-gray: #1a1a1a;
 		--color-primary-red: #80160d;
+		--color-primary-orange: #d15b00;
 		--color-primary-beige: #ffcf98;
 		--color-primary-brown-light: #9f7b59;
 		--color-primary-brown: #7e6146;
 		--color-primary-brown-dark: #4d3620;
-		--color-primary-yellow: #ffc400;
+		--color-primary-yellow: #ffc800;
 		--color-primary-black: #000;
 		--color-primary-white: #fff;
+		--king-blue: #020763;
 
 		/* メッセージ関連のカラー */
 		--bg-color-message-release: #000;
@@ -178,33 +177,6 @@
 		--responsive-breakpoint-2xl: 1536px;
 	}
 
-	/* font-sizeはclamp()関数で指定ここから */
-	/* *,
-::before,
-::after {
-  --clamp-root-font-size: 16;
-  --clamp-slope: calc((var(--clamp-max) - var(--clamp-min)) / (var(--clamp-viewport-max) - var(--clamp-viewport-min)));
-  --clamp-y-axis-intersection: calc(var(--clamp-min) - (var(--clamp-slope) * var(--clamp-viewport-min)));
-  --clamp-preffered-value: calc(
-    var(--clamp-y-axis-intersection) * (1rem / var(--clamp-root-font-size)) + (var(--clamp-slope) * 100vi)
-  );
-  --clamp: clamp(
-    calc(var(--clamp-min) * (1rem / var(--clamp-root-font-size))),
-    var(--clamp-preffered-value),
-    calc(var(--clamp-max) * (1rem / var(--clamp-root-font-size)))
-  );
-
-  font-size: var(--clamp);
-}
-
-body {
-  --clamp-viewport-min: 400;
-  --clamp-viewport-max: 1200;
-  --clamp-min: 12;
-  --clamp-max: 16;
-} */
-	/* font-sizeはclamp()関数で指定ここまで */
-
 	body {
 		min-height: 100svh;
 		height: 100svh;
@@ -213,8 +185,10 @@ body {
 		color: var(--color-primary-white);
 		background: var(--color-primary-red);
 		font-family:
-			var(--font-dot-gothic-16), "Helvetica Neue", Arial,
+			"sicprintemps", var(--font-dot-gothic-16), "Helvetica Neue", Arial,
 			"Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+		font-weight: 600;
+		font-style: normal;
 	}
 
 	main {

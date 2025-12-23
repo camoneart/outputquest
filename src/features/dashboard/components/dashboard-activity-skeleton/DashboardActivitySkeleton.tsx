@@ -41,9 +41,7 @@ const DashboardActivitySkeleton = () => {
 								</div>
 
 								{/* Platform (favicon + name) */}
-								<div
-									className={styles["skeleton-activity-item-platform-container"]}
-								>
+								<div className={styles["skeleton-activity-item-platform-container"]}>
 									<div className={styles["skeleton-favicon"]} />
 									<div className={styles["skeleton-platform"]} />
 								</div>

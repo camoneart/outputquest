@@ -1,29 +1,29 @@
 .release-message,
 .error-message,
 .success-message {
-  font-size: 0.875rem;
-  font-weight: var(--font-weight-bold);
-  line-height: var(--leading-tight);
-  color: var(--color-primary-white);
-  border: 2px solid var(--color-primary-white);
-  padding-block: 12px;
-  padding-inline: 24px;
-  border-radius: var(--border-radius-small);
-  width: fit-content;
-  height: fit-content;
-  margin-inline: auto;
-  place-self: end;
-  text-shadow: 1px 1px 0px var(--color-primary-black);
+	font-size: 0.875rem;
+	font-weight: var(--font-weight-bold);
+	line-height: var(--leading-tight);
+	color: var(--color-primary-white);
+	border: 2px solid var(--color-primary-white);
+	padding-block: 12px;
+	padding-inline: 24px;
+	border-radius: var(--border-radius-small);
+	width: fit-content;
+	height: fit-content;
+	margin-inline: auto;
+	place-self: end;
+	text-shadow: 1px 1px 0px var(--color-primary-black);
 }
 
 .release-message {
-  background-color: var(--bg-color-message-release);
+	background-color: var(--bg-color-message-release);
 }
 
 .error-message {
-  background-color: var(--bg-color-message-error);
+	background-color: var(--bg-color-message-error);
 }
 
 .success-message {
-  background-color: var(--bg-color-message-success);
+	background-color: var(--bg-color-message-success);
 }

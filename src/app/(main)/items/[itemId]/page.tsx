@@ -5,44 +5,44 @@ import * as itemDetail from "@/features/item-detail/components/index";
 import { generateItemMetadata } from "@/features/item-detail/metadata/generateItemMetadata";
 
 export async function generateStaticParams() {
-  // 1から30までのアイテムIDを生成
-  return Array.from({ length: 30 }, (_, i) => ({
-    itemId: String(i + 1),
-  }));
+	// 1から30までのアイテムIDを生成
+	return Array.from({ length: 30 }, (_, i) => ({
+		itemId: String(i + 1),
+	}));
 }
 
-export async function generateMetadata(
-  { params }: { params: Promise<{ itemId: string }> }
-): Promise<Metadata> {
-  const { itemId } = await params;
-  const itemIdNum = parseInt(itemId);
-  return generateItemMetadata(itemIdNum);
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ itemId: string }>;
+}): Promise<Metadata> {
+	const { itemId } = await params;
+	const itemIdNum = parseInt(itemId);
+	return generateItemMetadata(itemIdNum);
 }
 
-export default async function ItemDetailPage(
-  { params }: { params: Promise<{ itemId: string }> }
-) {
-  const { itemId } = await params;
-  const itemIdNum = parseInt(itemId);
+export default async function ItemDetailPage({ params }: { params: Promise<{ itemId: string }> }) {
+	const { itemId } = await params;
+	const itemIdNum = parseInt(itemId);
 
-  if (isNaN(itemIdNum) || itemIdNum < 1 || itemIdNum > 30) {
-    notFound();
-  }
+	if (isNaN(itemIdNum) || itemIdNum < 1 || itemIdNum > 30) {
+		notFound();
+	}
 
-  return (
-    <>
-      {/* 動的にHeadを更新するコンポーネント */}
-      <itemDetail.ItemDynamicHead itemId={itemIdNum} />
+	return (
+		<>
+			{/* 動的にHeadを更新するコンポーネント */}
+			<itemDetail.ItemDynamicHead itemId={itemIdNum} />
 
-      <h1 className={styles["item-detail-page-title"]}>アイテム詳細</h1>
-      <div className={styles["item-detail-container"]}>
-        {/* クライアントコンポーネントとしてItemDetailClientを使用 */}
-        <itemDetail.ItemDetailClient itemId={itemIdNum} />
+			<h1 className={styles["item-detail-page-title"]}>アイテム詳細</h1>
+			<div className={styles["item-detail-container"]}>
+				{/* クライアントコンポーネントとしてItemDetailClientを使用 */}
+				<itemDetail.ItemDetailClient itemId={itemIdNum} />
 
-        <hr />
+				<hr />
 
-        <itemDetail.ItemDetailFooter />
-      </div>
-    </>
-  );
+				<itemDetail.ItemDetailFooter />
+			</div>
+		</>
+	);
 }

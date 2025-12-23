@@ -17,7 +17,6 @@ import { getUserInfo } from "@/lib/api/user";
 import XShareButton from "@/components/common/x-share-button/XShareButton";
 import DashboardLatestPartyMemberSkeleton from "../dashboard-latest-party-member-skeleton/DashboardLatestPartyMemberSkeleton";
 
-
 const DashboardLatestPartyMemberSection: React.FC = () => {
 	const [memberId, setMemberId] = useState<number | null>(null);
 	const [isLoadingMember, setIsLoadingMember] = useState<boolean>(true);
@@ -105,24 +104,18 @@ const DashboardLatestPartyMemberSection: React.FC = () => {
 
 	const isLoadingState = isHeroLoading || isLoadingMember || isUserLoading;
 
-	const memberName =
-		memberId !== null ? customMemberNames[memberId] || "まだ見ぬ仲間" : "";
+	const memberName = memberId !== null ? customMemberNames[memberId] || "まだ見ぬ仲間" : "";
 	const memberDescription =
 		memberId !== null ? customMemberDescriptions[memberId] || "詳細不明" : "";
 
-	const handleNavigation = (
-		e: React.MouseEvent<HTMLAnchorElement>,
-		path: string
-	) => {
+	const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
 		e.preventDefault();
 		playClickSound(() => router.push(path));
 	};
 
 	return (
 		<section className={`${styles["party-member-section"]}`}>
-			<h2 className={`${styles["party-member-title"]}`}>
-				~ 最近仲間に加わったキャラクター ~
-			</h2>
+			<h2 className={`${styles["party-member-title"]}`}>~ 最近仲間に加わったキャラクター ~</h2>
 			<div className={`${styles["party-member-container"]}`}>
 				{isLoadingState ? (
 					<DashboardLatestPartyMemberSkeleton />
@@ -157,12 +150,8 @@ const DashboardLatestPartyMemberSection: React.FC = () => {
 								</div>
 							</div>
 							<div className={`${styles["party-member-info"]}`}>
-								<h3 className={`${styles["party-member-name"]}`}>
-									{memberName}
-								</h3>
-								<p className={`${styles["party-member-description"]}`}>
-									{memberDescription}
-								</p>
+								<h3 className={`${styles["party-member-name"]}`}>{memberName}</h3>
+								<p className={`${styles["party-member-description"]}`}>{memberDescription}</p>
 							</div>
 						</Link>
 					</div>

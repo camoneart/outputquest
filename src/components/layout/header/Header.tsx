@@ -19,12 +19,7 @@ export const Header = () => {
 
 	// audioPlayer の定義をここに移動
 	const audioPlayer = (
-		<AudioPlayer
-			src="/audio/Small_World.mp3"
-			size={17}
-			color="#fff"
-			volume={0.3}
-		/>
+		<AudioPlayer src="/audio/Small_World.mp3" size={17} color="#fff" volume={0.3} />
 	);
 
 	const toggleMenu = () => {
@@ -41,11 +36,7 @@ export const Header = () => {
 		const handleClickOutside = (event: MouseEvent) => {
 			const hamburger = document.querySelector(`.hamburger`);
 
-			if (
-				isMenuOpen &&
-				hamburger &&
-				!hamburger.contains(event.target as Node)
-			) {
+			if (isMenuOpen && hamburger && !hamburger.contains(event.target as Node)) {
 				setIsMenuOpen(false);
 			}
 		};
@@ -70,9 +61,7 @@ export const Header = () => {
 			<div className={`${pathname === "/" ? styles[""] : styles["header-bg"]}`}>
 				<div
 					className={`${styles["header-container"]} ${
-						pathname === "/"
-							? styles["home-header-container"]
-							: styles["child-header-container"]
+						pathname === "/" ? styles["home-header-container"] : styles["child-header-container"]
 					}`}
 				>
 					{pathname !== "/" && (
@@ -146,9 +135,7 @@ export const Header = () => {
 					)}
 					<div className={`${styles["header__items"]}`}>
 						{audioPlayer}
-						{pathname !== "/" && (
-							<HamburgerMenu toggleMenu={toggleMenu} isOpen={isMenuOpen} />
-						)}
+						{pathname !== "/" && <HamburgerMenu toggleMenu={toggleMenu} isOpen={isMenuOpen} />}
 					</div>
 				</div>
 				{pathname !== "/" && (

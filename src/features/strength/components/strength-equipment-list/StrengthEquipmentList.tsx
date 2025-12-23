@@ -92,10 +92,7 @@ const StrengthEquipmentList = () => {
 	];
 
 	// 遅延付きページ遷移の処理
-	const handleNavigation = (
-		e: React.MouseEvent<HTMLAnchorElement>,
-		path: string
-	) => {
+	const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
 		e.preventDefault();
 		playClickSound(() => router.push(path));
 	};
@@ -122,26 +119,18 @@ const StrengthEquipmentList = () => {
 					{equipmentTypes.map((equipment) => {
 						const Icon = equipment.icon;
 						return (
-							<li
-								key={equipment.type}
-								className={styles["strength-equipment-item"]}
-							>
+							<li key={equipment.type} className={styles["strength-equipment-item"]}>
 								<Link
 									href={`/equipment/${equipment.type}`}
 									className={styles["strength-equipment-item-link"]}
-									onClick={(e) =>
-										handleNavigation(e, `/equipment/${equipment.type}`)
-									}
+									onClick={(e) => handleNavigation(e, `/equipment/${equipment.type}`)}
 								>
 									<div
 										className={`${styles["strength-equipment-icon-box"]} ${
 											styles[`strength-equipment-icon-box-${equipment.type}`]
 										}`}
 									>
-										<Icon
-											className={styles["strength-equipment-icon"]}
-											size={24}
-										/>
+										<Icon className={styles["strength-equipment-icon"]} size={24} />
 									</div>
 									<h3 className={styles["strength-equipment-item-link-text"]}>
 										{getEquipmentName(equipment.type)}

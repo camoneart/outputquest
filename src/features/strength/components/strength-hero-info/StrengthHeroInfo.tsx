@@ -61,23 +61,14 @@ const StrengthHeroInfo = async () => {
 		const displayZennUsername = `@${zennUsername}`;
 
 		// Client Componentにデータを渡す
-		return (
-			<StrengthHeroInfoClient
-				heroData={heroData}
-				zennUsername={displayZennUsername}
-			/>
-		);
+		return <StrengthHeroInfoClient heroData={heroData} zennUsername={displayZennUsername} />;
 	} catch (error) {
 		console.error("Zenn記事の取得エラー:", error);
 		return (
 			<div className={styles["strength-hero-info"]}>
 				<div className={styles["strength-hero-info-content"]}>
-					<h2 className={styles["strength-hero-info-title"]}>
-						~ 勇者のレベル ~
-					</h2>
-					<div className={styles["error-text"]}>
-						データの取得中にエラーが発生しました。
-					</div>
+					<h2 className={styles["strength-hero-info-title"]}>~ 勇者のレベル ~</h2>
+					<div className={styles["error-text"]}>データの取得中にエラーが発生しました。</div>
 				</div>
 			</div>
 		);

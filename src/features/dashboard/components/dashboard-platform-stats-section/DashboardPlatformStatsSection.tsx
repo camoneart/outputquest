@@ -12,9 +12,7 @@ type DashboardPlatformStatsSectionProps = {
 	dashboardData: DashboardData;
 };
 
-const DashboardPlatformStatsSection = ({
-	dashboardData,
-}: DashboardPlatformStatsSectionProps) => {
+const DashboardPlatformStatsSection = ({ dashboardData }: DashboardPlatformStatsSectionProps) => {
 	const { heroData, isLoading, error } = useHero();
 	const { user, isLoaded } = useUser();
 	const [userZennInfo, setUserZennInfo] = useState<{
@@ -72,13 +70,9 @@ const DashboardPlatformStatsSection = ({
 			<h2 className={`${styles["platform-stats-title"]}`}>~ 投稿状況 ~</h2>
 			<div className={`${styles["platform-stats-container"]}`}>
 				<div className={`${styles["platform-stats-grid"]}`}>
-					<div
-						className={`${styles["platform-stat-card"]} ${styles["platform-stat-card-zenn"]}`}
-					>
+					<div className={`${styles["platform-stat-card"]} ${styles["platform-stat-card-zenn"]}`}>
 						<div className={`${styles["platform-stat-card-content"]}`}>
-							<h3 className={`${styles["platform-stat-card-title"]}`}>
-								{zennStat.platform}
-							</h3>
+							<h3 className={`${styles["platform-stat-card-title"]}`}>{zennStat.platform}</h3>
 							<div className={`${styles["platform-stat-count"]}`}>
 								{isLoading ? (
 									<>
@@ -87,27 +81,17 @@ const DashboardPlatformStatsSection = ({
 											<span className={styles["loading-dot"]}>.</span>
 											<span className={styles["loading-dot"]}>.</span>
 										</span>
-										<span className={`${styles["platform-stat-unit"]}`}>
-											記事
-										</span>
+										<span className={`${styles["platform-stat-unit"]}`}>記事</span>
 									</>
 								) : error ? (
 									<>
-										<span className={`${styles["platform-stat-error"]}`}>
-											0
-										</span>
-										<span className={`${styles["platform-stat-unit"]}`}>
-											記事
-										</span>
+										<span className={`${styles["platform-stat-error"]}`}>0</span>
+										<span className={`${styles["platform-stat-unit"]}`}>記事</span>
 									</>
 								) : (
 									<>
-										<em className={`${styles["platform-stat-count-em"]}`}>
-											{zennStat.count}
-										</em>
-										<span className={`${styles["platform-stat-unit"]}`}>
-											記事
-										</span>
+										<em className={`${styles["platform-stat-count-em"]}`}>{zennStat.count}</em>
+										<span className={`${styles["platform-stat-unit"]}`}>記事</span>
 									</>
 								)}
 							</div>

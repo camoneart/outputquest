@@ -12,17 +12,14 @@ const TermsPage = () => {
 			<div className={`${styles["terms-container"]}`}>
 				<div className={`${styles["terms-content"]} w-full`}>
 					<p className="text-base md:text-lg leading-[1.75] font-weight-normal px-[20px] md:px-[50px] pt-[10px] md:pt-[30px]">
-						この利用規約（以下、「本規約」といいます。）は、「OUTPUT QUEST　~
-						叡智の継承者
+						この利用規約（以下、「本規約」といいます。）は、「OUTPUT QUEST　~ 叡智の継承者
 						~」（以下、「当サービス」といいます。）がこのウェブサイト上で提供するサービス（以下、「本サービス」といいます。）の利用条件を定めるものです。
 					</p>
 					<article className={styles["terms-article"]}>
 						<section className={`${styles["terms-section"]}`}>
 							<div className={styles["terms-section-title-container"]}>
 								<div className={styles["terms-section-title-box"]}>
-									<h2 className={styles["terms-section-title"]}>
-										第1条（適用）
-									</h2>
+									<h2 className={styles["terms-section-title"]}>第1条（適用）</h2>
 								</div>
 							</div>
 							<div className={styles["terms-section-message"]}>
@@ -40,9 +37,7 @@ const TermsPage = () => {
 						<section className={`${styles["terms-section"]}`}>
 							<div className={styles["terms-section-title-container"]}>
 								<div className={styles["terms-section-title-box"]}>
-									<h2 className={styles["terms-section-title"]}>
-										第2条（利用登録）
-									</h2>
+									<h2 className={styles["terms-section-title"]}>第2条（利用登録）</h2>
 								</div>
 							</div>
 							<ol className={styles["terms-section-list"]}>
@@ -53,9 +48,7 @@ const TermsPage = () => {
 									当サービスは、利用登録の申請者に以下の事由があると判断した場合、利用登録の申請を承認しないことがあり、その理由については一切の開示義務を負わないものとします。
 								</li>
 								<ol className={styles["terms-section-list"]}>
-									<li className={styles["terms-section-list-item"]}>
-										虚偽の事項を届け出た場合
-									</li>
+									<li className={styles["terms-section-list-item"]}>虚偽の事項を届け出た場合</li>
 									<li className={styles["terms-section-list-item"]}>
 										本規約に違反したことがある者からの申請である場合
 									</li>
@@ -72,9 +65,7 @@ const TermsPage = () => {
 						<section className={`${styles["terms-section"]}`}>
 							<div className={styles["terms-section-title-container"]}>
 								<div className={styles["terms-section-title-box"]}>
-									<h2 className={styles["terms-section-title"]}>
-										第3条（禁止事項）
-									</h2>
+									<h2 className={styles["terms-section-title"]}>第3条（禁止事項）</h2>
 								</div>
 							</div>
 							<p className={styles["terms-section-message"]}>
@@ -84,9 +75,7 @@ const TermsPage = () => {
 								<li className={styles["terms-section-list-item"]}>
 									法令または公序良俗に違反する行為
 								</li>
-								<li className={styles["terms-section-list-item"]}>
-									犯罪行為に関連する行為
-								</li>
+								<li className={styles["terms-section-list-item"]}>犯罪行為に関連する行為</li>
 								<li className={styles["terms-section-list-item"]}>
 									当サービスのサーバーまたはネットワークの機能を破壊したり、妨害したりする行為
 								</li>
@@ -96,9 +85,7 @@ const TermsPage = () => {
 								<li className={styles["terms-section-list-item"]}>
 									他のユーザーに関する個人情報等を収集または蓄積する行為
 								</li>
-								<li className={styles["terms-section-list-item"]}>
-									他のユーザーに成りすます行為
-								</li>
+								<li className={styles["terms-section-list-item"]}>他のユーザーに成りすます行為</li>
 								<li className={styles["terms-section-list-item"]}>
 									当サービスのサービスに関連して、反社会的勢力に対して直接または間接に利益を供与する行為
 								</li>
@@ -149,9 +136,7 @@ const TermsPage = () => {
 						<section className={`${styles["terms-section"]}`}>
 							<div className={styles["terms-section-title-container"]}>
 								<div className={styles["terms-section-title-box"]}>
-									<h2 className={styles["terms-section-title"]}>
-										第5条（免責事項）
-									</h2>
+									<h2 className={styles["terms-section-title"]}>第5条（免責事項）</h2>
 								</div>
 							</div>
 							<ol className={styles["terms-section-list"]}>
@@ -167,9 +152,7 @@ const TermsPage = () => {
 						<section className={`${styles["terms-section"]}`}>
 							<div className={styles["terms-section-title-container"]}>
 								<div className={styles["terms-section-title-box"]}>
-									<h2 className={styles["terms-section-title"]}>
-										第6条（ユーザーの投稿等）
-									</h2>
+									<h2 className={styles["terms-section-title"]}>第6条（ユーザーの投稿等）</h2>
 								</div>
 							</div>
 							<ol className={styles["terms-section-list"]}>
@@ -185,9 +168,7 @@ const TermsPage = () => {
 						<section className={`${styles["terms-section"]}`}>
 							<div className={styles["terms-section-title-container"]}>
 								<div className={styles["terms-section-title-box"]}>
-									<h2 className={styles["terms-section-title"]}>
-										第7条（サービス内容の変更等）
-									</h2>
+									<h2 className={styles["terms-section-title"]}>第7条（サービス内容の変更等）</h2>
 								</div>
 							</div>
 							<p className={styles["terms-section-message"]}>
@@ -198,9 +179,7 @@ const TermsPage = () => {
 						<section className={`${styles["terms-section"]}`}>
 							<div className={styles["terms-section-title-container"]}>
 								<div className={styles["terms-section-title-box"]}>
-									<h2 className={styles["terms-section-title"]}>
-										第8条（利用規約の変更）
-									</h2>
+									<h2 className={styles["terms-section-title"]}>第8条（利用規約の変更）</h2>
 								</div>
 							</div>
 							<p className={styles["terms-section-message"]}>
@@ -211,9 +190,7 @@ const TermsPage = () => {
 						<section className={`${styles["terms-section"]}`}>
 							<div className={styles["terms-section-title-container"]}>
 								<div className={styles["terms-section-title-box"]}>
-									<h2 className={styles["terms-section-title"]}>
-										第9条（利用料金）
-									</h2>
+									<h2 className={styles["terms-section-title"]}>第9条（利用料金）</h2>
 								</div>
 							</div>
 							<p className={styles["terms-section-message"]}>
@@ -224,9 +201,7 @@ const TermsPage = () => {
 						<section className={`${styles["terms-section"]}`}>
 							<div className={styles["terms-section-title-container"]}>
 								<div className={styles["terms-section-title-box"]}>
-									<h2 className={styles["terms-section-title"]}>
-										第10条（準拠法および裁判管轄）
-									</h2>
+									<h2 className={styles["terms-section-title"]}>第10条（準拠法および裁判管轄）</h2>
 								</div>
 							</div>
 							<p className={styles["terms-section-message"]}>

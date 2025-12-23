@@ -72,27 +72,15 @@ const ItemDynamicHead: React.FC<ItemDynamicHeadProps> = ({ itemId }) => {
 
 		// OpenGraph メタデータ
 		const ogTitleMeta = document.querySelector('meta[property="og:title"]');
-		const ogDescriptionMeta = document.querySelector(
-			'meta[property="og:description"]'
-		);
+		const ogDescriptionMeta = document.querySelector('meta[property="og:description"]');
 		const ogImageMeta = document.querySelector('meta[property="og:image"]');
-		const ogImageAltMeta = document.querySelector(
-			'meta[property="og:image:alt"]'
-		);
+		const ogImageAltMeta = document.querySelector('meta[property="og:image:alt"]');
 
 		// Twitter Card メタデータ
-		const twitterTitleMeta = document.querySelector(
-			'meta[name="twitter:title"]'
-		);
-		const twitterDescriptionMeta = document.querySelector(
-			'meta[name="twitter:description"]'
-		);
-		const twitterImageMeta = document.querySelector(
-			'meta[name="twitter:image"]'
-		);
-		const twitterImageAltMeta = document.querySelector(
-			'meta[name="twitter:image:alt"]'
-		);
+		const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]');
+		const twitterDescriptionMeta = document.querySelector('meta[name="twitter:description"]');
+		const twitterImageMeta = document.querySelector('meta[name="twitter:image"]');
+		const twitterImageAltMeta = document.querySelector('meta[name="twitter:image:alt"]');
 
 		// ゲストユーザーまたはZenn未連携ユーザーの場合はゲスト用メタデータを表示
 		const isGuestUser = !user || !userZennInfo?.zennUsername;
@@ -102,38 +90,25 @@ const ItemDynamicHead: React.FC<ItemDynamicHeadProps> = ({ itemId }) => {
 			const guestDescription =
 				"ログインすると入手したアイテムについての詳細情報がここに表示されます。";
 			const guestOgTitle = `${guestTitle}｜OUTPUT QUEST`;
-			const guestImageUrl =
-				"/images/items-page/unacquired-icon/treasure-chest.svg";
+			const guestImageUrl = "/images/items-page/unacquired-icon/treasure-chest.svg";
 
 			// 基本メタデータ
-			if (titleElement)
-				titleElement.textContent = `${guestTitle}｜OUTPUT QUEST`;
-			if (descriptionMeta)
-				descriptionMeta.setAttribute("content", guestDescription);
+			if (titleElement) titleElement.textContent = `${guestTitle}｜OUTPUT QUEST`;
+			if (descriptionMeta) descriptionMeta.setAttribute("content", guestDescription);
 
 			// OpenGraph メタデータ
 			if (ogTitleMeta) ogTitleMeta.setAttribute("content", guestOgTitle);
-			if (ogDescriptionMeta)
-				ogDescriptionMeta.setAttribute("content", guestDescription);
+			if (ogDescriptionMeta) ogDescriptionMeta.setAttribute("content", guestDescription);
 			if (ogImageMeta)
-				ogImageMeta.setAttribute(
-					"content",
-					`${window.location.origin}${guestImageUrl}`
-				);
+				ogImageMeta.setAttribute("content", `${window.location.origin}${guestImageUrl}`);
 			if (ogImageAltMeta) ogImageAltMeta.setAttribute("content", guestTitle);
 
 			// Twitter Card メタデータ
-			if (twitterTitleMeta)
-				twitterTitleMeta.setAttribute("content", guestOgTitle);
-			if (twitterDescriptionMeta)
-				twitterDescriptionMeta.setAttribute("content", guestDescription);
+			if (twitterTitleMeta) twitterTitleMeta.setAttribute("content", guestOgTitle);
+			if (twitterDescriptionMeta) twitterDescriptionMeta.setAttribute("content", guestDescription);
 			if (twitterImageMeta)
-				twitterImageMeta.setAttribute(
-					"content",
-					`${window.location.origin}${guestImageUrl}`
-				);
-			if (twitterImageAltMeta)
-				twitterImageAltMeta.setAttribute("content", guestTitle);
+				twitterImageMeta.setAttribute("content", `${window.location.origin}${guestImageUrl}`);
+			if (twitterImageAltMeta) twitterImageAltMeta.setAttribute("content", guestTitle);
 
 			return;
 		}
@@ -150,86 +125,52 @@ const ItemDynamicHead: React.FC<ItemDynamicHeadProps> = ({ itemId }) => {
 
 			// 基本メタデータ
 			if (titleElement) titleElement.textContent = `${itemName}｜OUTPUT QUEST`;
-			if (descriptionMeta)
-				descriptionMeta.setAttribute("content", itemDescription);
+			if (descriptionMeta) descriptionMeta.setAttribute("content", itemDescription);
 
 			// OpenGraph メタデータ
 			if (ogTitleMeta) ogTitleMeta.setAttribute("content", itemOgTitle);
-			if (ogDescriptionMeta)
-				ogDescriptionMeta.setAttribute("content", itemDescription);
+			if (ogDescriptionMeta) ogDescriptionMeta.setAttribute("content", itemDescription);
 			if (ogImageMeta)
-				ogImageMeta.setAttribute(
-					"content",
-					`${window.location.origin}${itemImageUrl}`
-				);
+				ogImageMeta.setAttribute("content", `${window.location.origin}${itemImageUrl}`);
 			if (ogImageAltMeta) ogImageAltMeta.setAttribute("content", itemName);
 
 			// Twitter Card メタデータ
-			if (twitterTitleMeta)
-				twitterTitleMeta.setAttribute("content", itemOgTitle);
-			if (twitterDescriptionMeta)
-				twitterDescriptionMeta.setAttribute("content", itemDescription);
+			if (twitterTitleMeta) twitterTitleMeta.setAttribute("content", itemOgTitle);
+			if (twitterDescriptionMeta) twitterDescriptionMeta.setAttribute("content", itemDescription);
 			if (twitterImageMeta)
-				twitterImageMeta.setAttribute(
-					"content",
-					`${window.location.origin}${itemImageUrl}`
-				);
-			if (twitterImageAltMeta)
-				twitterImageAltMeta.setAttribute("content", itemName);
+				twitterImageMeta.setAttribute("content", `${window.location.origin}${itemImageUrl}`);
+			if (twitterImageAltMeta) twitterImageAltMeta.setAttribute("content", itemName);
 		} else {
 			// 未入手の場合は、未入手のメッセージを表示
 			const unacquiredTitle = "未入手のアイテム";
-			const requiredLevelElement = document.querySelector(
-				'meta[name="requiredLevel"]'
-			);
+			const requiredLevelElement = document.querySelector('meta[name="requiredLevel"]');
 			const requiredLevel = requiredLevelElement
 				? requiredLevelElement.getAttribute("content")
 				: itemId;
 			const unacquiredDescription = `このアイテムはレベル${requiredLevel}で入手できます。冒険を続けて探索しましょう。`;
 			const unacquiredOgTitle = `${unacquiredTitle}｜アイテム詳細`;
-			const unacquiredImageUrl =
-				"/images/items-page/unacquired-icon/treasure-chest.svg";
+			const unacquiredImageUrl = "/images/items-page/unacquired-icon/treasure-chest.svg";
 
 			// 基本メタデータ
-			if (titleElement)
-				titleElement.textContent = `${unacquiredTitle}｜OUTPUT QUEST`;
-			if (descriptionMeta)
-				descriptionMeta.setAttribute("content", unacquiredDescription);
+			if (titleElement) titleElement.textContent = `${unacquiredTitle}｜OUTPUT QUEST`;
+			if (descriptionMeta) descriptionMeta.setAttribute("content", unacquiredDescription);
 
 			// OpenGraph メタデータ
 			if (ogTitleMeta) ogTitleMeta.setAttribute("content", unacquiredOgTitle);
-			if (ogDescriptionMeta)
-				ogDescriptionMeta.setAttribute("content", unacquiredDescription);
+			if (ogDescriptionMeta) ogDescriptionMeta.setAttribute("content", unacquiredDescription);
 			if (ogImageMeta)
-				ogImageMeta.setAttribute(
-					"content",
-					`${window.location.origin}${unacquiredImageUrl}`
-				);
-			if (ogImageAltMeta)
-				ogImageAltMeta.setAttribute("content", unacquiredTitle);
+				ogImageMeta.setAttribute("content", `${window.location.origin}${unacquiredImageUrl}`);
+			if (ogImageAltMeta) ogImageAltMeta.setAttribute("content", unacquiredTitle);
 
 			// Twitter Card メタデータ
-			if (twitterTitleMeta)
-				twitterTitleMeta.setAttribute("content", unacquiredOgTitle);
+			if (twitterTitleMeta) twitterTitleMeta.setAttribute("content", unacquiredOgTitle);
 			if (twitterDescriptionMeta)
 				twitterDescriptionMeta.setAttribute("content", unacquiredDescription);
 			if (twitterImageMeta)
-				twitterImageMeta.setAttribute(
-					"content",
-					`${window.location.origin}${unacquiredImageUrl}`
-				);
-			if (twitterImageAltMeta)
-				twitterImageAltMeta.setAttribute("content", unacquiredTitle);
+				twitterImageMeta.setAttribute("content", `${window.location.origin}${unacquiredImageUrl}`);
+			if (twitterImageAltMeta) twitterImageAltMeta.setAttribute("content", unacquiredTitle);
 		}
-	}, [
-		itemId,
-		heroData.level,
-		isLoading,
-		user,
-		isLoaded,
-		userZennInfo,
-		isZennInfoLoaded,
-	]);
+	}, [itemId, heroData.level, isLoading, user, isLoaded, userZennInfo, isZennInfoLoaded]);
 
 	return null; // 何もレンダリングしない
 };

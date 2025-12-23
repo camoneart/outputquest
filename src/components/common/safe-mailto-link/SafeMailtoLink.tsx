@@ -24,12 +24,7 @@ const SafeMailtoLink: React.FC<SafeMailtoLinkProps> = ({
 	const displayEmail = `${user}@${domain}`;
 
 	return (
-		<Link
-			href={gmailLink}
-			className={className}
-			target="_blank"
-			rel="noopener noreferrer"
-		>
+		<Link href={gmailLink} className={className} target="_blank" rel="noopener noreferrer">
 			{children || displayEmail}
 		</Link>
 	);

@@ -45,9 +45,7 @@ const DashboardContentClient = ({
 			<hr />
 
 			<div className={styles["dashboard-zenn-area"]}>
-				<Dashboard.DashboardPlatformStatsSection
-					dashboardData={dashboardData}
-				/>
+				<Dashboard.DashboardPlatformStatsSection dashboardData={dashboardData} />
 
 				<hr className="block md:hidden" />
 

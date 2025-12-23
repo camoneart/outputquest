@@ -91,18 +91,13 @@ const DashboardHeroSection = ({ dashboardData }: DashboardHeroSectionProps) => {
 	});
 
 	// 遅延付きページ遷移の処理
-	const handleNavigation = (
-		e: React.MouseEvent<HTMLAnchorElement>,
-		path: string
-	) => {
+	const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
 		e.preventDefault();
 		playClickSound(() => router.push(path));
 	};
 
 	// 表示するレベル値を決定（HeroContextから取得）
-	const displayLevel = isLoading
-		? dashboardData.heroData.level
-		: heroData.level;
+	const displayLevel = isLoading ? dashboardData.heroData.level : heroData.level;
 
 	return (
 		<section className={`${styles["hero-info-section"]}`}>
@@ -152,14 +147,8 @@ const DashboardHeroSection = ({ dashboardData }: DashboardHeroSectionProps) => {
 							<div className={`${styles["hero-info-level-display-container"]}`}>
 								<div className={`${styles["hero-info-level-display-box"]}`}>
 									<div className={`${styles["hero-info-level-display"]}`}>
-										<span
-											className={`${styles["hero-info-level-display-text"]}`}
-										>
-											Lv
-										</span>
-										<span
-											className={`${styles["hero-info-level-display-value"]}`}
-										>
+										<span className={`${styles["hero-info-level-display-text"]}`}>Lv</span>
+										<span className={`${styles["hero-info-level-display-value"]}`}>
 											{isLoading ? (
 												<span className={styles["loading-dots"]}>
 													<span className={styles["loading-dot"]}>.</span>
@@ -195,9 +184,7 @@ const DashboardHeroSection = ({ dashboardData }: DashboardHeroSectionProps) => {
 								<span className={`${styles["hero-info-level-progress-text"]}`}>
 									次のレベルまで：
 								</span>
-								<div
-									className={`${styles["hero-info-level-progress-value-info"]}`}
-								>
+								<div className={`${styles["hero-info-level-progress-value-info"]}`}>
 									{isLoading ? (
 										<div className={styles["loading-dots-small"]}>
 											<span className={styles["loading-dot-small"]}>.</span>
@@ -205,22 +192,14 @@ const DashboardHeroSection = ({ dashboardData }: DashboardHeroSectionProps) => {
 											<span className={styles["loading-dot-small"]}>.</span>
 										</div>
 									) : (
-										<em
-											className={`${styles["hero-info-level-progress-value"]}`}
-										>
+										<em className={`${styles["hero-info-level-progress-value"]}`}>
 											{remainingArticles}
 										</em>
 									)}
-									<span
-										className={`${styles["hero-info-level-progress-unit"]}`}
-									>
-										記事
-									</span>
+									<span className={`${styles["hero-info-level-progress-unit"]}`}>記事</span>
 								</div>
 							</div>
-							<div
-								className={`${styles["hero-info-level-progress-gauge-container"]}`}
-							>
+							<div className={`${styles["hero-info-level-progress-gauge-container"]}`}>
 								<Image
 									src="/images/common/exp.svg"
 									alt="EXP"
@@ -229,9 +208,7 @@ const DashboardHeroSection = ({ dashboardData }: DashboardHeroSectionProps) => {
 									priority={true}
 									className={`${styles["hero-info-level-progress-exp-icon"]}`}
 								/>
-								<div
-									className={`${styles["hero-info-level-progress-gauge-box"]}`}
-								>
+								<div className={`${styles["hero-info-level-progress-gauge-box"]}`}>
 									<div
 										className={`${styles["hero-info-level-progress-gauge"]}`}
 										style={{

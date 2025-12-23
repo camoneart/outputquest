@@ -8,9 +8,7 @@ const ConnectionDetailContent = () => {
 			<div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-subgrid row-span-8 lg:row-span-4 gap-10 lg:gap-2 items-start h-full">
 				{/* ログインユーザー */}
 				<div className="grid grid-cols-1 grid-rows-subgrid row-span-4 gap-2.5">
-					<div
-						className={`${styles["connection-detail-content-box"]} bg-[#005193]`}
-					>
+					<div className={`${styles["connection-detail-content-box"]} bg-[#005193]`}>
 						<div className="grid grid-cols-1 gap-2 place-items-center">
 							<div className="w-full grid gap-3">
 								<h2 className="text-base md:text-lg font-bold w-full text-center pb-[8px] border-b border-white [filter:drop-shadow(1px_1px_0px_#000)]">
@@ -27,9 +25,7 @@ const ConnectionDetailContent = () => {
 							<em className="text-sm md:text-base not-italic font-bold text-[#ffc400] [text-shadow:1px_1px_0px_#000] tracking-wider">
 								【こんな方にオススメ】
 							</em>
-							<ul
-								className={`${styles["connection-detail-list"]} [text-shadow:1px_1px_0px_#000]`}
-							>
+							<ul className={`${styles["connection-detail-list"]} [text-shadow:1px_1px_0px_#000]`}>
 								<li
 									className={`${styles["connection-detail-list-item"]} text-sm leading-[1.75] w-full`}
 								>
@@ -66,9 +62,7 @@ const ConnectionDetailContent = () => {
 							<em className="text-sm md:text-base not-italic font-bold text-[#ff1717] [text-shadow:1px_1px_0px_#000] tracking-wider">
 								【機能制限】
 							</em>
-							<ul
-								className={`${styles["connection-detail-list"]} [text-shadow:1px_1px_0px_#000]`}
-							>
+							<ul className={`${styles["connection-detail-list"]} [text-shadow:1px_1px_0px_#000]`}>
 								<li
 									className={`${styles["connection-detail-list-item"]} text-sm leading-[1.75] w-full`}
 								>
@@ -84,9 +78,7 @@ const ConnectionDetailContent = () => {
 				</div>
 				{/* ゲストユーザー */}
 				<div className="grid grid-cols-1 grid-rows-subgrid row-span-4 gap-2.5">
-					<div
-						className={`${styles["connection-detail-content-box"]} bg-[#333]`}
-					>
+					<div className={`${styles["connection-detail-content-box"]} bg-[#333]`}>
 						<div className="grid grid-cols-1 gap-2 place-items-center">
 							<div className="w-full grid gap-3">
 								<h2 className="text-base md:text-lg font-bold w-full text-center pb-[8px] border-b border-white [filter:drop-shadow(1px_1px_0px_#000)]">
@@ -105,9 +97,7 @@ const ConnectionDetailContent = () => {
 							<em className="text-sm md:text-base not-italic font-bold text-[#ffc400] [text-shadow:1px_1px_0px_#000] tracking-wider">
 								【こんな方にオススメ】
 							</em>
-							<ul
-								className={`${styles["connection-detail-list"]} [text-shadow:1px_1px_0px_#000]`}
-							>
+							<ul className={`${styles["connection-detail-list"]} [text-shadow:1px_1px_0px_#000]`}>
 								<li
 									className={`${styles["connection-detail-list-item"]} text-sm leading-[1.75] w-full`}
 								>
@@ -134,9 +124,7 @@ const ConnectionDetailContent = () => {
 							<em className="text-sm md:text-base not-italic font-bold text-[#ff1717] [text-shadow:1px_1px_0px_#000] tracking-wider">
 								【機能制限】
 							</em>
-							<ul
-								className={`${styles["connection-detail-list"]} [text-shadow:1px_1px_0px_#000]`}
-							>
+							<ul className={`${styles["connection-detail-list"]} [text-shadow:1px_1px_0px_#000]`}>
 								<li
 									className={`${styles["connection-detail-list-item"]} text-sm leading-[1.75] w-full`}
 								>
@@ -177,10 +165,7 @@ const ConnectionDetailContent = () => {
 				</div>
 			</div>
 			<div className="mt-[20px] lg:mt-2 grid place-items-center">
-				<Link
-					href="/connection"
-					className={styles["connection-detail-back-link"]}
-				>
+				<Link href="/connection" className={styles["connection-detail-back-link"]}>
 					<Image
 						src="/images/arrow/arrow-icon.svg"
 						alt="連携ページに戻る"
@@ -188,9 +173,7 @@ const ConnectionDetailContent = () => {
 						height={18}
 						className={styles["connection-detail-back-link-icon"]}
 					/>
-					<span className={styles["connection-detail-back-link-text"]}>
-						連携ページに戻る
-					</span>
+					<span className={styles["connection-detail-back-link-text"]}>連携ページに戻る</span>
 				</Link>
 			</div>
 		</div>

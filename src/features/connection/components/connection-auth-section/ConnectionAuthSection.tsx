@@ -16,9 +16,7 @@ const ConnectionAuthSection: React.FC<ConnectionAuthSectionProps> = ({
 	updateUserProfile,
 }) => {
 	return (
-		<div
-			className={`px-4 pt-3 pb-6 grid gap-8 ${styles["connection-container"]}`}
-		>
+		<div className={`px-4 pt-3 pb-6 grid gap-8 ${styles["connection-container"]}`}>
 			<div className={`${styles["auth-content"]}`}>
 				<AuthButton />
 				<div className="grid grid-cols-1 gap-[32px]">
@@ -40,10 +38,7 @@ const ConnectionAuthSection: React.FC<ConnectionAuthSectionProps> = ({
 							<em className="not-italic">※ ログイン無しでも、</em>
 							<span>ご利用いただけます。</span>
 						</p>
-						<Link
-							href="/connection-detail"
-							className={styles["connection-detail-link"]}
-						>
+						<Link href="/connection-detail" className={styles["connection-detail-link"]}>
 							詳細はこちら
 						</Link>
 					</div>
@@ -79,11 +74,7 @@ const ConnectionAuthSection: React.FC<ConnectionAuthSectionProps> = ({
 						onClick={() => updateUserProfile()}
 						className={`${styles["connect-button"]} ${
 							!loading && zennUsername ? styles["active"] : ""
-						} ${
-							loading || !zennUsername
-								? "opacity-50 cursor-not-allowed"
-								: "cursor-pointer"
-						}`}
+						} ${loading || !zennUsername ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
 						disabled={loading || !zennUsername}
 					>
 						<div className={`${styles["connect-button-content"]}`}>

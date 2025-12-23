@@ -6,9 +6,9 @@ interface ConnectionNavigationToAdventureProps {
 	onNavigate: (e: React.MouseEvent<HTMLAnchorElement>, path: string) => void;
 }
 
-const ConnectionNavigationToAdventure: React.FC<
-	ConnectionNavigationToAdventureProps
-> = ({ onNavigate }) => {
+const ConnectionNavigationToAdventure: React.FC<ConnectionNavigationToAdventureProps> = ({
+	onNavigate,
+}) => {
 	return (
 		<div className={styles["adventure-start-link-container"]}>
 			<div className={styles["adventure-start-link-box"]}>
@@ -24,9 +24,7 @@ const ConnectionNavigationToAdventure: React.FC<
 						height={17}
 						className={styles["adventure-start-link-icon"]}
 					/>
-					<span className={styles["adventure-start-link-text"]}>
-						冒険をはじめる
-					</span>
+					<span className={styles["adventure-start-link-text"]}>冒険をはじめる</span>
 				</Link>
 			</div>
 		</div>

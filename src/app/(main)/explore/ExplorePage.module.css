@@ -1,5 +1,5 @@
 .title-bg {
-  background-color: var(--color-primary-dark-gray);
+	background-color: var(--color-primary-dark-gray);
 	width: calc(100% - 62px);
 	height: 20px;
 	position: absolute;

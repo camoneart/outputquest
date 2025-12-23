@@ -1,4 +1,4 @@
 export interface TitleNameData {
-  id: number;
-  name: string;
+	id: number;
+	name: string;
 }

@@ -8,8 +8,8 @@ import DashboardLatestPartyMemberSection from "./dashboard-latest-party-member-s
 // DashboardContent → Server Component（直接importして使用）
 
 export {
-  DashboardHeroSection,
-  DashboardPlatformStatsSection,
-  DashboardLatestItemSection,
-  DashboardLatestPartyMemberSection,
+	DashboardHeroSection,
+	DashboardPlatformStatsSection,
+	DashboardLatestItemSection,
+	DashboardLatestPartyMemberSection,
 };

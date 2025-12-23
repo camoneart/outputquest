@@ -8,16 +8,16 @@ import DashboardSkeleton from "@/features/dashboard/components/dashboard-skeleto
 export const metadata: Metadata = getPageMetadata("dashboard");
 
 const DashboardPage = () => {
-  return (
-    <>
-      <h1 className={`${styles["dashboard-title"]}`}>ダッシュボード</h1>
-      <div className={styles["dashboard-content-wrapper"]}>
-        <Suspense fallback={<DashboardSkeleton />}>
-          <DashboardContent />
-        </Suspense>
-      </div>
-    </>
-  );
+	return (
+		<>
+			<h1 className={`${styles["dashboard-title"]}`}>ダッシュボード</h1>
+			<div className={styles["dashboard-content-wrapper"]}>
+				<Suspense fallback={<DashboardSkeleton />}>
+					<DashboardContent />
+				</Suspense>
+			</div>
+		</>
+	);
 };
 
 export default DashboardPage;

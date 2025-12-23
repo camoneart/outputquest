@@ -9,10 +9,7 @@ interface HomeAnimatedTitleProps {
 	duration?: number;
 }
 
-const HomeAnimatedTitle: FC<HomeAnimatedTitleProps> = ({
-	delay = 0.2,
-	duration = 6,
-}) => {
+const HomeAnimatedTitle: FC<HomeAnimatedTitleProps> = ({ delay = 0.2, duration = 6 }) => {
 	return (
 		<motion.div
 			className={`${styles["title-container"]}`}

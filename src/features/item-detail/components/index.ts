@@ -5,9 +5,9 @@ import ItemDetailClient from "./item-detail-client/ItemDetailClient";
 import ItemDetailSkeleton from "./item-detail-skeleton/ItemDetailSkeleton";
 
 export {
-  ItemDetailRarityStar,
-  ItemDetailFooter,
-  ItemDynamicHead,
-  ItemDetailClient,
-  ItemDetailSkeleton,
+	ItemDetailRarityStar,
+	ItemDetailFooter,
+	ItemDynamicHead,
+	ItemDetailClient,
+	ItemDetailSkeleton,
 };

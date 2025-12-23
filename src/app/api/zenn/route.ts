@@ -77,9 +77,7 @@ const fetchWithTimeoutAndRetry = async (
 				headers: {
 					"User-Agent": "Mozilla/5.0 (compatible; ZennBot/1.0)",
 					"Cache-Control":
-						bustCache || attempt > 1
-							? "no-cache, no-store, must-revalidate"
-							: "public, max-age=60",
+						bustCache || attempt > 1 ? "no-cache, no-store, must-revalidate" : "public, max-age=60",
 					Pragma: bustCache || attempt > 1 ? "no-cache" : "cache",
 				},
 			});
@@ -139,9 +137,7 @@ export async function GET(request: Request) {
 	}
 
 	try {
-		const apiUrl = `https://zenn.dev/api/articles?username=${encodeURIComponent(
-			username
-		)}`;
+		const apiUrl = `https://zenn.dev/api/articles?username=${encodeURIComponent(username)}`;
 
 		const response = await fetchWithTimeoutAndRetry(apiUrl, 3, 8000, bustCache);
 
@@ -206,14 +202,11 @@ export async function GET(request: Request) {
 
 		// 記事を最新順に並べる（高速化のためsortを最適化）
 		const sortedArticles = data.articles.sort((a, b) => {
-			return (
-				new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
-			);
+			return new Date(b.published_at).getTime() - new Date(a.published_at).getTime();
 		});
 
 		// 制限があれば適用、なければ全件使用
-		const limitedArticles =
-			hasLimit && limit > 0 ? sortedArticles.slice(0, limit) : sortedArticles;
+		const limitedArticles = hasLimit && limit > 0 ? sortedArticles.slice(0, limit) : sortedArticles;
 
 		// 各記事の詳細情報を変換（非同期処理を削除してパフォーマンス向上）
 		const articles = limitedArticles.map(transformZennArticle);

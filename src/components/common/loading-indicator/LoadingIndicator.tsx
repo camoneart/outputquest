@@ -16,11 +16,7 @@ interface LoadingIndicatorProps {
  * @param className - 追加のCSSクラス名
  * @param fontSize - フォントサイズ（例: "1rem", "16px"）
  */
-const LoadingIndicator = ({
-	text,
-	className = "",
-	fontSize,
-}: LoadingIndicatorProps) => {
+const LoadingIndicator = ({ text, className = "", fontSize }: LoadingIndicatorProps) => {
 	return (
 		<div
 			className={`${styles["loading-indicator"]} ${className}`}

@@ -1,134 +1,133 @@
 .zenn-info-container {
-  min-width: 450px;
-  width: max-content;
-  max-width: 100%;
-  margin-inline: auto;
-  margin-block-start: 10px;
-  border: 8px dashed var(--color-primary-brown-light);
-  background-color: var(--color-primary-brown-dark);
-  border-radius: var(--border-radius-small);
-  padding-inline: 5px;
-  padding-block: 5px;
+	min-width: 450px;
+	width: max-content;
+	max-width: 100%;
+	margin-inline: auto;
+	margin-block-start: 10px;
+	border: 8px dashed var(--color-primary-brown-light);
+	background-color: var(--color-primary-brown-dark);
+	border-radius: var(--border-radius-small);
+	padding-inline: 5px;
+	padding-block: 5px;
 
-  @media (width < 768px) {
-    min-width: 250px;
-  }
+	@media (width < 768px) {
+		min-width: 250px;
+	}
 }
 
 .zenn-info-content {
-  display: block grid;
-  place-items: center;
-  gap: 20px;
-  border: 2px solid var(--color-primary-brown-light);
-  background-color: var(--color-primary-brown);
-  padding-inline: 20px;
-  padding-block: 15px 25px;
+	display: block grid;
+	place-items: center;
+	gap: 20px;
+	border: 2px solid var(--color-primary-brown-light);
+	background-color: var(--color-primary-brown);
+	padding-inline: 20px;
+	padding-block: 15px 25px;
 
-  @media (width < 768px) {
-    gap: 25px;
-  }
+	@media (width < 768px) {
+		gap: 25px;
+	}
 }
 
 .zenn-info-title {
-  display: block flex;
-  align-items: center;
-  gap: 6px;
-  width: fit-content;
-  font-size: 0.875rem;
-  font-weight: var(--font-weight-normal);
-  line-height: var(--leading-x-tight);
-  background-color: var(--color-primary-dark-gray);
-  border: 1.5px solid var(--color-primary-white);
-  border-radius: var(--border-radius-small);
-  padding-block: 7px 8px;
-  padding-inline: 15px;
+	display: block flex;
+	align-items: center;
+	gap: 6px;
+	width: fit-content;
+	font-size: 0.875rem;
+	font-weight: var(--font-weight-normal);
+	line-height: var(--leading-x-tight);
+	background-color: var(--color-primary-dark-gray);
+	border: 1.5px solid var(--color-primary-white);
+	border-radius: var(--border-radius-small);
+	padding-block: 7px 8px;
+	padding-inline: 15px;
 
-  @media (width < 768px) {
-    padding-inline: 35px;
-  }
+	@media (width < 768px) {
+		padding-inline: 35px;
+	}
 }
 
 .zenn-logo-sm {
-  width: 16px;
-  height: 16px;
-  object-fit: contain;
-  object-position: center;
-  filter: drop-shadow(0 0 0.5px var(--color-primary-white));
+	width: 16px;
+	height: 16px;
+	object-fit: contain;
+	object-position: center;
+	filter: drop-shadow(0 0 0.5px var(--color-primary-white));
 }
 
 .user-info-list {
-  width: fit-content;
-  display: block flex;
-  gap: 3px;
+	width: fit-content;
+	display: block flex;
+	gap: 3px;
 
-  @media (width < 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
+	@media (width < 768px) {
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .user-info-title {
-  display: block flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 1rem;
-  font-weight: var(--font-weight-bold);
-  line-height: var(--leading-x-tight);
+	display: block flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 1rem;
+	font-weight: var(--font-weight-bold);
+	line-height: var(--leading-x-tight);
 }
 
 .user-info-title-text {
-  padding-block-end: 2px;
-  text-shadow: 1.5px 1.5px 0px var(--color-primary-black);
+	padding-block-end: 2px;
+	text-shadow: 1.5px 1.5px 0px var(--color-primary-black);
 }
 
 .user-info-icon {
-  object-fit: contain;
-  object-position: center;
-  filter: drop-shadow(0 0 1px var(--color-primary-white));
+	object-fit: contain;
+	object-position: center;
+	filter: drop-shadow(0 0 1px var(--color-primary-white));
 }
 
 .user-info-description {
-  font-size: 1rem;
-  font-weight: var(--font-weight-bold);
-  line-height: var(--leading-x-tight);
-  letter-spacing: 0.05em;
-  text-shadow: 1.5px 1.5px 0px var(--color-primary-black);
+	font-size: 1rem;
+	font-weight: var(--font-weight-bold);
+	line-height: var(--leading-x-tight);
+	letter-spacing: 0.05em;
+	text-shadow: 1.5px 1.5px 0px var(--color-primary-black);
 }
 
 .article-count-list {
-  display: block flex;
-  gap: 3px;
+	display: block flex;
+	gap: 3px;
 
-  @media (width < 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
+	@media (width < 768px) {
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .article-count-title {
-  display: block flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 1rem;
-  font-weight: var(--font-weight-bold);
-  line-height: var(--leading-x-tight);
+	display: block flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 1rem;
+	font-weight: var(--font-weight-bold);
+	line-height: var(--leading-x-tight);
 }
 
 .article-count-title-text {
-  padding-block-end: 2px;
-  text-shadow: 1.5px 1.5px 0px var(--color-primary-black);
+	padding-block-end: 2px;
+	text-shadow: 1.5px 1.5px 0px var(--color-primary-black);
 }
 
 .article-count-icon {
-  object-fit: contain;
-  object-position: center;
-  filter: drop-shadow(0 0 1px var(--color-primary-white));
+	object-fit: contain;
+	object-position: center;
+	filter: drop-shadow(0 0 1px var(--color-primary-white));
 }
 
 .article-count-description {
-  font-size: 1rem;
-  font-weight: var(--font-weight-bold);
-  line-height: var(--leading-x-tight);
-  text-shadow: 1.5px 1.5px 0px var(--color-primary-black);
+	font-size: 1rem;
+	font-weight: var(--font-weight-bold);
+	line-height: var(--leading-x-tight);
+	text-shadow: 1.5px 1.5px 0px var(--color-primary-black);
 }
-

@@ -37,11 +37,7 @@ async function getCachedZennArticles(
 		});
 
 		// 全件取得でない場合、かつlimit値が指定されている場合のみ追加
-		if (
-			!options.fetchAll &&
-			options.limit !== undefined &&
-			options.limit > 0
-		) {
+		if (!options.fetchAll && options.limit !== undefined && options.limit > 0) {
 			params.append("limit", options.limit.toString());
 		}
 

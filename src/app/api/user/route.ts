@@ -182,9 +182,8 @@ export async function POST(request: Request) {
 		const user = await retryOperation(async () => {
 			// Clerkからメールアドレスを取得（upsertのために先に取得）
 			const emailFromClerk =
-				clerkUser.emailAddresses.find(
-					(email) => email.id === clerkUser.primaryEmailAddressId
-				)?.emailAddress || clerkUser.emailAddresses[0]?.emailAddress;
+				clerkUser.emailAddresses.find((email) => email.id === clerkUser.primaryEmailAddressId)
+					?.emailAddress || clerkUser.emailAddresses[0]?.emailAddress;
 
 			if (!emailFromClerk) {
 				// emailFromClerk が undefined の場合、エラーを投げるか、
@@ -228,9 +227,8 @@ export async function POST(request: Request) {
 						displayName:
 							reqDisplayName && reqDisplayName.trim() !== ""
 								? reqDisplayName
-								: `${clerkUser.firstName || ""} ${
-										clerkUser.lastName || ""
-									}`.trim() || usernameForCreate,
+								: `${clerkUser.firstName || ""} ${clerkUser.lastName || ""}`.trim() ||
+									usernameForCreate,
 						profileImage:
 							reqProfileImage && reqProfileImage.trim() !== ""
 								? reqProfileImage
@@ -261,9 +259,8 @@ export async function POST(request: Request) {
 						displayName:
 							reqDisplayName && reqDisplayName.trim() !== ""
 								? reqDisplayName
-								: `${clerkUser.firstName || ""} ${
-										clerkUser.lastName || ""
-									}`.trim() || usernameForCreate,
+								: `${clerkUser.firstName || ""} ${clerkUser.lastName || ""}`.trim() ||
+									usernameForCreate,
 						profileImage:
 							reqProfileImage && reqProfileImage.trim() !== ""
 								? reqProfileImage
@@ -323,8 +320,7 @@ export async function POST(request: Request) {
 		return NextResponse.json(
 			{
 				success: false,
-				error:
-					"ユーザー情報の更新に失敗しました。時間を空けて再度お試しください。",
+				error: "ユーザー情報の更新に失敗しました。時間を空けて再度お試しください。",
 			},
 			{
 				status: 500,
@@ -400,12 +396,7 @@ export async function PUT(request: Request) {
 		console.error("記事数更新エラー:", error);
 
 		// ユーザーが存在しない場合の特別なハンドリング
-		if (
-			error &&
-			typeof error === "object" &&
-			"code" in error &&
-			error.code === "P2025"
-		) {
+		if (error && typeof error === "object" && "code" in error && error.code === "P2025") {
 			return NextResponse.json(
 				{ success: false, error: "ユーザーが見つかりません" },
 				{

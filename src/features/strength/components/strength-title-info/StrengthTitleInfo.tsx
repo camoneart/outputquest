@@ -164,10 +164,7 @@ const StrengthTitleInfo = () => {
 		return styles[`strength-title-detail-content-lv${requiredLevel}`];
 	};
 
-	const handleNavigation = (
-		e: React.MouseEvent<HTMLAnchorElement>,
-		path: string
-	) => {
+	const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
 		e.preventDefault();
 		playClickSound(() => router.push(path));
 	};
@@ -180,16 +177,12 @@ const StrengthTitleInfo = () => {
 					<div className={styles["strength-title-detail-bg"]}>
 						<div className={styles["strength-title-detail"]}>
 							<div
-								className={`${
-									styles["strength-title-detail-content"]
-								} ${getCurrentTitleClass()}`}
+								className={`${styles["strength-title-detail-content"]} ${getCurrentTitleClass()}`}
 							>
 								{isLoadingTitle || !isReady ? (
 									<LoadingIndicator text="読み込み中" fontSize="1.125rem" />
 								) : (
-									<h3 className={styles["strength-title-detail-text"]}>
-										{getLatestTitle()}
-									</h3>
+									<h3 className={styles["strength-title-detail-text"]}>{getLatestTitle()}</h3>
 								)}
 							</div>
 						</div>

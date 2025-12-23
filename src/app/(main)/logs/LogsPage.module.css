@@ -1,5 +1,5 @@
 .title-bg {
-  background-color: var(--color-primary-dark-gray);
+	background-color: var(--color-primary-dark-gray);
 	width: calc(100% - 62px);
 	height: 20px;
 	position: absolute;
@@ -10,62 +10,62 @@
 }
 
 .logs-page-title {
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.5rem;
-  line-height: var(--leading-none);
-  font-weight: var(--font-weight-x-bold);
-  letter-spacing: 0.025em;
-  color: var(--color-primary-white);
-  background-color: var(--color-primary-dark-gray);
-  padding-block: 0 10px;
-  padding-inline: 10px;
-  z-index: 10;
+	position: absolute;
+	top: 8px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 1.5rem;
+	line-height: var(--leading-none);
+	font-weight: var(--font-weight-x-bold);
+	letter-spacing: 0.025em;
+	color: var(--color-primary-white);
+	background-color: var(--color-primary-dark-gray);
+	padding-block: 0 10px;
+	padding-inline: 10px;
+	z-index: 10;
 
-  @media (width < 768px) {
-    font-size: 1rem;
-    line-height: var(--leading-x-tight);
-  }
+	@media (width < 768px) {
+		font-size: 1rem;
+		line-height: var(--leading-x-tight);
+	}
 }
 
 .logs-page-container {
-  height: 100%;
-  display: block grid;
-  grid-template-rows: auto auto auto auto auto 1fr;
-  grid-template-areas:
-    "header"
-    "line-first"
-    "list"
-    "line-second"
-    "footer";
-  border: var(--border-large);
-  border-radius: var(--border-radius-small);
-  padding-block: 40px 25px;
-  padding-inline: 25px;
-  color: var(--color-primary-white);
+	height: 100%;
+	display: block grid;
+	grid-template-rows: auto auto auto auto auto 1fr;
+	grid-template-areas:
+		"header"
+		"line-first"
+		"list"
+		"line-second"
+		"footer";
+	border: var(--border-large);
+	border-radius: var(--border-radius-small);
+	padding-block: 40px 25px;
+	padding-inline: 25px;
+	color: var(--color-primary-white);
 
-  @media (width < 1024px) {
-    padding-inline: 0;
-    overflow-y: scroll;
-  }
+	@media (width < 1024px) {
+		padding-inline: 0;
+		overflow-y: scroll;
+	}
 }
 
 .logs-page-line-first {
-  grid-area: line-first;
+	grid-area: line-first;
 
-  @media (width < 1024px) {
-    width: calc(100% - 40px);
-    margin-inline: auto;
-  }
+	@media (width < 1024px) {
+		width: calc(100% - 40px);
+		margin-inline: auto;
+	}
 }
 
 .logs-page-line-second {
-  grid-area: line-second;
+	grid-area: line-second;
 
-  @media (width < 1024px) {
-    width: calc(100% - 40px);
-    margin-inline: auto;
-  }
+	@media (width < 1024px) {
+		width: calc(100% - 40px);
+		margin-inline: auto;
+	}
 }

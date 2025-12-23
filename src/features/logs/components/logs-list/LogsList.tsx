@@ -7,42 +7,40 @@ import LoadingIndicator from "@/components/common/loading-indicator/LoadingIndic
 const LOGS_STORAGE_KEY = "adventure_logs";
 
 const LogsList = () => {
-  const [logs, setLogs] = useState<string[]>([]);
-  const [loading, setLoading] = useState(true);
+	const [logs, setLogs] = useState<string[]>([]);
+	const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // ローカルストレージからログを取得
-    const savedLogs = localStorage.getItem(LOGS_STORAGE_KEY);
-    if (savedLogs) {
-      // 取得した文字列を配列に変換
-      setLogs(JSON.parse(savedLogs));
-    }
-    setLoading(false);
-  }, []);
+	useEffect(() => {
+		// ローカルストレージからログを取得
+		const savedLogs = localStorage.getItem(LOGS_STORAGE_KEY);
+		if (savedLogs) {
+			// 取得した文字列を配列に変換
+			setLogs(JSON.parse(savedLogs));
+		}
+		setLoading(false);
+	}, []);
 
-  return (
-    <ul className={styles["logs-page-list"]}>
-      {loading ? (
-        <li className={styles["logs-page-list-item"]}>
-          <div className={styles["logs-page-list-item-loading-text"]}>
-            <LoadingIndicator text="読み込み中" fontSize="0.875rem" />
-          </div>
-        </li>
-      ) : logs.length === 0 ? (
-        <li className={styles["logs-page-list-item"]}>
-          <p className={styles["logs-page-list-item-text"]}>
-            まだ冒険ログがありません。
-          </p>
-        </li>
-      ) : (
-        logs.map((log, index) => (
-          <li key={index} className={styles["logs-page-list-item"]}>
-            <p className={styles["logs-page-list-item-text"]}>{log}</p>
-          </li>
-        ))
-      )}
-    </ul>
-  );
+	return (
+		<ul className={styles["logs-page-list"]}>
+			{loading ? (
+				<li className={styles["logs-page-list-item"]}>
+					<div className={styles["logs-page-list-item-loading-text"]}>
+						<LoadingIndicator text="読み込み中" fontSize="0.875rem" />
+					</div>
+				</li>
+			) : logs.length === 0 ? (
+				<li className={styles["logs-page-list-item"]}>
+					<p className={styles["logs-page-list-item-text"]}>まだ冒険ログがありません。</p>
+				</li>
+			) : (
+				logs.map((log, index) => (
+					<li key={index} className={styles["logs-page-list-item"]}>
+						<p className={styles["logs-page-list-item-text"]}>{log}</p>
+					</li>
+				))
+			)}
+		</ul>
+	);
 };
 
 export default LogsList;

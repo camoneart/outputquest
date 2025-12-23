@@ -23,10 +23,7 @@ const PartyMemberCardListClient: React.FC<PartyMemberCardListClientProps> = ({
 		delay: 190,
 	});
 
-	const handleNavigation = (
-		e: React.MouseEvent<HTMLAnchorElement>,
-		path: string
-	) => {
+	const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
 		e.preventDefault();
 		playClickSound(() => router.push(path));
 	};
@@ -34,10 +31,7 @@ const PartyMemberCardListClient: React.FC<PartyMemberCardListClientProps> = ({
 	return (
 		<div className={styles["party-grid"]}>
 			{members.map((partyMember) => (
-				<div
-					className={styles["party-member-card-content"]}
-					key={partyMember.id}
-				>
+				<div className={styles["party-member-card-content"]} key={partyMember.id}>
 					<Link
 						href={`/party/${partyMember.id}`}
 						className={styles["party-member-card"]}

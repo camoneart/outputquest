@@ -103,24 +103,17 @@ const DashboardLatestItemSection: React.FC = () => {
 
 	const isLoadingState = isHeroLoading || isLoadingItem || isUserLoading;
 
-	const itemName =
-		itemId !== null ? customItemNames[itemId] || "不明なアイテム" : "";
-	const itemDescription =
-		itemId !== null ? customItemDescriptions[itemId] || "詳細不明" : "";
+	const itemName = itemId !== null ? customItemNames[itemId] || "不明なアイテム" : "";
+	const itemDescription = itemId !== null ? customItemDescriptions[itemId] || "詳細不明" : "";
 
-	const handleNavigation = (
-		e: React.MouseEvent<HTMLAnchorElement>,
-		path: string
-	) => {
+	const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
 		e.preventDefault();
 		playClickSound(() => router.push(path));
 	};
 
 	return (
 		<section className={`${styles["last-item-section"]}`}>
-			<h2 className={`${styles["last-item-title"]}`}>
-				~ 最近入手したアイテム ~
-			</h2>
+			<h2 className={`${styles["last-item-title"]}`}>~ 最近入手したアイテム ~</h2>
 			<div className={`${styles["last-item-container"]}`}>
 				{isLoadingState ? (
 					<DashboardLatestItemSkeleton />
@@ -132,9 +125,7 @@ const DashboardLatestItemSection: React.FC = () => {
 					</div>
 				) : itemId === null ? (
 					<div className={styles["last-item-null-container"]}>
-						<p className={styles["last-item-null-message"]}>
-							まだ入手したアイテムはありません。
-						</p>
+						<p className={styles["last-item-null-message"]}>まだ入手したアイテムはありません。</p>
 					</div>
 				) : (
 					<div className={`${styles["last-item-box"]}`}>
@@ -156,9 +147,7 @@ const DashboardLatestItemSection: React.FC = () => {
 							</div>
 							<div className={`${styles["last-item-info"]}`}>
 								<h3 className={`${styles["last-item-name"]}`}>{itemName}</h3>
-								<p className={`${styles["last-item-description"]}`}>
-									{itemDescription}
-								</p>
+								<p className={`${styles["last-item-description"]}`}>{itemDescription}</p>
 							</div>
 						</Link>
 					</div>

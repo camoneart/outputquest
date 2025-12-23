@@ -37,13 +37,7 @@ const CATEGORY_DISPLAY = {
 	idea: "IDEA",
 };
 
-const PostCard = ({
-	title,
-	url,
-	category,
-	publishedAt,
-	platformType,
-}: PostCardProps) => {
+const PostCard = ({ title, url, category, publishedAt, platformType }: PostCardProps) => {
 	const platformInfo = platformType ? PLATFORM_INFO[platformType] : null;
 
 	const { playClickSound } = useClickSound({
@@ -74,8 +68,7 @@ const PostCard = ({
 					{category && (
 						<div className={styles["post-card__category-box"]}>
 							<span className={`${styles["post-card__category"]}`}>
-								{CATEGORY_DISPLAY[category as keyof typeof CATEGORY_DISPLAY] ||
-									category}
+								{CATEGORY_DISPLAY[category as keyof typeof CATEGORY_DISPLAY] || category}
 							</span>
 						</div>
 					)}
@@ -83,9 +76,7 @@ const PostCard = ({
 					{/* 投稿日表示 */}
 					{publishedAt && (
 						<div className={`${styles["post-card__date-box"]}`}>
-							<span className={`${styles["post-card__date"]}`}>
-								{formatDate(publishedAt)}
-							</span>
+							<span className={`${styles["post-card__date"]}`}>{formatDate(publishedAt)}</span>
 						</div>
 					)}
 				</div>
@@ -100,9 +91,7 @@ const PostCard = ({
 								height={14}
 								className={`${styles["favicon"]}`}
 							/>
-							<p className={`${styles["post-card__site-name-text"]}`}>
-								{platformInfo.name}
-							</p>
+							<p className={`${styles["post-card__site-name-text"]}`}>{platformInfo.name}</p>
 						</>
 					)}
 				</div>

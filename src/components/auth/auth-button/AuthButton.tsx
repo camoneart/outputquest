@@ -33,10 +33,7 @@ const AuthButton = () => {
 	return (
 		<div className="flex items-center justify-center w-full">
 			<SignInButton mode="modal" forceRedirectUrl={redirectUrl}>
-				<button
-					className={`${styles["login-btn"]}`}
-					onClick={() => playClickSound()}
-				>
+				<button className={`${styles["login-btn"]}`} onClick={() => playClickSound()}>
 					<span className={`${styles["login-btn-text"]}`}>ログイン</span>
 				</button>
 			</SignInButton>

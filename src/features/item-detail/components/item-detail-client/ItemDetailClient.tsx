@@ -74,11 +74,7 @@ const ItemDetailClient: React.FC<ItemDetailClientProps> = ({ itemId }) => {
 				setCurrentLevel(articles.length);
 			} catch (err) {
 				console.error("レベル取得エラー:", err);
-				setLevelError(
-					err instanceof Error
-						? err.message
-						: "レベル取得中にエラーが発生しました。"
-				);
+				setLevelError(err instanceof Error ? err.message : "レベル取得中にエラーが発生しました。");
 			} finally {
 				setIsZennInfoLoaded(true);
 			}
@@ -94,8 +90,7 @@ const ItemDetailClient: React.FC<ItemDetailClientProps> = ({ itemId }) => {
 	}
 
 	// ゲストユーザーの場合は常に未入手状態として表示
-	const isAcquired =
-		!isGuestUser && isAcquiredByHeroLevel(itemId, currentLevel);
+	const isAcquired = !isGuestUser && isAcquiredByHeroLevel(itemId, currentLevel);
 
 	// アイテムを入手するために必要なレベル
 	const requiredLevel = heroLevelAndItemRelation[itemId] || itemId;
@@ -104,9 +99,7 @@ const ItemDetailClient: React.FC<ItemDetailClientProps> = ({ itemId }) => {
 	const levelDifference = Math.max(0, requiredLevel - currentLevel);
 
 	// アイテムの名前と説明文を取得
-	const itemName = isAcquired
-		? customItemNames[itemId] || `アイテム${itemId}`
-		: null;
+	const itemName = isAcquired ? customItemNames[itemId] || `アイテム${itemId}` : null;
 	const itemDescription = isAcquired
 		? customItemDescriptions[itemId] || `これは${itemName}の説明です。`
 		: null;
@@ -154,22 +147,15 @@ const ItemDetailClient: React.FC<ItemDetailClientProps> = ({ itemId }) => {
 						{isAcquired ? (
 							<>
 								<div className={styles["item-detail-description-box"]}>
-									<p className={styles["item-detail-description"]}>
-										{itemDescription}
-									</p>
+									<p className={styles["item-detail-description"]}>{itemDescription}</p>
 								</div>
 
 								<div className={styles["item-detail-rarity-box"]}>
-									<h3 className={styles["item-detail-rarity-title"]}>
-										レア度
-									</h3>
+									<h3 className={styles["item-detail-rarity-title"]}>レア度</h3>
 									<div className={styles["item-detail-rarity-stars"]}>
-										{rarityType === "normal" &&
-											itemDetail.ItemDetailRarityStar.normal}
-										{rarityType === "rare" &&
-											itemDetail.ItemDetailRarityStar.rare}
-										{rarityType === "superRare" &&
-											itemDetail.ItemDetailRarityStar.superRare}
+										{rarityType === "normal" && itemDetail.ItemDetailRarityStar.normal}
+										{rarityType === "rare" && itemDetail.ItemDetailRarityStar.rare}
+										{rarityType === "superRare" && itemDetail.ItemDetailRarityStar.superRare}
 									</div>
 								</div>
 							</>

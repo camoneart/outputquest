@@ -3,9 +3,4 @@ import StrengthEquipmentList from "./strength-equipment-list/StrengthEquipmentLi
 import StrengthLogInfo from "./strength-log-info/StrengthLogInfo";
 import StrengthTitleInfo from "./strength-title-info/StrengthTitleInfo";
 
-export {
-	StrengthEquipmentInfo,
-	StrengthEquipmentList,
-	StrengthLogInfo,
-	StrengthTitleInfo,
-};
+export { StrengthEquipmentInfo, StrengthEquipmentList, StrengthLogInfo, StrengthTitleInfo };

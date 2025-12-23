@@ -30,17 +30,12 @@ export const useZennSync = ({
 	const [loading, setLoading] = useState(false);
 
 	// 楽観的 UI 用
-	const [optimisticUser, addOptimistic] = useOptimistic<
-		UserInfo | null,
-		Partial<UserInfo>
-	>(userInfo, (current, patch) =>
-		current ? { ...current, ...patch } : current
+	const [optimisticUser, addOptimistic] = useOptimistic<UserInfo | null, Partial<UserInfo>>(
+		userInfo,
+		(current, patch) => (current ? { ...current, ...patch } : current)
 	);
 
-	const syncZennArticles = async (
-		zennUsername: string,
-		shouldRedirect = false
-	) => {
+	const syncZennArticles = async (zennUsername: string, shouldRedirect = false) => {
 		if (!zennUsername) {
 			setError("ユーザー名を入力してください");
 			return;
@@ -59,9 +54,7 @@ export const useZennSync = ({
 
 		try {
 			// APIが常に48件を返す問題に対応
-			const randomUsername = `test_${Math.random()
-				.toString(36)
-				.substring(2, 10)}`;
+			const randomUsername = `test_${Math.random().toString(36).substring(2, 10)}`;
 			const testResponse = await fetch(`/api/zenn?username=${randomUsername}`);
 			const testData = await testResponse.json();
 
@@ -70,10 +63,7 @@ export const useZennSync = ({
 
 			// 存在しないユーザーの場合の対策
 			if (data.success && data.totalCount === SUSPICIOUS_FIXED_COUNT) {
-				if (
-					testData.success &&
-					testData.totalCount === SUSPICIOUS_FIXED_COUNT
-				) {
+				if (testData.success && testData.totalCount === SUSPICIOUS_FIXED_COUNT) {
 					setError("Zennとの連携に失敗しました。存在しないユーザー名です。");
 					setLoading(false);
 					return;
@@ -113,23 +103,17 @@ export const useZennSync = ({
 								level: 1, // 連携解除時にlevelもリセット
 							});
 							setZennUsername("");
-							setError(
-								"連携中のアカウントの記事数が0件になったため連携を解除しました"
-							);
+							setError("連携中のアカウントの記事数が0件になったため連携を解除しました");
 
 							// 自動連携解除時に装備をリセット
 							resetEquipment();
 						} else {
 							console.error("自動連携解除エラー:", releaseData.error);
-							setError(
-								"記事数が0件のため連携解除を試みましたが、処理に失敗しました"
-							);
+							setError("記事数が0件のため連携解除を試みましたが、処理に失敗しました");
 						}
 					} catch (err) {
 						console.error("自動連携解除エラー:", err);
-						setError(
-							"記事数が0件のため連携解除を試みましたが、処理に失敗しました"
-						);
+						setError("記事数が0件のため連携解除を試みましたが、処理に失敗しました");
 					}
 					setLoading(false);
 					return;
@@ -161,9 +145,7 @@ export const useZennSync = ({
 					console.error("HeroContext更新エラー:", heroError);
 				}
 			} else {
-				setError(
-					data.error || "ユーザーが存在しないか、記事を取得できませんでした。"
-				);
+				setError(data.error || "ユーザーが存在しないか、記事を取得できませんでした。");
 			}
 		} catch (err) {
 			console.error("Zenn同期エラー:", err);

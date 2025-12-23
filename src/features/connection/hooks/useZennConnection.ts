@@ -57,9 +57,7 @@ export const useZennConnection = ({
 			}
 
 			// APIが常に48件を返す問題に対応
-			const randomUsername = `test_${Math.random()
-				.toString(36)
-				.substring(2, 10)}`;
+			const randomUsername = `test_${Math.random().toString(36).substring(2, 10)}`;
 			const testResponse = await fetch(`/api/zenn?username=${randomUsername}`);
 			const testData = await testResponse.json();
 
@@ -80,14 +78,8 @@ export const useZennConnection = ({
 
 				const retryData = await checkZennUser(username);
 
-				if (
-					!retryData.success ||
-					!retryData.articles ||
-					retryData.articles.length === 0
-				) {
-					setError(
-						"このユーザー名のアカウントは記事を投稿していないため連携できません"
-					);
+				if (!retryData.success || !retryData.articles || retryData.articles.length === 0) {
+					setError("このユーザー名のアカウントは記事を投稿していないため連携できません");
 					setLoading(false);
 					return false;
 				}
@@ -100,9 +92,7 @@ export const useZennConnection = ({
 			// プロフィールを更新
 			const data = await updateUserProfileApi(
 				username,
-				user?.firstName
-					? `${user.firstName} ${user.lastName || ""}`.trim()
-					: undefined,
+				user?.firstName ? `${user.firstName} ${user.lastName || ""}`.trim() : undefined,
 				user?.imageUrl
 			);
 

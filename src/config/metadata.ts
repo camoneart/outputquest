@@ -73,8 +73,7 @@ export const metadata: Record<string, Metadata> = {
 	logs: {
 		...baseMetadata,
 		title: "冒険ログ",
-		description:
-			"学びの軌跡が残る「冒険ログ」。これまでの学びの軌跡を時系列で確認できます。",
+		description: "学びの軌跡が残る「冒険ログ」。これまでの学びの軌跡を時系列で確認できます。",
 	},
 	party: {
 		...baseMetadata,
@@ -103,8 +102,7 @@ export const metadata: Record<string, Metadata> = {
 	about: {
 		...baseMetadata,
 		title: "OUTPUT QUESTとは ?",
-		description:
-			"OUTPUT QUESTの世界観と使い方、概要、コンセプト、主要機能について紹介します。",
+		description: "OUTPUT QUESTの世界観と使い方、概要、コンセプト、主要機能について紹介します。",
 	},
 	terms: {
 		...baseMetadata,
