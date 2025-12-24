@@ -96,7 +96,6 @@
 	font-weight: var(--font-weight-x-bold);
 	line-height: var(--leading-none);
 	font-style: normal;
-	letter-spacing: var(--letter-spacing-wide);
 }
 
 .platform-stat-count-em {
@@ -104,7 +103,6 @@
 	font-weight: var(--font-weight-x-bold);
 	line-height: var(--leading-none);
 	font-style: normal;
-	letter-spacing: var(--letter-spacing-wide);
 	text-shadow: 2.5px 2.5px 0px var(--color-primary-black);
 }
 

@@ -236,7 +236,6 @@
 	display: block grid;
 	place-items: end;
 	font-size: 3rem;
-	letter-spacing: var(--letter-spacing-wide);
 
 	& .loading-dots {
 		min-width: 57.6px;
