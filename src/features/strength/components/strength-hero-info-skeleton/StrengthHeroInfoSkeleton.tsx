@@ -11,7 +11,7 @@ const StrengthHeroInfoSkeleton = () => {
 		<div className={styles["skeleton-container"]}>
 			<div className={styles["skeleton-content"]}>
 				{/* タイトル */}
-				<h2 className={styles["skeleton-title"]}>~ 勇者のレベル ~</h2>
+				<h2 className={styles["skeleton-title"]}>〜 勇者のレベル 〜</h2>
 
 				{/* ヘッダー部分（アイコン + レベル） */}
 				<div className={styles["skeleton-header"]}>

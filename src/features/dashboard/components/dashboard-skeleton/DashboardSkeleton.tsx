@@ -23,7 +23,7 @@ const DashboardSkeleton = () => {
 		<div className={styles["skeleton-container"]}>
 			{/* DashboardHeroSection Skeleton */}
 			<section className={styles["skeleton-hero-section"]}>
-				<h2 className={styles["skeleton-hero-title"]}>~ 勇者のレベル ~</h2>
+				<h2 className={styles["skeleton-hero-title"]}>〜 勇者のレベル 〜</h2>
 				<div className={styles["skeleton-hero-container"]}>
 					<div className={styles["skeleton-hero-info"]}>
 						{/* 左側: アイコン + 名前 */}
