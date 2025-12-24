@@ -103,7 +103,7 @@
 	font-weight: var(--font-weight-x-bold);
 	line-height: var(--leading-none);
 	font-style: normal;
-	text-shadow: 2.5px 2.5px 0px var(--color-primary-black);
+	text-shadow: 2px 2px 0px var(--color-primary-black);
 }
 
 .platform-stat-unit {
