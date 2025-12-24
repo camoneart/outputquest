@@ -5,7 +5,7 @@
 	background-color: var(--color-primary-dark-gray) !important;
 	justify-content: flex-start !important;
 	padding-block: 5px !important;
-	padding-inline: 23px !important;
+	/* padding-inline: 23px !important; */
 
 	&:before {
 		content: "";
@@ -52,7 +52,7 @@
 .gnav-item-content {
 	display: block grid;
 	place-items: center;
-	grid-template-columns: 20px 1fr;
+	grid-template-columns: 32px 1fr;
 	gap: 6px;
 	transition: padding-inline-start 0.2s;
 }
@@ -60,7 +60,47 @@
 .gnav-item-icon {
 	object-fit: contain;
 	object-position: center;
-	filter: drop-shadow(0 0 1px var(--color-primary-white));
+	filter: drop-shadow(0 0 0.7px var(--color-primary-white));
+
+	&[data-nav-id="1"] {
+		width: 19px;
+	}
+
+	&[data-nav-id="2"] {
+		width: 25px;
+	}
+
+	&[data-nav-id="3"] {
+		width: 30px;
+	}
+
+	&[data-nav-id="4"] {
+		width: 20px;
+	}
+
+	&[data-nav-id="5"] {
+		width: 20px;
+	}
+
+	&[data-nav-id="6"] {
+		width: 23px;
+	}
+
+	&[data-nav-id="7"] {
+		width: 20px;
+	}
+
+	&[data-nav-id="8"] {
+		width: 20px;
+	}
+
+	&[data-nav-id="9"] {
+		width: 20px;
+	}
+
+	&[data-nav-id="10"] {
+		width: 20px;
+	}
 }
 
 .gnav-item-content-active {
