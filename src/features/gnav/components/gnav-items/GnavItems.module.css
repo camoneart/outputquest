@@ -60,7 +60,7 @@
 .gnav-item-icon {
 	object-fit: contain;
 	object-position: center;
-	filter: drop-shadow(0 0 0.7px var(--color-primary-white));
+	filter: drop-shadow(0 0 1px var(--color-primary-white));
 
 	&[data-nav-id="1"] {
 		width: 19px;
