@@ -14,7 +14,9 @@ export default function HomePage() {
 		<main className={`${styles["main"]}`}>
 			<Hero.HeroBg />
 			<div className={`${styles["main-container"]}`}>
-				<Crown />
+				<div className={`${styles["crown-container"]}`}>
+					<Crown />
+				</div>
 				<HomeAnimatedTitle />
 				<Home.HomeStartButton />
 			</div>

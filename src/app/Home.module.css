@@ -12,3 +12,15 @@
 	align-content: center;
 	padding-block-start: 40px;
 }
+
+.crown-container {
+	width: 50px;
+	height: auto;
+	margin-inline-start: 282px;
+	filter: drop-shadow(0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 10%))
+		drop-shadow(0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 50%))
+		drop-shadow(0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 50%))
+		drop-shadow(0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 50%))
+		drop-shadow(0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 50%))
+		drop-shadow(0 0 2px color-mix(in srgb, var(--color-primary-orange), transparent 50%));
+}
