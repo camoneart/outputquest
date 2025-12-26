@@ -101,7 +101,16 @@ const DashboardHeroSection = ({ dashboardData }: DashboardHeroSectionProps) => {
 
 	return (
 		<section className={`${styles["hero-info-section"]}`}>
-			<h2 className={`${styles["hero-info-title"]}`}>〜 勇者のレベル 〜</h2>
+			<h2 className={`${styles["hero-info-title"]}`}>
+				<Image
+					src="/images/crown/crown03.png"
+					alt="王冠"
+					width={20}
+					height={20}
+					className={`${styles["hero-info-title-icon"]}`}
+				/>
+				<span>勇者のレベル</span>
+			</h2>
 			<div className={`${styles["hero-info-container"]}`}>
 				{/* キャラクター情報 */}
 				<div className={`${styles["hero-info"]}`}>
@@ -113,10 +122,10 @@ const DashboardHeroSection = ({ dashboardData }: DashboardHeroSectionProps) => {
 								onClick={(e) => handleNavigation(e, "/strength/")}
 							>
 								<Image
-									src={`/images/common/character_yusha_01_red.png`}
+									src={`/images/hero/hero.png`}
 									alt={dashboardData.heroData.name}
-									width={55}
-									height={55}
+									width={1000}
+									height={1000}
 									priority={true}
 									className={`${styles["hero-info-icon-image"]}`}
 								/>
@@ -124,6 +133,13 @@ const DashboardHeroSection = ({ dashboardData }: DashboardHeroSectionProps) => {
 						</div>
 						<div className={styles["hero-info-name-box"]}>
 							<h3 className={`${styles["hero-info-name"]}`}>
+								<Image
+									src="/images/crown/crown01-edge.png"
+									alt="王冠"
+									width={100}
+									height={100}
+									className={`${styles["hero-info-name-icon"]}`}
+								/>
 								{dashboardData.heroData.name}
 								{!isZennUsernameLoaded || !zennUsername ? (
 									<>
