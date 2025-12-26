@@ -2,7 +2,6 @@
 
 import { navigationItems } from "@/features/navigation/data/navigationItems";
 import { usePathname } from "next/navigation";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useClickSound } from "@/components/common/audio/click-sound/ClickSound";
 import styles from "./GnavItems.module.css";
@@ -26,12 +25,11 @@ const GnavItems = () => {
 				const isActive = pathname === item.href;
 
 				return (
-					<li key={item.href}>
+					<li key={item.href} className={`${styles["gnav-item"]}`}>
 						{isActive ? (
-							<Button
+							<div
 								key={item.href}
-								variant="default"
-								className={`${styles["gnav-item"]} ${styles["gnav-item-active"]}`}
+								className={`${styles["gnav-item-link-container"]} ${styles["gnav-item-active"]}`}
 							>
 								<div className={`${styles["gnav-item-not-link"]}`}>
 									<div
@@ -44,24 +42,24 @@ const GnavItems = () => {
 											height={item.height || 20}
 											priority={true}
 											className={`${styles["gnav-item-icon"]}`}
+											data-nav-id={item.id}
 										/>
 										<h3 className={`${styles["gnav-item-title"]}`}>{item.title}</h3>
 									</div>
 								</div>
-							</Button>
+							</div>
 						) : (
-							<Button
+							<div
 								key={item.href}
-								asChild
-								variant="default"
-								className={`${styles["gnav-item"]}`}
+								className={`${styles["gnav-item-link-container"]}`}
 							>
 								<Link
 									href={item.href}
 									className={`${styles["gnav-item-link"]}`}
 									onClick={() => handleLinkClick()}
 								>
-									<div className={`${styles["gnav-item-content"]}`}>
+									<div className={`${styles["gnav-item-content"]}`}
+									>
 										<Image
 											src={item.icon || "/images/nav-icon/default-icon.svg"}
 											alt={item.alt || item.title}
@@ -69,11 +67,12 @@ const GnavItems = () => {
 											height={item.height || 20}
 											priority={true}
 											className={`${styles["gnav-item-icon"]}`}
+											data-nav-id={item.id}
 										/>
 										<h3 className={`${styles["gnav-item-title"]}`}>{item.title}</h3>
 									</div>
 								</Link>
-							</Button>
+							</div>
 						)}
 					</li>
 				);

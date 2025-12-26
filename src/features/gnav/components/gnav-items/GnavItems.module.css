@@ -1,11 +1,12 @@
-.gnav-item {
+.gnav-item-link-container {
 	position: relative;
 	width: 100%;
 	height: auto;
-	background-color: var(--color-primary-dark-gray) !important;
-	justify-content: flex-start !important;
-	padding-block: 5px !important;
-	/* padding-inline: 23px !important; */
+	display: block grid;
+	background-color: var(--color-primary-dark-gray);
+	padding-inline-start: 16px;
+	padding-block: 5px;
+	cursor: pointer;
 
 	&:before {
 		content: "";
@@ -13,10 +14,10 @@
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
-		width: 17px;
-		height: 17px;
+		width: 16px;
+		height: 16px;
 		position: absolute;
-		left: 13px;
+		left: 12px;
 		top: 52%;
 		transform: translateY(-50%) rotate(180deg);
 		opacity: 0;
@@ -38,6 +39,8 @@
 
 .gnav-item-active,
 .gnav-item-not-link {
+	display: block grid;
+	justify-content: start;
 	cursor: default;
 
 	&::before {
@@ -47,12 +50,14 @@
 
 .gnav-item-link {
 	display: block grid;
+	justify-content: start;
+	width: 100%;
 }
 
 .gnav-item-content {
 	display: block grid;
 	place-items: center;
-	grid-template-columns: 32px 1fr;
+	grid-template-columns: 31px 1fr;
 	gap: 6px;
 	transition: padding-inline-start 0.2s;
 }
@@ -60,46 +65,46 @@
 .gnav-item-icon {
 	object-fit: contain;
 	object-position: center;
-	filter: drop-shadow(0 0 1px var(--color-primary-white));
+	filter: drop-shadow(0 0 0.7px var(--color-primary-white));
 
 	&[data-nav-id="1"] {
-		width: 19px;
+		width: 20px;
 	}
 
 	&[data-nav-id="2"] {
-		width: 25px;
+		width: 26px;
 	}
 
 	&[data-nav-id="3"] {
-		width: 30px;
+		width: 31px;
 	}
 
 	&[data-nav-id="4"] {
-		width: 20px;
-	}
-
-	&[data-nav-id="5"] {
-		width: 20px;
-	}
-
-	&[data-nav-id="6"] {
 		width: 23px;
 	}
 
+	&[data-nav-id="5"] {
+		width: 22px;
+	}
+
+	&[data-nav-id="6"] {
+		width: 24px;
+	}
+
 	&[data-nav-id="7"] {
-		width: 20px;
+		width: 22px;
 	}
 
 	&[data-nav-id="8"] {
-		width: 20px;
+		width: 22px;
 	}
 
 	&[data-nav-id="9"] {
-		width: 20px;
+		width: 25.5px;
 	}
 
 	&[data-nav-id="10"] {
-		width: 20px;
+		width: 20.5px;
 	}
 }
 
@@ -108,6 +113,6 @@
 }
 
 .gnav-item-title {
-	font-size: 0.875rem;
+	font-size: 13px;
 	font-weight: var(--font-weight-x-bold);
 }
