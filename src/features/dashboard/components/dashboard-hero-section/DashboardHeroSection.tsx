@@ -103,10 +103,10 @@ const DashboardHeroSection = ({ dashboardData }: DashboardHeroSectionProps) => {
 		<section className={`${styles["hero-info-section"]}`}>
 			<h2 className={`${styles["hero-info-title"]}`}>
 				<Image
-					src="/images/crown/crown03.png"
+					src="/images/crown/crown02.png"
 					alt="王冠"
-					width={20}
-					height={20}
+					width={100}
+					height={100}
 					className={`${styles["hero-info-title-icon"]}`}
 				/>
 				<span>勇者のレベル</span>
