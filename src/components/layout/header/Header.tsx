@@ -8,6 +8,7 @@ import { useClickSound } from "@/components/common/audio/click-sound/ClickSound"
 import HamburgerMenu from "@/components/elements/hamburger-menu/HamburgerMenu";
 import Gnav from "@/components/layout/gnav/Gnav";
 import styles from "./Header.module.css";
+import Crown from "@/components/common/crown/Crown";
 
 export const Header = () => {
 	const pathname = usePathname();
@@ -71,65 +72,10 @@ export const Header = () => {
 								className={`${styles["header__title-link"]}`}
 								onClick={() => playClickSound()}
 							>
-								<div className={`${styles["header__title-link-text-box"]}`}>
-									<span
-										className={`${styles["header__title-link-text"]} ${styles["header__title-link-text-1"]}`}
-									>
-										O
-									</span>
-									<span
-										className={`${styles["header__title-link-text"]} ${styles["header__title-link-text-2"]}`}
-									>
-										U
-									</span>
-									<span
-										className={`${styles["header__title-link-text"]} ${styles["header__title-link-text-3"]}`}
-									>
-										T
-									</span>
-									<span
-										className={`${styles["header__title-link-text"]} ${styles["header__title-link-text-4"]}`}
-									>
-										P
-									</span>
-									<span
-										className={`${styles["header__title-link-text"]} ${styles["header__title-link-text-5"]}`}
-									>
-										U
-									</span>
-									<span
-										className={`${styles["header__title-link-text"]} ${styles["header__title-link-text-6"]}`}
-									>
-										T
-									</span>
+								<div className={`${styles["crown-container"]}`}>
+									<Crown />
 								</div>
-								<div className={`${styles["header__title-link-text-box"]}`}>
-									<span
-										className={`${styles["header__title-link-text"]} ${styles["header__title-link-text-7"]}`}
-									>
-										Q
-									</span>
-									<span
-										className={`${styles["header__title-link-text"]} ${styles["header__title-link-text-8"]}`}
-									>
-										U
-									</span>
-									<span
-										className={`${styles["header__title-link-text"]} ${styles["header__title-link-text-9"]}`}
-									>
-										E
-									</span>
-									<span
-										className={`${styles["header__title-link-text"]} ${styles["header__title-link-text-10"]}`}
-									>
-										S
-									</span>
-									<span
-										className={`${styles["header__title-link-text"]} ${styles["header__title-link-text-11"]}`}
-									>
-										T
-									</span>
-								</div>
+								<span>OUTPUT QUEST</span>
 							</Link>
 						</div>
 					)}

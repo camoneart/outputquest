@@ -52,6 +52,7 @@
 	font-size: 1.125rem;
 	font-family: "ab-don2", sans-serif;
 	color: var(--color-primary-yellow);
+	letter-spacing: 0.025em;
 	text-shadow:
 		0px 0px 2px var(--color-primary-orange),
 		0px 0px 2px var(--color-primary-orange),
@@ -65,15 +66,10 @@
 }
 
 .header__title-link {
+	position: relative;
 	display: block flex;
 	align-items: center;
 	gap: 0.5rem;
-}
-
-.header__title-link-text-box {
-	letter-spacing: 0.025em;
-	display: block flex;
-	align-items: center;
 }
 
 .header__items {
@@ -88,4 +84,27 @@
 
 .header-gnav {
 	display: none;
+}
+
+.crown-container {
+	position: absolute;
+	top: -3;
+	left: 104.5px;
+	width: 7px;
+	height: auto;
+	filter: drop-shadow(0 0 0.5px color-mix(in srgb, var(--color-primary-orange), transparent 70%))
+		drop-shadow(0 0 0.5px color-mix(in srgb, var(--color-primary-orange), transparent 70%))
+		drop-shadow(0 0 0.5px color-mix(in srgb, var(--color-primary-orange), transparent 70%))
+		drop-shadow(0 0 0.5px color-mix(in srgb, var(--color-primary-orange), transparent 70%))
+		drop-shadow(0 0 0.5px color-mix(in srgb, var(--color-primary-orange), transparent 70%))
+		drop-shadow(0 0 0.5px color-mix(in srgb, var(--color-primary-orange), transparent 70%))
+		drop-shadow(0 0 0.5px color-mix(in srgb, var(--color-primary-orange), transparent 70%))
+		drop-shadow(0 0 0.5px color-mix(in srgb, var(--color-primary-orange), transparent 70%))
+		drop-shadow(0 0 0.5px color-mix(in srgb, var(--color-primary-orange), transparent 70%))
+		drop-shadow(0 0 0.5px color-mix(in srgb, var(--color-primary-orange), transparent 70%));
+
+	@media (width < 768px) {
+		width: 6px;
+		left: 92.8px;
+	}
 }
