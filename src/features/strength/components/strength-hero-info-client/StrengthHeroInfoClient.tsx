@@ -33,17 +33,24 @@ const StrengthHeroInfoClient = ({ heroData, zennUsername }: StrengthHeroInfoClie
 					<div className={styles["strength-hero-box"]}>
 						<div className={styles["strength-hero-icon-box"]}>
 							<Image
-								src="/images/common/character_yusha_01_red.png"
-								alt="勇者のアイコン"
-								width={50}
-								height={50}
+								src="/images/hero/hero.png"
+								alt="勇者"
+								width={1000}
+								height={1000}
 								priority={true}
 								className={styles["strength-hero-icon-image"]}
 							/>
 						</div>
 						<div className={styles["strength-hero-name-box"]}>
 							<h3 className={`${styles["strength-hero-name"]}`}>
-								{heroData.name}({zennUsername})
+								<Image
+									src="/images/crown/crown01-edge.png"
+									alt="王冠"
+									width={100}
+									height={100}
+									className={`${styles["strength-hero-name-icon"]}`}
+								/>
+								<span>{heroData.name}({zennUsername})</span>
 							</h3>
 						</div>
 					</div>
