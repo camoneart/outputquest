@@ -52,7 +52,7 @@
 	display: block grid;
 	grid-template-columns: auto auto;
 	place-content: center;
-	gap: 12px;
+	gap: 25px;
 	background-color: var(--color-primary-dark-gray);
 	border: 2px solid var(--color-primary-white);
 	border-radius: var(--border-radius-small);
@@ -74,18 +74,18 @@
 	display: block grid;
 	grid-template-rows: auto auto;
 	place-items: center;
-	gap: 12px;
+	gap: 13px;
 }
 
 .strength-hero-icon-box {
-	width: 50px;
-	height: 53px;
+	width: 75px;
+	height: 86.25px;
 	display: block grid;
 	place-items: center;
 }
 
 .strength-hero-icon-image {
-	width: 50px;
+	width: 70px;
 	height: auto;
 	object-fit: contain;
 	object-position: center;
@@ -97,14 +97,22 @@
 }
 
 .strength-hero-name {
-	font-size: 0.875rem;
+	display: block flex;
+	align-items: center;
+	gap: 4px;
+	font-size: 0.75rem;
 	font-weight: var(--font-weight-normal);
 	line-height: var(--leading-none);
 	color: var(--color-primary-white);
 	border: 2px solid var(--color-primary-white);
-	padding-block: 6px 8px;
+	padding-block: 6px 7px;
 	padding-inline: 9px;
 	border-radius: var(--border-radius-small);
+}
+
+.strength-hero-name-icon {
+	width: 13px;
+	height: auto;
 }
 
 .strength-level-info {
@@ -163,9 +171,6 @@
 	font-weight: var(--font-weight-x-bold);
 	line-height: var(--leading-none);
 	color: var(--color-primary-white);
-}
-
-.strength-level-progress-info {
 }
 
 .strength-level-progress-box {
