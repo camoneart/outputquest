@@ -124,14 +124,14 @@
 	display: block flex;
 	align-items: center;
 	gap: 5px;
-	font-size: 0.875rem;
+	font-size: 0.75rem;
 	font-weight: var(--font-weight-normal);
 	line-height: var(--leading-none);
 	padding-block: 3px 5px;
 	padding-inline: 7px;
 	border: 1px solid var(--color-primary-brown-light);
 	background-color: var(--color-primary-brown);
-	text-shadow: 1px 1px 0px var(--color-primary-black);
+	text-shadow: 1.5px 1.5px 0px var(--color-primary-black);
 }
 
 .hero-info-name-icon {
