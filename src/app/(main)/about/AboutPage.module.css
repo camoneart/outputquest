@@ -136,11 +136,13 @@
 	line-height: var(--leading-tight);
 	color: var(--color-primary-yellow);
 	text-shadow:
-		-1px -1px 0 var(--color-primary-black),
-		1px -1px 0 var(--color-primary-black),
-		-1px 1px 0 var(--color-primary-black),
-		1px 1px 0 var(--color-primary-black),
-		0px 0px 7px var(--color-primary-yellow);
+		0px 0px 2px var(--color-primary-orange),
+		0px 0px 2px var(--color-primary-orange),
+		0px 0px 2px var(--color-primary-orange),
+		0px 0px 2px var(--color-primary-orange),
+		0px 0px 2px var(--color-primary-orange),
+		0px 0px 3px var(--color-primary-orange),
+		0px 0px 3px var(--color-primary-orange);
 
 	@media (width < 1024px) {
 		font-size: 1.25rem;
