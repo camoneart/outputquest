@@ -173,7 +173,7 @@ const StrengthTitleInfo = () => {
 		<div className={styles["strength-title-info"]}>
 			<div className={styles["strength-title-info-content"]}>
 				<div className={styles["strength-title-box"]}>
-					<h2 className={styles["strength-title-title"]}>~ 称号 ~</h2>
+					<h2 className={styles["strength-title-title"]}>称号</h2>
 					<div className={styles["strength-title-detail-bg"]}>
 						<div className={styles["strength-title-detail"]}>
 							<div

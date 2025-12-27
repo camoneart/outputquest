@@ -137,7 +137,7 @@ const StrengthLogInfo = () => {
 			<div className={styles["strength-log-info"]}>
 				<div className={styles["strength-log-info-content"]}>
 					<div className={styles["strength-log-box"]}>
-						<h2 className={styles["strength-log-title"]}>~ 冒険ログ ~</h2>
+						<h2 className={styles["strength-log-title"]}>冒険ログ</h2>
 						<div className={styles["error-text"]}>{error}</div>
 					</div>
 				</div>
@@ -149,7 +149,7 @@ const StrengthLogInfo = () => {
 		<div className={styles["strength-log-info"]}>
 			<div className={styles["strength-log-info-content"]}>
 				<div className={styles["strength-log-box"]}>
-					<h2 className={styles["strength-log-title"]}>~ 冒険ログ ~</h2>
+					<h2 className={styles["strength-log-title"]}>冒険ログ</h2>
 					<div className={styles["strength-log-list-content"]}>
 						<div className={styles["strength-log-list-box"]}>
 							<ul className={styles["strength-log-list"]}>

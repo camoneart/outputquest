@@ -67,7 +67,7 @@ const StrengthHeroInfo = async () => {
 		return (
 			<div className={styles["strength-hero-info"]}>
 				<div className={styles["strength-hero-info-content"]}>
-					<h2 className={styles["strength-hero-info-title"]}>〜 勇者のレベル 〜</h2>
+					<h2 className={styles["strength-hero-info-title"]}>勇者のレベル</h2>
 					<div className={styles["error-text"]}>データの取得中にエラーが発生しました。</div>
 				</div>
 			</div>
