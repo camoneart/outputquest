@@ -10,7 +10,6 @@
 	grid-template-rows: auto auto auto;
 	place-items: center;
 	align-content: center;
-	padding-block-start: 40px;
 }
 
 .crown-container {
