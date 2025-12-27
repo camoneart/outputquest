@@ -39,7 +39,7 @@ export function HeroBg() {
 				transition={{ duration: 1 }}
 			>
 				<Image
-					src="/images/hero/castle-background.jpg"
+					src="/images/top-bg/castle-background.jpg"
 					alt=""
 					fill
 					priority
@@ -61,7 +61,7 @@ export function HeroBg() {
 				{viewState === "video" && (
 					<motion.video
 						key="hero-video"
-						src="/videos/hero/castle-background.mp4"
+						src="/videos/top-bg/castle-background.mp4"
 						className="absolute inset-0 size-full object-cover"
 						autoPlay
 						muted
@@ -75,7 +75,7 @@ export function HeroBg() {
 			</AnimatePresence>
 
 			{/* Overlay */}
-			<div className="absolute inset-0 bg-black/70 backdrop-blur-[3px]" />
+			<div className="absolute inset-0 bg-black/10 backdrop-blur-[5px]" />
 		</div>
 	);
 }
