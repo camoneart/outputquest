@@ -79,7 +79,7 @@ const ExploreArticleAnalysis: React.FC<ExploreArticleAnalysisProps> = ({
 														</span>
 													</>
 												) : (
-													"~ 探索結果 ~"
+													"探索結果"
 												)}
 											</h2>
 
