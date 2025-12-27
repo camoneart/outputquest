@@ -7,6 +7,7 @@ import { useUser } from "@clerk/nextjs";
 import { useClickSound } from "@/components/common/audio/click-sound/ClickSound";
 import { useAudio } from "@/contexts/AudioContext";
 import styles from "./HomeStartButton.module.css";
+import Image from "next/image";
 
 const HomeStartButton = () => {
 	const router = useRouter();
@@ -56,7 +57,20 @@ const HomeStartButton = () => {
 	return (
 		<div className={`${styles["start-btn-container"]}`}>
 			<Link href={destination} className={`${styles["start-btn"]}`} onClick={handleClick}>
-				はじめる
+				<Image
+					src="/images/button/start-button.png"
+					alt="はじめる"
+					width={1000}
+					height={1000}
+					className={styles["start-btn-image"]}
+				/>
+				<Image
+					src="/images/button/start-button-hover.png"
+					alt="はじめる - ホバー"
+					width={1000}
+					height={1000}
+					className={styles["start-btn-image-hover"]}
+				/>
 			</Link>
 		</div>
 	);
