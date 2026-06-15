@@ -63,7 +63,7 @@
 		"@types/howler": "2.2.13",
 		"@types/node": "25",
 		"@types/pg": "8.20.0",
-		"@types/react": "19.2.16",
+		"@types/react": "19.2.17",
 		"@types/react-dom": "19.2.3",
 		"babel-plugin-react-compiler": "1.0.0",
 		"eslint": "10.4.1",
@@ -80,7 +80,7 @@
 	},
 	"pnpm": {
 		"overrides": {
-			"@types/react": "19.2.16",
+			"@types/react": "19.2.17",
 			"@types/react-dom": "19.2.3",
 			"postcss": "^8.5.15"
 		}
