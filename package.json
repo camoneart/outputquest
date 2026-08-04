@@ -7,7 +7,7 @@
 	"homepage": "https://outputquest.com",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/kaijutale/outputquest"
+		"url": "https://github.com/dendedev/outputquest"
 	},
 	"packageManager": "pnpm@10.11.1",
 	"engines": {

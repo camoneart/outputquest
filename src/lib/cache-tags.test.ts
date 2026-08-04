@@ -9,7 +9,7 @@ describe("CacheTags", () => {
 	});
 
 	it("zennArticles() returns zenn-{username}", () => {
-		expect(CacheTags.zennArticles("kaiju")).toBe("zenn-kaiju");
+		expect(CacheTags.zennArticles("dende")).toBe("zenn-dende");
 	});
 
 	it("dashboard() returns dashboard-{clerkId}", () => {
