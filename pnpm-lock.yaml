@@ -7,7 +7,7 @@ settings:
 overrides:
   '@types/react': 19.2.16
   '@types/react-dom': 19.2.3
-  postcss: ^8.5.23
+  postcss: 8.5.23
 
 importers:
 
@@ -138,7 +138,7 @@ importers:
         specifier: 20.10.1
         version: 20.10.1
       postcss:
-        specifier: ^8.5.23
+        specifier: 8.5.23
         version: 8.5.23
       prettier:
         specifier: 3.8.3
