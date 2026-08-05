@@ -14,7 +14,10 @@ interface ItemDetailCardProps {
 	itemId: number;
 }
 
-const ItemDetailCard = async ({ itemId }: ItemDetailCardProps) => {
+// データ取得はJSXの構築と分離する。
+// try/catch内でJSXを構築しても、Reactは即座にレンダリングしないため
+// レンダリング時のエラーはcatchされない (react-hooks/error-boundaries)。
+const loadItemDetail = async (itemId: number) => {
 	try {
 		const { articleCount, isGuestUser } = await getUserWithArticles();
 		const currentLevel = isGuestUser ? 1 : articleCount;
@@ -40,24 +43,43 @@ const ItemDetailCard = async ({ itemId }: ItemDetailCardProps) => {
 			: `/images/items-page/acquired-icon/item-${itemId}.png`;
 		const unacquiredImagePath = `/images/items-page/unacquired-icon/${customItemSilhouetteImages[itemId]}`;
 
-		// Client Componentにデータを渡す
-		return (
-			<ItemDetail.ItemDetailCardClient
-				itemId={itemId}
-				isAcquired={isAcquired}
-				isGuestUser={isGuestUser}
-				itemName={itemName}
-				itemDescription={itemDescription}
-				requiredLevel={requiredLevel}
-				levelDifference={levelDifference}
-				acquiredImagePath={acquiredImagePath}
-				unacquiredImagePath={unacquiredImagePath}
-			/>
-		);
+		return {
+			isAcquired,
+			isGuestUser,
+			itemName,
+			itemDescription,
+			requiredLevel,
+			levelDifference,
+			acquiredImagePath,
+			unacquiredImagePath,
+		};
 	} catch (error) {
 		console.error("アイテム詳細データ取得エラー:", error);
+		return null;
+	}
+};
+
+const ItemDetailCard = async ({ itemId }: ItemDetailCardProps) => {
+	const data = await loadItemDetail(itemId);
+
+	if (!data) {
 		return <p className={styles["error-message"]}>アイテム詳細データの取得に失敗しました。</p>;
 	}
+
+	// Client Componentにデータを渡す
+	return (
+		<ItemDetail.ItemDetailCardClient
+			itemId={itemId}
+			isAcquired={data.isAcquired}
+			isGuestUser={data.isGuestUser}
+			itemName={data.itemName}
+			itemDescription={data.itemDescription}
+			requiredLevel={data.requiredLevel}
+			levelDifference={data.levelDifference}
+			acquiredImagePath={data.acquiredImagePath}
+			unacquiredImagePath={data.unacquiredImagePath}
+		/>
+	);
 };
 
 export default ItemDetailCard;

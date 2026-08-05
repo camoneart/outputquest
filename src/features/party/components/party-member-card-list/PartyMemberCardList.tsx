@@ -8,15 +8,27 @@ import styles from "./PartyMemberCardList.module.css";
  *
  * パーティメンバー一覧を取得して表示するServer Component
  */
-const PartyMemberCardList = async () => {
+// データ取得はJSXの構築と分離する。
+// try/catch内でJSXを構築しても、Reactは即座にレンダリングしないため
+// レンダリング時のエラーはcatchされない (react-hooks/error-boundaries)。
+const loadPartyMembers = async () => {
 	try {
 		const { articleCount, isGuestUser } = await getUserWithArticles();
-		const members = updatePartyMembersByLevel(articleCount);
-		return <Party.PartyMemberCardListClient members={members} isGuestUser={isGuestUser} />;
+		return { members: updatePartyMembersByLevel(articleCount), isGuestUser };
 	} catch (error) {
 		console.error("仲間データ取得エラー:", error);
+		return null;
+	}
+};
+
+const PartyMemberCardList = async () => {
+	const data = await loadPartyMembers();
+
+	if (!data) {
 		return <p className={styles["error-message"]}>仲間データの取得に失敗しました。</p>;
 	}
+
+	return <Party.PartyMemberCardListClient members={data.members} isGuestUser={data.isGuestUser} />;
 };
 
 export default PartyMemberCardList;
