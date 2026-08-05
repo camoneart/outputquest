@@ -11,7 +11,7 @@ Next.js 16 (App Router) / React 19 / TypeScript (strict) / Tailwind + CSS Module
 
 ```
 src/app/          -- App Router、ページ、API Routes
-src/components/   -- 共有UI (auth/, common/, elements/, layout/, ui/)
+src/components/   -- 共有UI (auth/, common/, elements/, layout/, providers/, ui/)
 src/features/     -- 機能モジュール（domain別 components/hooks/types/utils）
 src/lib/          -- ライブラリ/ユーティリティ
 src/contexts/     -- React Context (AudioContext, HeroContext)
