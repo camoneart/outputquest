@@ -10,6 +10,13 @@ updates:
       day: "monday"
     open-pull-requests-limit: 10
     versioning-strategy: "increase"
+    # eslint の major 更新のみ無視する(minor/patch は従来どおり受け取る)。
+    # 理由: eslint-config-next が引き込む eslint-plugin-react が ESLint 10 に未対応で、
+    # 10.x へ上げると `pnpm lint` が TypeError でクラッシュする (PR #232 で 9.39.5 へ戻した)。
+    # eslint-plugin-react の ESLint 10 対応版 (7.8.0) が安定リリースされたら本設定を見直す。
+    ignore:
+      - dependency-name: "eslint"
+        update-types: ["version-update:semver-major"]
     groups:
       next:
         patterns:
