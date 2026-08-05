@@ -82,7 +82,7 @@
 		"overrides": {
 			"@types/react": "19.2.16",
 			"@types/react-dom": "19.2.3",
-			"postcss": "^8.5.15"
+			"postcss": "8.5.23"
 		}
 	}
 }
