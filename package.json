@@ -57,7 +57,7 @@
 		"zod": "4.4.3"
 	},
 	"devDependencies": {
-		"@eslint/eslintrc": "3.3.5",
+		"@eslint/eslintrc": "3.3.6",
 		"@prisma/config": "7.9.1",
 		"@tailwindcss/postcss": "4.3.3",
 		"@types/howler": "2.2.13",
