@@ -57,7 +57,7 @@
 		"zod": "4.4.3"
 	},
 	"devDependencies": {
-		"@eslint/eslintrc": "3.3.5",
+		"@eslint/eslintrc": "3.3.6",
 		"@prisma/config": "7.9.1",
 		"@tailwindcss/postcss": "4.3.3",
 		"@types/howler": "2.2.13",
@@ -82,7 +82,9 @@
 		"overrides": {
 			"@types/react": "19.2.18",
 			"@types/react-dom": "19.2.4",
-			"postcss": "8.5.25"
+			"postcss": "8.5.25",
+			"fast-uri": "3.1.5",
+			"brace-expansion": "1.1.16"
 		}
 	}
 }
