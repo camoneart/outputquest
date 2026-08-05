@@ -192,23 +192,23 @@ OUTPUT QUESTのプライバシーポリシーを確認できます。
 
 ### nodeバージョン
 
-- [node](https://nodejs.org/ja/)：v24.8.0
+- [node](https://nodejs.org/ja/)：v24.13.1
 - [pnpm](https://pnpm.io/ja/)：v10.11.1
 
 ### フロント
 
-- [Next.js(App Router)](https://nextjs.org)：v16.1.1
-- [React](https://react.dev)：v19.2.3
-- [TypeScript](https://www.typescriptlang.org/)：v5.9.3
+- [Next.js(App Router)](https://nextjs.org)：v16.2.11
+- [React](https://react.dev)：v19.2.7
+- [TypeScript](https://www.typescriptlang.org/)：v6.0.3
 
 ### スタイル・UI
 
-- [Tailwind CSS](https://tailwindcss.com/)：v4.1.18
+- [Tailwind CSS](https://tailwindcss.com/)：v4.3.0
 - [shadcn/ui](https://ui.shadcn.com/)
 
 ### アニメーション
 
-- [Motion](https://motion.dev/)：v12.25.0
+- [Motion](https://motion.dev/)：v12.40.0
 
 ### オーディオ
 
@@ -216,19 +216,19 @@ OUTPUT QUESTのプライバシーポリシーを確認できます。
 
 ### 認証・データベース
 
-- [Clerk](https://clerk.com/)：v6.36.7（認証）
-- [Prisma](https://www.prisma.io/)：v7.2.0（ORM）
+- [Clerk](https://clerk.com/)：v6.39.3（認証）
+- [Prisma](https://www.prisma.io/)：v7.9.1（ORM）
 - [Supabase](https://supabase.com/)（PostgreSQL）
 
 ### スキーマバリデーション
 
-- [zod](https://zod.dev/)：v4.3.5
+- [zod](https://zod.dev/)：v4.4.3
 
 ### AI
 
-- [Vercel AI SDK](https://ai-sdk.dev/)：v6.0.24（TypeScript Toolkit）
-- [AI SDK Core](https://ai-sdk.dev/docs/ai-sdk-core/overview)：v3.0.6（LLM：Gemini(gemini-2.5-pro)）
-- [AI SDK UI](https://ai-sdk.dev/docs/ai-sdk-ui/overview)：v3.0.25（UI）
+- [Vercel AI SDK](https://ai-sdk.dev/)：v6.0.195（TypeScript Toolkit）
+- [AI SDK Core](https://ai-sdk.dev/docs/ai-sdk-core/overview)：v3.0.80（LLM：Gemini(gemini-2.5-pro)）
+- [AI SDK UI](https://ai-sdk.dev/docs/ai-sdk-ui/overview)：v3.0.197（UI）
 
 ### Markdown
 
@@ -417,7 +417,7 @@ outputquest/
 
 ### 前提条件
 
-- Node.js 20.9.0 以上
+- Node.js 20.19.0 以上
 - pnpm
 - Git
 
