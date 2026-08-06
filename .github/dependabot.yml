@@ -10,12 +10,22 @@ updates:
       day: "monday"
     open-pull-requests-limit: 10
     versioning-strategy: "increase"
-    # eslint の major 更新のみ無視する(minor/patch は従来どおり受け取る)。
-    # 理由: eslint-config-next が引き込む eslint-plugin-react が ESLint 10 に未対応で、
-    # 10.x へ上げると `pnpm lint` が TypeError でクラッシュする (PR #232 で 9.39.5 へ戻した)。
-    # eslint-plugin-react の ESLint 10 対応版 (7.8.0) が安定リリースされたら本設定を見直す。
+    # 以下 2 件は major 更新のみ無視する(minor/patch は従来どおり受け取る)。
+    # どちらも上流が未対応であることが原因で、本リポジトリ側の修正では解決しない。
+    #
+    # eslint: eslint-config-next が引き込む eslint-plugin-react が ESLint 10 に未対応で、
+    #   10.x へ上げると `pnpm lint` が TypeError でクラッシュする (PR #232 で 9.39.5 へ戻した)。
+    #   eslint-plugin-react の ESLint 10 対応版 (7.8.0) が安定リリースされたら見直す。
+    #
+    # typescript: eslint-config-next/typescript が引き込む @typescript-eslint が
+    #   TypeScript 7 に未対応。peerDependencies が `>=4.8.4 <6.1.0` で、latest (8.66.0) でも
+    #   同じ範囲のまま 9.x は未リリース。7.0.2 へ上げると typescript-estree の初期化時に
+    #   `TypeError: Cannot read properties of undefined (reading 'Cjs')` でクラッシュする。
+    #   @typescript-eslint が TypeScript 7 に対応したら見直す (issue #244)。
     ignore:
       - dependency-name: "eslint"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "typescript"
         update-types: ["version-update:semver-major"]
     groups:
       next:
