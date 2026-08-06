@@ -249,10 +249,19 @@ export async function connectZenn(
 			user = updatedUser as UserInfo;
 		} else {
 			// 新規ユーザー作成
+			//
+			// User.username は Clerk 側のユーザー名を入れる欄であり (@unique)、
+			// Zennのユーザー名は zennUsername (制約なし) が持つ。
+			// ここで username に Zennのユーザー名を入れると、別ユーザーが同じ名前を
+			// 既に持っていた場合に一意制約違反 (P2002) になる。利用者のZennアカウントは
+			// 1つなので入力を変える余地がなく、復帰する手段がない。
+			// Clerk Webhook (api/webhooks/clerk/route.ts) と同じ規則で生成する。
+			const usernameForCreate = clerkUser.username || `user_${userId.substring(0, 8)}`;
+
 			const newUser = await prisma.user.create({
 				data: {
 					clerkId: userId,
-					username,
+					username: usernameForCreate,
 					email: emailFromClerk,
 					zennUsername: username,
 					zennArticleCount: articleCount,
