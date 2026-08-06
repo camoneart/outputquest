@@ -286,18 +286,6 @@ export async function connectZenn(
 		};
 	} catch (error) {
 		console.error("Zenn連携エラー:", error);
-
-		// ユーザー名が既に使われている場合
-		// (User.username は @unique。別アカウントが同じZennユーザー名を先に連携している)
-		// 一意制約違反は再試行しても解消しないため、汎用の「時間をおいて」メッセージに
-		// 丸めると利用者が無限に再試行することになる。
-		if (error && typeof error === "object" && "code" in error && error.code === "P2002") {
-			return {
-				success: false,
-				error: "このZennユーザー名は既に使用されています。別のユーザー名を入力してください。",
-			};
-		}
-
 		return {
 			success: false,
 			error: "予期しないエラーが発生しました。時間をおいて再度お試しください。",
