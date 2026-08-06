@@ -1,4 +1,4 @@
-import { UserResource } from "@clerk/types";
+import type { UserResource } from "@clerk/nextjs/types";
 import styles from "./ConnectionUserProfileHeader.module.css";
 import UserIconButton from "@/components/auth/user-icon-button/UserIconButton";
 

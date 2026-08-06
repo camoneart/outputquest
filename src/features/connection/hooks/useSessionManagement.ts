@@ -3,7 +3,7 @@
 import "client-only";
 
 import { useEffect, Dispatch, SetStateAction } from "react";
-import { UserResource } from "@clerk/types";
+import type { UserResource } from "@clerk/nextjs/types";
 import { SESSION_ID_KEY, LOGOUT_FLAG_KEY } from "@/features/connection/constants";
 import { storage } from "@/utils/storage";
 
