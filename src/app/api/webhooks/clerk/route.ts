@@ -213,16 +213,23 @@ export async function POST(request: Request) {
 							data: updateData,
 						});
 					} catch (error) {
-						// ユーザーが存在しない場合の特別処理
 						if (
 							error &&
 							typeof error === "object" &&
 							"code" in error &&
 							(error as { code?: string }).code === "P2025"
 						) {
-							// ユーザーが存在しない場合はスキップ
+							// 対象が存在しない = 更新すべき行が無い。成功として扱う
 						} else {
+							// 更新に失敗したまま 200 を返すと Clerk は成功として記録し、
+							// リトライも Dashboard の Failed 表示も発生しない。
+							// 結果として Clerk 側の変更 (メールアドレス・ユーザー名等) が
+							// DB へ反映されないまま乖離し続ける (issue #255)。
+							// user.deleted と同じく 5xx を返してリトライと可視化に載せる。
 							console.error(`ユーザー更新エラー: ${id}`, error);
+							return new NextResponse("Webhook Error: user update failed", {
+								status: 500,
+							});
 						}
 					}
 				}
@@ -244,16 +251,22 @@ export async function POST(request: Request) {
 						where: { clerkId: id },
 					});
 				} catch (error) {
-					// ユーザーが存在しない場合は警告のみ
 					if (
 						error &&
 						typeof error === "object" &&
 						"code" in error &&
 						(error as { code?: string }).code === "P2025"
 					) {
-						// ユーザーが既に削除されている場合はスキップ
+						// 対象が存在しない = 既に削除済み。冪等なので成功として扱う
 					} else {
+						// 削除に失敗したまま 200 を返すと Clerk は成功として記録し、
+						// リトライも Dashboard の Failed 表示も発生しない。
+						// 結果として DB に行が残り続け、後から一意制約違反(P2002)の
+						// 衝突相手になる (issue #255)。5xx を返してリトライと可視化に載せる。
 						console.error(`ユーザー削除エラー: ${id}`, error);
+						return new NextResponse("Webhook Error: user deletion failed", {
+							status: 500,
+						});
 					}
 				}
 				break;
