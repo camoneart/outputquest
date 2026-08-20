@@ -7,7 +7,7 @@
 	"homepage": "https://outputquest.com",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/dendedev/outputquest"
+		"url": "https://github.com/mirinodev/outputquest"
 	},
 	"packageManager": "pnpm@10.11.1",
 	"engines": {
