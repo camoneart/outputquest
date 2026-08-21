@@ -293,7 +293,7 @@ OUTPUT QUESTのプライバシーポリシーを確認できます。
 
 <h2 id="development-configuration-diagram">開発構成図</h2>
 
-[開発構成図](https://dendedev.github.io/outputquest-development-configuration-diagram/)はHTMLインフォグラフィックで表現しました。
+[開発構成図](https://mirinodev.github.io/outputquest-development-configuration-diagram/)はHTMLインフォグラフィックで表現しました。
 
 <h2 id="directory-design">ディレクトリ構造</h2>
 
@@ -424,7 +424,7 @@ outputquest/
 ### 1. リポジトリのクローン
 
 ```bash
-git clone https://github.com/dendedev/outputquest.git
+git clone https://github.com/mirinodev/outputquest.git
 cd outputquest
 ```
 

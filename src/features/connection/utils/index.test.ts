@@ -3,27 +3,27 @@ import { cleanUsername, isValidZennUsernameFormat } from "./index";
 
 describe("cleanUsername", () => {
 	it("strips a single leading @", () => {
-		expect(cleanUsername("@dende")).toBe("dende");
+		expect(cleanUsername("@mirino")).toBe("mirino");
 	});
 
 	it("leaves a username without @ unchanged", () => {
-		expect(cleanUsername("dende")).toBe("dende");
+		expect(cleanUsername("mirino")).toBe("mirino");
 	});
 
 	it("only strips the leading @, not internal ones", () => {
-		expect(cleanUsername("@de@nde")).toBe("de@nde");
+		expect(cleanUsername("@mi@rino")).toBe("mi@rino");
 	});
 });
 
 describe("isValidZennUsernameFormat", () => {
-	it.each(["dende", "dende_123", "user-name", "ABC123", "_", "-"])(
+	it.each(["mirino", "mirino_123", "user-name", "ABC123", "_", "-"])(
 		"accepts valid username: %s",
 		(username) => {
 			expect(isValidZennUsernameFormat(username)).toBe(true);
 		}
 	);
 
-	it.each(["", "@dende", "den de", "デンデ", "user.name", "user!", "a/b"])(
+	it.each(["", "@mirino", "mi rino", "ミリノ", "user.name", "user!", "a/b"])(
 		"rejects invalid username: %s",
 		(username) => {
 			expect(isValidZennUsernameFormat(username)).toBe(false);

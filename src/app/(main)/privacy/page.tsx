@@ -92,7 +92,7 @@ const PrivacyPage = () => {
 										<dt className="md:text-base text-sm">開発者のメールアドレス：</dt>
 										<dd>
 											<SafeMailtoLink
-												user="ldendedevl"
+												user="mirinodev"
 												domain="gmail.com"
 												className="md:text-base text-sm underline underline-offset-4 py-1 pr-2"
 											/>
@@ -102,12 +102,12 @@ const PrivacyPage = () => {
 										<dt className="md:text-base text-sm">開発者のX：</dt>
 										<dd>
 											<Link
-												href="https://x.com/dendedev"
+												href="https://x.com/mirinodev"
 												className="md:text-base text-sm underline underline-offset-4 py-1 pr-2"
 												target="_blank"
 												rel="noopener noreferrer"
 											>
-												@dendedev
+												@mirinodev
 											</Link>
 										</dd>
 									</div>
